@@ -1,0 +1,281 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+      <style>
+        html {
+          -webkit-font-smoothing: antialiased;
+          font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+          font-size: 16px;
+          color: #271325;
+          background: #FFF0BA;
+        }
+        *{
+          /*outline: 1px solid rgba(0,0,0,.05);*/
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+        }
+        h1,h2,h3,h4,h5 {
+
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        .Header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          background: #271325;
+          color: #FFF0BA;
+          padding: 2vw 4vw;
+          z-index: 2;
+        }
+        .Header select {
+          position: absolute;
+          right: 4vw;
+          top: 2.2vw;
+          background: none;
+          color: #fff;
+          width: 150px;
+        }
+        section:after {
+          content: "";
+          position: relative;
+          display: block;
+          width: 92vw;
+          margin: 4vw 4vw;
+          border-bottom: 1px solid;
+          opacity: .4;
+        }
+        .Composition {
+          margin-top: 5vw;
+        }
+        section {
+          width: 100%;
+          padding: 0 0;
+        }
+        .Group {
+          padding: 4vw;
+          margin: 0 0;
+        }
+        .Group.Graphical {
+
+        }
+        .Headline {
+          padding: 5vh;
+        }
+        .Headline h1 {
+
+        }
+        .Attribution {
+
+        }
+        .Attribution .Author {
+
+        }
+        .Attribution .Source {
+
+        }
+        .Cover {
+          overflow: hidden;
+          max-height: 80vh;
+        }
+        .Cover img {
+          position: relative;
+          width: 101%;
+          mix-blend-mode: multiply;
+        }
+
+    /* RAMS COMPOSITION */
+        .Rams {
+          padding: 4vw 0;
+        }
+        .Rams .Headline span,
+        .Rams .Attribution span{
+          -webkit-box-decoration-break: clone;
+          line-height: 1.4;
+        }
+        .Rams .Headline {
+          padding: 0;
+        }
+
+
+    /* BASS COMPOSITION */
+        .Bass {
+          padding: 4vw 0;
+          /*background: #EF4144;*/
+        }
+        .Bass section {
+          /*display: block;*/
+        }
+        .Bass .Attribution {
+          color: #FFF0BA;
+        }
+        .Bass .Headline span,
+        .Bass .Attribution span{
+          padding: .2rem .4rem;
+          -webkit-box-decoration-break: clone;
+          line-height: 1.4;
+          background: #271325;
+          color: #FFF0BA;
+        }
+        .Bass .Headline span,
+        .Bass .Attribution span{
+          padding: .2rem .4rem;
+          -webkit-box-decoration-break: clone;
+          line-height: 1.4;
+          background: #271325;
+          color: #FFF0BA;
+        }
+        .Bass .Headline {
+          padding: 0;
+        }
+
+    /* VIGNELLI COMPOSITION */
+
+        .Vignelli section {
+          padding: 4vw 0;
+        }
+        .Vignelli section:nth-of-type(even){
+          /*background: #271325;*/
+          /*color: #FFF0BA;*/
+        }
+        .Vignelli section:nth-of-type(odd){
+          /*background: #FFF0BA;*/
+        }
+
+        .Vignelli .Headline{
+          border-top: 8px solid;
+          border-bottom: 8px solid;
+          padding: 1rem 0 1.5rem;
+        }
+
+        .Vignelli .Attribution {
+          border-top: 8px solid;
+          padding: 1rem 0 1.5rem;
+        }
+
+    /* Escher COMPOSITION */
+
+        .Escher section {
+          padding: 4vw;
+        }
+        .Escher{
+/*          background: #271325;
+          color: #FFF0BA;*/
+        }
+
+        .Escher .Group {
+          border: .5vw solid;
+          padding: 1vw;
+        }
+
+        .Escher .Group {
+          margin-left: -.5vw;
+          margin-top: -.5vw;
+          position: relative;
+        }
+
+        .Escher .Group:after{
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: .5vw;
+          top: .5vw;
+          border: .5vw solid #E4D4A7;
+        }
+
+        .Escher .Headline{
+          padding: 2vw;
+          width: 100%;
+        }
+
+        .Escher .Attribution {
+          padding: 2vw;
+          width: 100%;
+        }
+        .Escher .Cover {
+          width: 100%;
+          display: inline-block;
+          position: relative;
+        }
+        .Escher .Cover img{
+
+        }
+
+        @media screen and (min-width: 960px) {
+          section .Component {
+            display: flex;
+            align-items: flex-start;
+          }
+          .Group {
+            width: 50%;
+          }
+          .Group {
+            align-self: stretch;
+            display: flex;
+            padding: 0 2vw;
+          }
+        }
+        @media screen and (min-width: 1280px) {
+          section .Component {
+            display: flex;
+            align-items: flex-start;
+            padding: 0 10vw;
+          }
+          .Group {
+            min-width: 33.3333%;
+            align-self: stretch;
+            display: flex;
+            padding: 0 1vw;
+          }
+        }
+
+      </style>
+  </head>
+
+  <div class="Header">
+    <h3><span>The Components</span></h3>
+    <select name="composition" id="Composition-input">
+      <option value="Rams">Dieter Rams</option>
+      <option value="Vignelli">Massimo Vignelli</option>
+      <option value="Bass">Saul Bass</option>
+      <option value="Escher">MC Escher</option>
+    </select>
+  </div>
+    <div class="Components">
+
+<!-- RAMS -->
+
+    <div class="Composition Rams">
+      <section>
+        <div class="Component">
+          <div class="Group Graphical">
+            <div class="Cover">
+              <img src="images/dieter.jpg">
+            </div>
+          </div>
+          <div class="Group">
+            <div class="Attribution">
+              <h5><span class="Author">Dieter Rams</span> via <span class="Source">Vitsœ</span></h5>
+            </div>
+          </div>
+          <div class="Group Textual">
+            <div class="Headline">
+              <h1><span>Aware that he was a significant contributor to that world, he asked himself an important question: is my design good design?</span></h1>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script>
+    document.querySelector('#Composition-input').addEventListener("change", changeComposition);
+    function changeComposition() {
+      document.querySelector('.Composition').className = "Composition " + document.querySelector('#Composition-input').value;
+    }
+  </script>
+
+</html>
