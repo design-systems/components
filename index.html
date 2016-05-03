@@ -7,7 +7,7 @@
           font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
           font-size: 16px;
           color: #271325;
-          /*background: #E2F1F6;*/
+          background: #FFF0BA;
         }
         *{
           /*outline: 1px solid rgba(0,0,0,.05);*/
@@ -84,21 +84,12 @@
         .Cover img {
           position: relative;
           width: 101%;
-          opacity: .9;
+          mix-blend-mode: multiply;
         }
 
     /* RAMS COMPOSITION */
         .Rams {
           padding: 4vw 0;
-        }
-        .Rams section:after {
-          content: "";
-          position: relative;
-          display: block;
-          width: 92vw;
-          margin: 4vw 0;
-          border-bottom: 1px solid;
-          opacity: .4;
         }
         .Rams .Headline span,
         .Rams .Attribution span{
@@ -113,7 +104,7 @@
     /* BASS COMPOSITION */
         .Bass {
           padding: 4vw 0;
-          background: #EF4144;
+          /*background: #EF4144;*/
         }
         .Bass section {
           /*display: block;*/
@@ -147,58 +138,71 @@
           padding: 4vw 0;
         }
         .Vignelli section:nth-of-type(even){
-          background: #271325;
-          color: #FFF0BA;
+          /*background: #271325;*/
+          /*color: #FFF0BA;*/
         }
         .Vignelli section:nth-of-type(odd){
-          background: #FFF0BA;
+          /*background: #FFF0BA;*/
         }
 
         .Vignelli .Headline{
           border-top: 8px solid;
           border-bottom: 8px solid;
-          padding: 2rem 0;
+          padding: 1rem 0 1.5rem;
         }
 
         .Vignelli .Attribution {
           border-top: 8px solid;
-          padding: 2rem 0;
+          padding: 1rem 0 1.5rem;
         }
 
-    /* HUNTER COMPOSITION */
+    /* Escher COMPOSITION */
 
-        .Hunter section {
+        .Escher section {
           padding: 4vw;
         }
-        .Hunter{
-          background: #271325;
+        .Escher{
+/*          background: #271325;
+          color: #FFF0BA;*/
         }
 
-        .Hunter .Group {
-          border: 8px solid #00BAB2;
-          padding: 4vw;
+        .Escher .Group {
+          border: .5vw solid;
+          padding: 1vw;
         }
 
-        .Hunter .Group {
-          margin-left: -8px;
+        .Escher .Group {
+          margin-left: -.5vw;
+          margin-top: -.5vw;
           position: relative;
         }
 
-        .Hunter .Headline{
-          padding: 2rem;
+        .Escher .Group:after{
+          content: "";
           width: 100%;
-          background-color: #FFF0BA;
+          height: 100%;
+          position: absolute;
+          left: .5vw;
+          top: .5vw;
+          border: .5vw solid #E4D4A7;
         }
 
-        .Hunter .Attribution {
-          background: #FFF0BA;
-          padding: 2rem;
+        .Escher .Headline{
+          padding: 2vw;
           width: 100%;
         }
 
-        .Hunter .Cover {
-          background-color: #FFF0BA;
-          margin: auto;
+        .Escher .Attribution {
+          padding: 2vw;
+          width: 100%;
+        }
+        .Escher .Cover {
+          width: 100%;
+          display: inline-block;
+          position: relative;
+        }
+        .Escher .Cover img{
+
         }
 
         @media screen and (min-width: 960px) {
@@ -212,19 +216,20 @@
           .Group {
             align-self: stretch;
             display: flex;
-            padding: 0 4vw;
+            padding: 0 2vw;
           }
         }
         @media screen and (min-width: 1280px) {
           section .Component {
             display: flex;
             align-items: flex-start;
+            padding: 0 10vw;
           }
           .Group {
             min-width: 33.3333%;
             align-self: stretch;
             display: flex;
-            padding: 0 4vw;
+            padding: 0 1vw;
           }
         }
 
