@@ -16,6 +16,9 @@
         padding: 0;
         margin: 0;
       }
+      a{
+        color: #ef4044;
+      }
       h1,h2,h3,h4,h5 {
 
       }
@@ -46,48 +49,60 @@
       .Header h3 {
         float: left;
       }
+
+      .Composition {
+        margin-top: 8vh;
+      }
+
+      section {
+        width: 100%;
+        padding: 4vw 10vw;
+      }
+
       section:after {
         content: "";
         position: relative;
         display: block;
-        width: 92vw;
-        margin: 4vw 4vw;
+        width: 80vw;
+        margin: 4vw 0;
         border-bottom: 1px solid;
         opacity: .4;
       }
-      .Composition {
-        margin-top: 8vh;
-      }
-      section {
-        width: 100%;
-        padding: 0 0;
-      }
+
       .Group {
         padding: 4vw;
         margin: 0 0;
       }
+
       .Group.Graphical {
 
       }
+
       .Headline {
         padding: 5vh;
       }
+
       .Headline h1 {
 
       }
+
       .Attribution {
 
       }
+
       .Attribution .Author {
 
       }
+
       .Attribution .Source {
 
       }
+
       .Cover {
         overflow: hidden;
         max-height: 80vh;
       }
+
       .Cover img {
         position: relative;
         width: 101%;
@@ -96,7 +111,7 @@
 
   /* RAMS COMPOSITION */
       .Rams {
-        padding: 4vw 0;
+
       }
       .Rams .Headline span,
       .Rams .Attribution span{
@@ -110,7 +125,7 @@
 
   /* BASS COMPOSITION */
       .Bass {
-        padding: 4vw 0;
+
         /*background: #EF4144;*/
       }
       .Bass section {
@@ -142,7 +157,7 @@
   /* VIGNELLI COMPOSITION */
 
       .Vignelli section {
-        padding: 4vw 0;
+
       }
       .Vignelli section:nth-of-type(even){
         /*background: #271325;*/
@@ -166,7 +181,7 @@
   /* Escher COMPOSITION */
 
       .Escher section {
-        padding: 4vw;
+
       }
       .Escher{
 /*          background: #271325;
@@ -225,12 +240,28 @@
           display: flex;
           padding: 0 2vw;
         }
+        section.Components--2 {
+          padding: 4vw 10vw;
+        }
+        section.Components--2 .Component  {
+          width: 50%;
+          display: inline-block;
+          padding-left: 0vw;
+          padding-right: 0vw;
+        }
+        section.Components--2 .Component .Group  {
+          padding: 1vw;
+          width: 100%;
+        }
+        /*section.Components--2:after {
+          padding: 4vw 10vw;
+        }*/
       }
       @media screen and (min-width: 1280px) {
         section .Component {
           display: flex;
           align-items: flex-start;
-          padding: 0 10vw;
+          padding: 0 0;
         }
         .Group {
           min-width: 33.3333%;
@@ -253,7 +284,7 @@
       <option value="Escher">MC Escher</option>
     </select>
   </div>
-    <div class="Components">
+  <div class="Components">
 
 <!-- RAMS -->
 
@@ -292,6 +323,41 @@
           <div class="Group Graphical">
             <div class="Cover">
               <img src="http://img.ffffound.com/static-data/assets/6/ba6babf8feb558c3199af3170b8cf47d1e2edf0b_m.jpg">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="Components--2">
+        <div class="Component">
+          <div class="Group Graphical">
+            <div class="Cover">
+              <img src="https://pbs.twimg.com/media/Cga99WyUYAAahnQ.jpg:large">
+            </div>
+          </div>
+          <div class="Group">
+            <div class="Attribution">
+              <h5><span class="Author">Dann Petty</span> via <span class="Source">Twitter</span></h5>
+            </div>
+          </div>
+          <div class="Group Textual">
+            <div class="Headline">
+              <h1><span>I'm a vlogger now. Check out Vlog—001 on <a href="https://www.youtube.com/watch?v=EYwKabWGYRs">YouTube…</a></span></h1>
+            </div>
+          </div>
+        </div><div class="Component">
+          <div class="Group Graphical">
+            <div class="Cover">
+              <img src="http://danielmall.com/articles/selling-design-systems/boards.jpg">
+            </div>
+          </div>
+          <div class="Group">
+            <div class="Attribution">
+              <h5><span class="Author">Daniel Mall</span> via <span class="Source">Danielmall.com</span></h5>
+            </div>
+          </div>
+          <div class="Group Textual">
+            <div class="Headline">
+              <h1><span>With amazing examples of public design systems like Google’s Material Design and Salesforce’s Lightning Design System, it’s easy to forget that many people still need to be convinced of the value a design system can have for an organization.</span></h1>
             </div>
           </div>
         </div>
