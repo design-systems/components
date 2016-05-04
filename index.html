@@ -33,7 +33,7 @@
         background: #271325;
         color: #FFF0BA;
         padding: 4vh 4vw 2vh;
-        z-index: 2;
+        z-index: 30;
       }
       .Header select {
         position: relative;
@@ -57,6 +57,7 @@
       section {
         width: 100%;
         padding: 4vw 10vw;
+        position: relative;
       }
 
       section:after {
@@ -72,10 +73,21 @@
       .Group {
         padding: 4vw;
         margin: 0 0;
+        position: relative;
       }
 
-      .Group.Graphical {
+      .Group--graphical {
 
+      }
+
+      .Group--textual {
+        z-index: 10;
+        align-self: flex-end !important;
+      }
+
+      .Group--meta {
+        z-index: 10;
+        align-self: flex-end !important;
       }
 
       .Headline {
@@ -100,7 +112,7 @@
 
       .Cover {
         overflow: hidden;
-        max-height: 80vh;
+        max-height: 90vh;
       }
 
       .Cover img {
@@ -109,7 +121,58 @@
         mix-blend-mode: multiply;
       }
 
-  /* RAMS COMPOSITION */
+      .Section.Section--fullscreen-bg {
+        width: 100%;
+        height: 80vh;
+        padding-top: 0;
+      }
+
+      .Section.Section--fullscreen-bg .Component {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        justify-content: flex-end;
+      }
+
+      .Section.Section--fullscreen-bg .Group--graphical{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        left: 0;
+        top: 0;
+      }
+
+      .Section.Section--fullscreen-bg .Cover{
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .Section.Section--fullscreen-bg .Cover img{
+        min-height: 100%;
+        min-width: 100%;
+        width: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%,-50%,0);
+        mix-blend-mode: multiply;
+      }
+
+      .Section.Section--fullscreen-bg .Group--meta{
+        padding: 2vh 2vw;
+        background: #FFF0BA;
+        width: auto;
+        min-width: auto;
+      }
+      .Section.Section--fullscreen-bg .Group--textual{
+        padding: 2vh 2vw;
+        background: #FFF0BA;
+        /*width: 33%;*/
+      }
+
+  /* RAMS DESIGN SYSTEM */
       .Rams {
 
       }
@@ -123,16 +186,18 @@
       }
 
 
-  /* BASS COMPOSITION */
+  /* BASS DESIGN SYSTEM */
       .Bass {
 
-        /*background: #EF4144;*/
       }
       .Bass section {
-        /*display: block;*/
+
       }
       .Bass .Attribution {
         color: #FFF0BA;
+      }
+      .Bass .Group {
+        background: transparent !important;
       }
       .Bass .Headline span,
       .Bass .Attribution span{
@@ -154,17 +219,13 @@
         padding: 0;
       }
 
-  /* VIGNELLI COMPOSITION */
-
+  /* VIGNELLI DESIGN SYSTEM */
       .Vignelli section {
 
       }
-      .Vignelli section:nth-of-type(even){
-        /*background: #271325;*/
-        /*color: #FFF0BA;*/
-      }
-      .Vignelli section:nth-of-type(odd){
-        /*background: #FFF0BA;*/
+
+      .Vignelli section {
+
       }
 
       .Vignelli .Headline{
@@ -178,14 +239,14 @@
         padding: 1rem 0 1.5rem;
       }
 
-  /* Escher COMPOSITION */
+  /* Escher DESIGN SYSTEM */
+
+      .Escher{
+
+      }
 
       .Escher section {
 
-      }
-      .Escher{
-/*          background: #271325;
-        color: #FFF0BA;*/
       }
 
       .Escher .Group {
@@ -240,22 +301,19 @@
           display: flex;
           padding: 0 2vw;
         }
-        section.Components--2 {
+        section.Section--components-2 {
           padding: 4vw 10vw;
         }
-        section.Components--2 .Component  {
+        section.Section--components-2 .Component  {
           width: 50%;
           display: inline-block;
           padding-left: 0vw;
           padding-right: 0vw;
         }
-        section.Components--2 .Component .Group  {
+        section.Section--components-2 .Component .Group  {
           padding: 1vw;
           width: 100%;
         }
-        /*section.Components--2:after {
-          padding: 4vw 10vw;
-        }*/
       }
       @media screen and (min-width: 1280px) {
         section .Component {
@@ -268,6 +326,9 @@
           align-self: stretch;
           display: flex;
           padding: 0 1vw;
+        }
+        .Group .Meta {
+          min-width: 16.666%;
         }
       }
 
@@ -289,147 +350,147 @@
 <!-- RAMS -->
 
     <div class="Composition Rams">
-      <section>
+      <section class="Section Section--fullscreen-bg">
         <div class="Component">
-          <div class="Group Graphical">
+          <div class="Group Group--graphical">
             <div class="Cover">
               <img src="images/dieter.jpg">
             </div>
           </div>
-          <div class="Group">
+          <div class="Group Group--meta">
             <div class="Attribution">
               <h5><span class="Author">Dieter Rams</span> via <span class="Source">Vitsœ</span></h5>
             </div>
           </div>
-          <div class="Group Textual">
+          <div class="Group Group--textual">
             <div class="Headline">
               <h1><span>Aware that he was a significant contributor to that world, he asked himself an important question: is my design good design?</span></h1>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section class="Section">
         <div class="Component">
-          <div class="Group Graphical">
+          <div class="Group Group--graphical">
             <div class="Cover">
               <img src="http://img.ffffound.com/static-data/assets/6/98ece2abf6418bfcb41f2a883f9530044263a518_m.jpg">
             </div>
           </div>
-          <div class="Group Graphical">
+          <div class="Group Group--graphical">
             <div class="Cover">
               <img src="http://img.ffffound.com/static-data/assets/6/37522f0129775641c302269d0ddc80aadaed2759_m.jpg">
             </div>
           </div>
-          <div class="Group Graphical">
+          <div class="Group Group--graphical">
             <div class="Cover">
               <img src="http://img.ffffound.com/static-data/assets/6/ba6babf8feb558c3199af3170b8cf47d1e2edf0b_m.jpg">
             </div>
           </div>
         </div>
       </section>
-      <section class="Components--2">
+      <section class="Section--components-2">
         <div class="Component">
-          <div class="Group Graphical">
+          <div class="Group Group--graphical">
             <div class="Cover">
               <img src="https://pbs.twimg.com/media/Cga99WyUYAAahnQ.jpg:large">
             </div>
           </div>
-          <div class="Group">
+          <div class="Group Group--meta">
             <div class="Attribution">
               <h5><span class="Author">Dann Petty</span> via <span class="Source">Twitter</span></h5>
             </div>
           </div>
-          <div class="Group Textual">
+          <div class="Group Group--textual">
             <div class="Headline">
               <h1><span>I'm a vlogger now. Check out Vlog—001 on <a href="https://www.youtube.com/watch?v=EYwKabWGYRs">YouTube…</a></span></h1>
             </div>
           </div>
         </div><div class="Component">
-          <div class="Group Graphical">
+          <div class="Group Group--graphical">
             <div class="Cover">
               <img src="http://danielmall.com/articles/selling-design-systems/boards.jpg">
             </div>
           </div>
-          <div class="Group">
+          <div class="Group Group--meta">
             <div class="Attribution">
               <h5><span class="Author">Daniel Mall</span> via <span class="Source">Danielmall.com</span></h5>
             </div>
           </div>
-          <div class="Group Textual">
+          <div class="Group Group--textual">
             <div class="Headline">
               <h1><span>With amazing examples of public design systems like Google’s Material Design and Salesforce’s Lightning Design System, it’s easy to forget that many people still need to be convinced of the value a design system can have for an organization.</span></h1>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section class="Section">
         <div class="Component">
-          <div class="Group Textual">
+          <div class="Group Group--textual">
             <div class="Headline">
               <h1><span>Surreal Photo Manipulations by Laurent Rosset Turn Landscapes into Giant Waves.</span></h1>
             </div>
           </div>
-          <div class="Group">
+          <div class="Group Group--meta">
             <div class="Attribution">
               <h5><span class="Author">Christopher Jobson</span> via <span class="Source">Collossal</span></h5>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section class="Section">
         <div class="Component">
-          <div class="Group Graphical">
+          <div class="Group Group--graphical">
             <div class="Cover">
               <img src="http://www.moma.org/media/W1siZiIsIjMxNjUyOCJdLFsicCIsImNvbnZlcnQiLCItcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=d9dabce80ed8e133">
             </div>
           </div>
-          <div class="Group">
+          <div class="Group Group--meta">
             <div class="Attribution">
               <h5><span class="Author">Noah Baumbach</span> via <span class="Source">MoMA</span></h5>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section class="Section">
         <div class="Component">
-          <div class="Group Graphical">
+          <div class="Group Group--graphical">
             <div class="Cover">
               <img src="http://www.moma.org/media/W1siZiIsIjIyODMzMyJdLFsicCIsImNvbnZlcnQiLCItcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=8808b4741e6e955f">
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section class="Section">
         <div class="Component">
-          <div class="Group Textual">
+          <div class="Group Group--textual">
             <div class="Headline">
               <h1><span>Surreal Photo Manipulations by Laurent Rosset Turn Landscapes into Giant Waves.</span></h1>
             </div>
           </div>
-          <div class="Group">
+          <div class="Group Group--meta">
             <div class="Attribution">
               <h5><span class="Author">Christopher Jobson</span> via <span class="Source">Collossal</span></h5>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section class="Section">
         <div class="Component">
-          <div class="Group Graphical">
+          <div class="Group Group--graphical">
             <div class="Cover">
               <img src="http://www.thisiscolossal.com/wp-content/uploads/2016/04/DanLam_11.jpg">
             </div>
           </div>
-          <div class="Group Textual">
+          <div class="Group Group--textual">
             <div class="Headline">
               <h1><span>Amorphous Technicolor Blobs That Appear to Ooze From Gallery Shelves by Dan Lam</span></h1>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section class="Section">
         <div class="Component">
-          <div class="Group Textual">
+          <div class="Group Group--textual">
             <div class="Headline">
               <h1><span>AARON JAMES DRAPLIN is a graphic designer, author and founder of Draplin Design Co. (DDC). His book, Pretty Much Everything, is a mid-career survey of his work including case studies and advice which will be out in May 2016.</span></h1>
             </div>
