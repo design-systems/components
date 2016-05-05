@@ -26,51 +26,51 @@ h1 {
 .text-align-center {
   text-align: center;
 }
-.text-align-right {
+.text-align-right .Component{
   text-align: right;
 }
 .text-align-justify {
   text-align: justify;
 }
 
-.flex-row {
+.flex-row .Component{
   display: block;
 }
 
-.flex-col {
+.flex-col .Component{
   display: flex;
   flex-flow: column;
 }
 
-.justify-start {
+.justify-start .Component{
   justify-content: flex-start;
 }
-.justify-center {
+.justify-center .Component{
   justify-content: center;
 }
-.justify-end {
+.justify-end .Component{
   justify-content: flex-end;
 }
-.justify-between {
+.justify-between .Component{
   justify-content: justify;
 }
-.justify-around {
+.justify-around .Component{
   justify-content: justify;
 }
 
-.align-start {
+.align-start .Component{
   align-items: flex-start;
 }
-.align-center {
+.align-center .Component{
   align-items: center;
 }
-.align-end {
+.align-end .Component{
   align-items: flex-end;
 }
-.align-between {
+.align-between .Component{
   align-items: justify;
 }
-.align-around {
+.align-around .Component{
   align-items: justify;
 }
 
@@ -123,25 +123,53 @@ h1 {
 
 .Class-list {
   position: relative;
-  background: #fff;
-  color: #000;
-  padding: 10px;
+  background: #FFF0BA;
+  color: #222;
+  padding: 0;
   z-index: 10;
   display: inline-block;
   // visibility: hidden;
-  width: 100px;
-  font-size: 1em;
+  width: 36px;
+  font-size: .9em;
   border: none;
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  opacity: .1;
-  transition: .2s ease-out;
+  bottom: 4vw;
+  right: 4vw;
+  text-align: center;
+  height: 26px;
+  border-radius: 4px;
+  border: 1px solid #000;
+  outline: none;
+  opacity: .4;
 }
 
-.Class-list:hover {
+.Class-list:after {
+  content: '...';
+}
+
+.Class-list li {
+  display: none;
+  margin-right: 3px;
+  background: #222;
+  border-radius: 3px;
+  padding: 5px;
+  color: #FFF0BA;
+}
+
+.Class-list:focus {
   opacity: 1;
-  width: 100%;
+  width: auto;
+  border-radius: 0%;
+  background: transparent;
+  border: none;
+}
+
+.Class-list:focus:after {
+  content: '';
+}
+
+.Class-list:focus li {
+  display: inline-block;
 }
 
 .Group {
