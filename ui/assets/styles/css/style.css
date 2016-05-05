@@ -1,0 +1,424 @@
+
+html {
+  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-size: 16px;
+  color: #271325;
+  background: #FFF0BA;
+}
+*{
+  /*outline: 1px solid rgba(0,0,0,.05);*/
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+a{
+  color: #ef4044;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.text-align-left {
+  text-align: left;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-align-right {
+  text-align: right;
+}
+.text-align-justify {
+  text-align: justify;
+}
+
+.flex-row {
+  display: flex;
+}
+.flex-col {
+  display: flex;
+  flex-flow: column;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-between {
+  justify-content: justify;
+}
+.justify-around {
+  justify-content: justify;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+.align-center {
+  align-items: center;
+}
+.align-end {
+  align-items: flex-end;
+}
+.align-between {
+  align-items: justify;
+}
+.align-around {
+  align-items: justify;
+}
+
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: #271325;
+  color: #FFF0BA;
+  padding: 4vh 4vw 2vh;
+  z-index: 30;
+}
+
+.Header select {
+  position: relative;
+  float: right;
+  top: -4px;
+  background: none;
+  color: #FFF0BA;
+  width: 170px;
+  font-size: 1.1rem;
+  color: #FFF0BA;
+  border-color: #FFF0BA;
+}
+
+.Header h3 {
+  float: left;
+}
+
+.Composition {
+  margin-top: 8vh;
+}
+
+section {
+  width: 100%;
+  padding: 4vw 10vw;
+  position: relative;
+}
+
+section:after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 80vw;
+  margin: 4vw 0 0;
+  border-bottom: 1px solid;
+  opacity: .4;
+}
+
+.Class-list {
+  position: relative;
+  background: #fff;
+  color: #000;
+  padding: 10px;
+  z-index: 10;
+  display: inline-block;
+  // visibility: hidden;
+  width: 100px;
+  font-size: 1em;
+  border: none;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  opacity: .1;
+  transition: .2s ease-out;
+}
+
+.Class-list:hover {
+  opacity: 1;
+  width: 100%;
+}
+
+.Group {
+  padding: 4vw;
+  margin: 0 0;
+  position: relative;
+}
+
+.Group--graphical {
+
+}
+
+.Group--textual {
+  z-index: 10;
+}
+
+.Group--meta {
+  z-index: 10;
+}
+
+.Headline {
+  padding: 5vh;
+}
+
+.Headline h1 {
+
+}
+
+.Attribution {
+
+}
+
+.Attribution .Author {
+
+}
+
+.Attribution .Source {
+
+}
+
+.Cover {
+  overflow: hidden;
+  max-height: 90vh;
+}
+
+.Cover img {
+  position: relative;
+  width: 101%;
+  mix-blend-mode: multiply;
+}
+
+.Section--bg-dark {
+  background: #000;
+}
+
+.Section--bg-dark .Group--graphical{
+  opacity: .2;
+}
+
+.Section--bg-dark .Group:not(.Group--graphical){
+  background: transparent !important;
+  color: #FFF0BA;
+}
+
+.Section--bg-fullscreen {
+  width: 100%;
+  height: 80vh;
+  padding-top: 0;
+}
+
+.Section--bg-fullscreen .Component {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.Section--bg-fullscreen .Group:not(.Group--graphical){
+  padding: 2vh 2vw;
+  background: #FFF0BA;
+  width: auto;
+  min-width: auto;
+  max-width: 50%;
+  /*width: 33%;*/
+}
+
+.Section--bg-fullscreen .Group--graphical{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  left: 0;
+  top: 0;
+  background: transparent;
+}
+
+.Section--bg-fullscreen .Cover{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.Section--bg-fullscreen .Cover img{
+  min-height: 100%;
+  min-width: 100%;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%,-50%,0);
+}
+
+/* RAMS DESIGN SYSTEM */
+.Rams {
+
+}
+.Rams .Headline span,
+.Rams .Attribution span{
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4;
+}
+.Rams .Headline {
+  padding: 0;
+}
+
+
+/* BASS DESIGN SYSTEM */
+.Bass {
+
+}
+.Bass section {
+
+}
+.Bass .Attribution {
+  color: #FFF0BA;
+}
+.Bass .Group {
+  background: transparent !important;
+}
+.Bass .Headline span,
+.Bass .Attribution span{
+  padding: .2rem .4rem;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4;
+  background: #271325;
+  color: #FFF0BA;
+}
+.Bass .Headline span,
+.Bass .Attribution span{
+  padding: .2rem .4rem;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4;
+  background: #271325;
+  color: #FFF0BA;
+}
+.Bass .Headline {
+  padding: 0;
+}
+
+.Bass .Section--bg-dark .Headline span,
+.Bass .Section--bg-dark .Attribution span{
+  background: #FFF0BA;
+  color: #271325;
+}
+
+/* VIGNELLI DESIGN SYSTEM */
+.Vignelli section {
+
+}
+
+.Vignelli section {
+
+}
+
+.Vignelli .Headline{
+  border-top: 8px solid;
+  border-bottom: 8px solid;
+  padding: 1rem 0 1.5rem;
+}
+
+.Vignelli .Attribution {
+  border-top: 8px solid;
+  padding: 1rem 0 1.5rem;
+}
+
+/* Escher DESIGN SYSTEM */
+
+.Escher{
+
+}
+
+.Escher section {
+
+}
+
+.Escher .Group {
+  border: .5vw solid;
+  padding: 1vw;
+}
+
+.Escher .Group {
+  margin-left: -.5vw;
+  margin-top: -.5vw;
+  // position: relative;
+}
+
+.Escher .Group:after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: .5vw;
+  top: .5vw;
+  border: .5vw solid #E4D4A7;
+}
+
+.Escher .Headline{
+  padding: 2vw;
+  width: 100%;
+}
+
+.Escher .Attribution {
+  padding: 2vw;
+  width: 100%;
+}
+.Escher .Cover {
+
+}
+.Escher .Cover img{
+
+}
+
+@media screen and (min-width: 960px) {
+  section .Component {
+
+  }
+  .Group {
+    width: 50%;
+  }
+  .Group {
+    padding: 0 2vw;
+  }
+  section.Section--components-2 {
+    padding: 4vw 10vw;
+  }
+  section.Section--components-2 .Component  {
+    width: 50%;
+    display: inline-block;
+    padding-left: 0vw;
+    padding-right: 0vw;
+  }
+  section.Section--components-2 .Component .Group  {
+    padding: 1vw;
+    width: 100%;
+  }
+
+  section.Section--components-3 {
+    padding: 4vw 10vw;
+  }
+  section.Section--components-3 .Component  {
+    width: 33%;
+    display: inline-block;
+    padding-left: 0vw;
+    padding-right: 0vw;
+  }
+  section.Section--components-3 .Component .Group  {
+    padding: 1vw;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  section .Component {
+    padding: 0 0;
+  }
+  .Group {
+    min-width: 33.3333%;
+    padding: 0 1vw;
+  }
+  .Group .Meta {
+    min-width: 16.666%;
+  }
+}
