@@ -387,7 +387,7 @@ h1 {
 
 @media screen and (min-width: 960px) {
   section .Component {
-
+    display: flex;
   }
   .Group {
     width: 50%;
