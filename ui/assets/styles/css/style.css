@@ -192,6 +192,20 @@ section:after {
   mix-blend-mode: multiply;
 }
 
+
+.Section--bg-light {
+  background: #FFF0BA;
+}
+
+.Section--bg-light .Group--graphical{
+  opacity: .2;
+}
+
+.Section--bg-light .Group:not(.Group--graphical){
+  background: transparent !important;
+  color: #222;
+}
+
 .Section--bg-dark {
   background: #000;
 }
