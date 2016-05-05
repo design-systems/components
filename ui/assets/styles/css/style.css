@@ -104,13 +104,13 @@ h1 {
   margin-top: 8vh;
 }
 
-section {
+.Section {
   width: 100%;
   padding: 4vw 10vw;
   position: relative;
 }
 
-section:after {
+.Section:after {
   content: "";
   position: relative;
   display: block;
@@ -191,7 +191,6 @@ section:after {
   width: 101%;
   mix-blend-mode: multiply;
 }
-
 
 .Section--bg-light {
   background: #FFF0BA;
@@ -397,31 +396,57 @@ section:after {
     padding: 0 2vw;
   }
   section.Section--components-2 {
-    padding: 4vw 10vw;
+
   }
-  section.Section--components-2 .Component  {
-    width: 50%;
+  section.Section--components-2 .Component,
+  section.Section--components-3 .Component,
+  section.Section--components-4 .Component,
+  section.Section--components-5 .Component,
+  section.Section--components-6 .Component  {
     display: inline-block;
-    padding-left: 0vw;
-    padding-right: 0vw;
   }
-  section.Section--components-2 .Component .Group  {
+  section.Section--components-2 .Component,
+  section.Section--components-3 .Component,
+  section.Section--components-4 .Component,
+  section.Section--components-5 .Component,
+  section.Section--components-6 .Component  {
+    width: 50%;
+  }
+  section.Section--components-2 .Component .Group,
+  section.Section--components-3 .Component .Group,
+  section.Section--components-4 .Component .Group,
+  section.Section--components-5 .Component .Group,
+  section.Section--components-6 .Component .Group  {
     padding: 1vw;
     width: 100%;
   }
 
   section.Section--components-3 {
-    padding: 4vw 10vw;
+
   }
   section.Section--components-3 .Component  {
     width: 33%;
-    display: inline-block;
-    padding-left: 0vw;
-    padding-right: 0vw;
   }
-  section.Section--components-3 .Component .Group  {
-    padding: 1vw;
-    width: 100%;
+  section.Section--components-4 .Component  {
+    width: 25%;
+  }
+  section.Section--components-5 .Component  {
+    width: 20%;
+  }
+  section.Section--components-6 .Component  {
+    width: 16.6666%;
+  }
+  section.Section--components-3 h1  {
+    font-size: 1.75rem;
+  }
+  section.Section--components-4 h1  {
+    font-size: 1.5rem;
+  }
+  section.Section--components-5 h1  {
+    font-size: 1.25rem;
+  }
+  section.Section--components-6 h1  {
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 1280px) {
