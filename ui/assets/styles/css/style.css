@@ -374,6 +374,11 @@ h1 {
   padding: 1rem 0 1.5rem;
 }
 
+.Vignelli .flex-row.align-end .Attribution {
+  border-top: none;
+  border-bottom: .8vh solid;
+}
+
 /* Escher DESIGN SYSTEM */
 
 .Escher{
