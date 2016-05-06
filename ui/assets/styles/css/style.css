@@ -36,7 +36,6 @@ h1 {
 .flex-row .Component{
   display: block;
 }
-
 .flex-col .Component{
   display: flex;
   flex-flow: column;
@@ -72,6 +71,10 @@ h1 {
 }
 .align-around .Component{
   align-items: justify;
+}
+
+.sm-title h1{
+  font-size: 3rem;
 }
 
 .Header {
