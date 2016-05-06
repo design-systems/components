@@ -138,7 +138,7 @@ h1 {
   text-align: center;
   height: 26px;
   border-radius: 4px;
-  border: 1px solid #000;
+  border: 1px solid #271325;
   outline: none;
   opacity: .4;
 }
@@ -218,7 +218,6 @@ h1 {
 .Cover img {
   position: relative;
   width: 101%;
-  mix-blend-mode: multiply;
 }
 
 .Section--bg-light {
@@ -235,7 +234,7 @@ h1 {
 }
 
 .Section--bg-dark {
-  background: #000;
+  background: #271325;
 }
 
 .Section--bg-dark .Group--graphical{
@@ -356,13 +355,13 @@ h1 {
 }
 
 .Vignelli .Headline{
-  border-top: 8px solid;
-  border-bottom: 8px solid;
+  border-top: .8vh solid;
+  border-bottom: .8vh solid;
   padding: 1rem 0 1.5rem;
 }
 
 .Vignelli .Attribution {
-  border-top: 8px solid;
+  border-top: .8vh solid;
   padding: 1rem 0 1.5rem;
 }
 
