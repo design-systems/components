@@ -178,7 +178,7 @@ h1 {
 
 .Group {
   padding: 4vw;
-  margin: 0 0;
+  margin: auto;
   position: relative;
 }
 
@@ -233,6 +233,9 @@ h1 {
 .no-bg .Bg {
   display: none;
 }
+.is-bg {
+  min-height: 400px;
+}
 .is-bg .Group--graphical{
   display: none;
 }
@@ -278,7 +281,21 @@ h1 {
 }
 .bg-size-half .Bg {
   width: 50%;
+  height: 80%;
+}
+
+.bg-align-left .Bg {
+  left: 0;
+}
+.bg-align-center .Bg {
+  right: auto;
+  left: 50%;
+  transform: translate3d(-50%,0,0);
   height: 100%;
+}
+.bg-align-right .Bg {
+  right: 0;
+  left: auto;
 }
 
 

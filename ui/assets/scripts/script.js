@@ -46,7 +46,8 @@ var bg_size = [
 ]
 var bg_align = [
   'bg-align-left',
-  'bg-align-right'
+  'bg-align-right',
+  'bg-align-center'
 ]
 var bg_color = [
   'bg-color-light',
