@@ -73,25 +73,6 @@ h1 {
   align-items: justify;
 }
 
-.title-small h1 span{
-  font-size: 1.5rem;
-}
-.title-large h1 span{
-  font-size: 3rem;
-}
-.title-huge h1 span{
-  font-size: 5rem;
-  line-height: 1.25 !important;
-}
-.title-giant h1 span{
-  font-size: 8rem;
-  line-height: 1.25 !important;
-}
-.title-giant .Group--textual,
-.title-huge .Group--textual {
-  max-width: 100% !important;
-}
-
 .Header {
   position: fixed;
   top: 0;
@@ -430,6 +411,26 @@ h1 {
   h1 {
     font-size: 2rem;
   }
+
+  .title-small h1 span{
+    font-size: 1.5rem;
+  }
+  .title-large h1 span{
+    font-size: 3rem;
+  }
+  .title-huge h1 span{
+    font-size: 5rem;
+    line-height: 1.25 !important;
+  }
+  .title-giant h1 span{
+    font-size: 8rem;
+    line-height: 1.25 !important;
+  }
+  .title-giant .Group--textual,
+  .title-huge .Group--textual {
+    max-width: 100% !important;
+  }
+
   .flex-row .Component{
     display: flex;
   }
