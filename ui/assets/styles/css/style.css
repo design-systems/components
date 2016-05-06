@@ -73,8 +73,23 @@ h1 {
   align-items: justify;
 }
 
-.sm-title h1{
+.title-small h1 span{
+  font-size: 1.5rem;
+}
+.title-large h1 span{
   font-size: 3rem;
+}
+.title-huge h1 span{
+  font-size: 5rem;
+  line-height: 1.25 !important;
+}
+.title-giant h1 span{
+  font-size: 8rem;
+  line-height: 1.25 !important;
+}
+.title-giant .Group--textual,
+.title-huge .Group--textual {
+  max-width: 100% !important;
 }
 
 .Header {
@@ -155,7 +170,7 @@ h1 {
   margin-right: 3px;
   background: #222;
   border-radius: 3px;
-  padding: 5px;
+  padding: 5px 8px;
   color: #FFF0BA;
 }
 
@@ -302,7 +317,6 @@ h1 {
 .Rams .Headline span,
 .Rams .Attribution span{
   -webkit-box-decoration-break: clone;
-  line-height: 1.4;
 }
 .Rams .Headline {
   padding: 0;
@@ -326,15 +340,7 @@ h1 {
 .Bass .Attribution span{
   padding: .2rem .4rem;
   -webkit-box-decoration-break: clone;
-  line-height: 1.4;
-  background: #271325;
-  color: #FFF0BA;
-}
-.Bass .Headline span,
-.Bass .Attribution span{
-  padding: .2rem .4rem;
-  -webkit-box-decoration-break: clone;
-  line-height: 1.4;
+  line-height: 1.25;
   background: #271325;
   color: #FFF0BA;
 }
