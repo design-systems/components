@@ -37,7 +37,8 @@ var flex = [
 ]
 var is_bg = [
   'is-bg',
-  'no-bg'
+  'no-bg',
+  'both-bg'
 ]
 var bg_fit = [
   'bg-fit-cover',
