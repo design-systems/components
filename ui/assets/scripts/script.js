@@ -2,22 +2,33 @@ var Headlines_array = new Array();
 Headlines_array['Rams'] = 'Aware that he was a significant contributor to that world, he asked himself an important question: is my design good design?'
 Headlines_array['Vignelli'] = 'Linear Genius, Bold and Transformative ‘Design Is One’ Centers on the Vignelli Team'
 Headlines_array['Bass'] = 'Saul Bass On His Approach To Title Sequences'
-Headlines_array['Escher'] = "The ultimate mind-benders: MC Escher's incredible optical illusions are set to have fans questioning reality with his first major UK exhibition"
+// Headlines_array['Escher'] = "The ultimate mind-benders: MC Escher's incredible optical illusions are set to have fans questioning reality with his first major UK exhibition"
 
 var Authors_array = new Array();
 Authors_array['Rams'] = 'Dieter Rams via Vitsœ'
 Authors_array['Vignelli'] = 'Lella & Massimo Vignelli via NYTimes'
 Authors_array['Bass'] = 'Saul Bass via Medium'
-Authors_array['Escher'] = 'MC Escher via Dailymail'
+// Authors_array['Escher'] = 'MC Escher via Dailymail'
 
-// ARCHETYPES
+var Archetypes_array = new Array();
+Archetypes_array[0] = 'Rams';
+Archetypes_array[1] = 'Vignelli';
+Archetypes_array[2] = 'Bass';
+// Archetypes_array[3] = 'Escher';
+
+var composition = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+var covers = document.querySelectorAll('.Cover img');
+var headlines = document.querySelectorAll('.Headline span');
+var authors = document.querySelectorAll('.Author');
+changePhotos();
+
 document.querySelector('#Composition-input').addEventListener("change", changeComposition);
 function changeComposition() {
-  var composition = document.querySelector('#Composition-input').value;
+  composition = document.querySelector('#Composition-input').value;
   document.querySelector('.Composition').className = "Composition " + composition;
-  var covers = document.querySelectorAll('.Cover img');
-  var headlines = document.querySelectorAll('.Headline span');
-  var authors = document.querySelectorAll('.Author');
+  changePhotos();
+}
+function changePhotos() {
   for (var i=0; i<covers.length; i++ ) {
     covers[i].setAttribute('src','images/'+composition+'.jpg');
   }
@@ -61,7 +72,7 @@ var title_size = [
   'title-size-small',
   'title-size-medium',
   'title-size-large',
-  // 'title-size-xlarge',
+  'title-size-xlarge',
   // 'title-size-xxlarge'
 ]
 var text_align = [
@@ -84,21 +95,14 @@ var group_justify = [
   'justify-between',
   'justify-around'
 ]
-var title_sizes = [
-  'title-xxsmall',
-  'title-xsmall',
-  'title-small',
-  'title-medium',
-  'title-large',
-  'title-xlarge',
-  'title-xxlarge'
-]
 var class_lists = [section_size, flex, is_bg, bg_size, bg_color, title_size, text_align, group_align, group_justify, bg_align]
 
 var sections = document.querySelectorAll('.Section');
-for (var i=0; i<4; i++ ) {
+for (var i=0; i<sections.length; i++ ) {
   assignClasses(i);
 }
+var composition = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+document.querySelector('.Composition').className = "Composition "+ composition
 
 function assignClasses(num){
   var section = sections[num];
@@ -106,7 +110,7 @@ function assignClasses(num){
   var list = document.createElement('div');
   list.classList.add('Class-list');
   list.setAttribute('contenteditable',true);
-  section.appendChild(list);
+  section.insertBefore(list,section.firstChild);
 
   for (var i=0; i<class_lists.length; i++){
     var listItem = document.createElement('li')
@@ -120,7 +124,7 @@ function assignClasses(num){
     if (e.keyCode == 13) {
       e.preventDefault();
       var items = list.querySelectorAll('li');
-      var myClass = '';
+      var myClass = 'Section Section--components-' + section.querySelectorAll('.Component').length + " ";
       for (var i=0;i<items.length;i++){
         myClass += items[i].textContent;
         if(myClass.substr(myClass.length-1) != " "){

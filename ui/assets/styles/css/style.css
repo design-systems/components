@@ -18,6 +18,7 @@ a{
 
 h1 {
   font-size: 1.5rem;
+  word-wrap: break-word;
 }
 
 .text-align-left {
@@ -36,6 +37,11 @@ h1 {
 .flex-row .Component{
   display: block;
 }
+
+.Group{
+  padding: 1vw;
+}
+
 .flex-col .Component{
   display: flex;
   flex-flow: column;
@@ -80,7 +86,8 @@ h1 {
   width: 100vw;
   background: #271325;
   color: #FFF0BA;
-  padding: 4vh 4vw 2vh;
+  padding: 30px 4vw 10px;
+  height: 70px;
   z-index: 30;
 }
 
@@ -101,13 +108,15 @@ h1 {
 }
 
 .Composition {
-  margin-top: 8vh;
+  margin-top: 70px;
 }
 
 .Section {
   width: 100%;
   padding: 0;
   position: relative;
+  display: block;
+  align-items: stretch;
 }
 
 .section-size-fullscreen {
@@ -131,13 +140,13 @@ h1 {
 }
 
 .Component {
-  padding: 4vw 10vw;
+  padding: 4vw 4vw;
 }
 
 .Class-list {
   position: relative;
   background: #FFF0BA;
-  color: #222;
+  color: #271325;
   padding: 0;
   z-index: 10;
   display: inline-block;
@@ -153,6 +162,7 @@ h1 {
   border: 1px solid #271325;
   outline: none;
   opacity: .4;
+  z-index: 30;
 }
 
 .Class-list:after {
@@ -185,8 +195,6 @@ h1 {
 }
 
 .Group {
-  padding: 4vw;
-  margin: auto;
   position: relative;
 }
 
@@ -203,7 +211,7 @@ h1 {
 }
 
 .Headline {
-  // padding: 5vh;
+
 }
 
 .Headline h1 {
@@ -255,18 +263,18 @@ h1 {
   background: #FFF0BA;
   width: auto;
   min-width: auto;
+}
+.Section--components-1.is-bg .Group{
   max-width: 66.666%;
 }
-
-
-/* Section background size
-**************************/
 
 .Bg {
   position: absolute;
   padding: 0;
   left: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
 }
 .Bg .Cover{
   position: relative;
@@ -283,11 +291,16 @@ h1 {
   transform: translate3d(-50%,-50%,0);
 }
 
+/* Section background size
+**************************/
+
 .bg-size-full .Bg {
   width: 100%;
   height: 100%;
 }
-.bg-size-half .Bg {
+.Section--components-1.bg-size-half .Bg,
+.Section--components-2.bg-size-half .Bg,
+.Section--components-3.bg-size-half .Bg {
   width: 50%;
   height: 100%;
 }
@@ -319,10 +332,10 @@ h1 {
 }
 .bg-color-light .Group{
   background: transparent !important;
-  color: #222;
+  color: #271325;
 }
 .bg-color-dark {
-  background: #271325;
+  background: #36222F;
 }
 .bg-color-dark .Bg .Cover{
   opacity: .3;
@@ -354,9 +367,6 @@ h1 {
 .Bass section {
 
 }
-.Bass .Attribution {
-  color: #FFF0BA;
-}
 .Bass .Group {
   background: transparent !important;
 }
@@ -368,8 +378,12 @@ h1 {
   background: #271325;
   color: #FFF0BA;
 }
+.Bass .Attribution {
+  color: #FFF0BA;
+  padding: 1rem 0 1.5rem;
+}
 .Bass .Headline {
-  padding: 0;
+  padding: 1rem 0 1.5rem;
 }
 
 .Bass .bg-color-dark .Headline span,
@@ -390,66 +404,19 @@ h1 {
 }
 
 .Vignelli .Headline{
-  border-top: .8vh solid;
-  border-bottom: .8vh solid;
+  border-top: calc(4px + .5vh) solid;
+  border-bottom: calc(4px + .5vh) solid;
   padding: 1rem 0 1.5rem;
 }
 
 .Vignelli .Attribution {
-  border-top: .8vh solid;
+  border-top: calc(4px + .5vh) solid;
   padding: 1rem 0 1.5rem;
 }
 
-.Vignelli .flex-row.align-end .Attribution {
+.Vignelli .Section--components-1.flex-row.align-end .Attribution {
   border-top: none;
-  border-bottom: .8vh solid;
-}
-
-/* Escher DESIGN SYSTEM
-**************************/
-
-.Escher{
-
-}
-
-.Escher section {
-
-}
-
-.Escher .Group {
-  border: .5vw solid;
-  padding: 1vw;
-}
-
-.Escher .Group {
-  margin-left: -.5vw;
-  margin-top: -.5vw;
-}
-
-.Escher .Group:not(.Group--graphical):after{
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: .5vw;
-  top: .5vw;
-  border: .5vw solid #E4D4A7;
-}
-
-.Escher .Headline{
-  padding: 2vw;
-  width: 100%;
-}
-
-.Escher .Attribution {
-  padding: 2vw;
-  width: 100%;
-}
-.Escher .Cover {
-
-}
-.Escher .Cover img{
-
+  border-bottom: calc(4px + .5vh) solid;
 }
 
 @media screen and (min-width: 960px) {
@@ -469,118 +436,98 @@ h1 {
   .title-size-medium h1 span{
     font-size: 2rem;
   }
-  .title-size-large h1 span{
+  .Section.Section--components-1.title-size-large h1 span,
+  .Section.Section--components-2.title-size-large h1 span{
     font-size: 3rem;
   }
-  .title-size-xlarge h1 span{
+  .Section.Section--components-1.title-size-xlarge h1 span{
     font-size: 5rem;
     line-height: 1.25 !important;
   }
-  .title-size-xxlarge h1 span{
+  .Section.Section--components-1.title-size-xxlarge h1 span{
     font-size: 8rem;
     line-height: 1.25 !important;
   }
-  .title-size-xlarge .Group--textual,
-  .title-size-xxlarge .Group--textual {
+  .Section.Section--components-1.title-size-xlarge .Group--textual,
+  .Section.Section--components-1.title-size-xxlarge .Group--textual {
     max-width: 100% !important;
   }
 
-  .flex-row .Component{
-    display: flex;
-  }
   .Section {
     padding: 0;
+    display: flex;
   }
 
   .Section .Component {
     display: flex;
-    padding: 4vw 4vw;
+    padding: 4vw 10vw;
     position: relative;
-    height: 100%;
+    width: 100%;
   }
 
   .Group {
     width: 50%;
   }
-  .Group {
-    padding: 0 2vw;
-  }
-  section.Section--components-2:not(.is-bg),
-  section.Section--components-3:not(.is-bg),
-  section.Section--components-4:not(.is-bg),
-  section.Section--components-5:not(.is-bg),
-  section.Section--components-6:not(.is-bg)  {
-    padding: 4vw 10vw;
-  }
-  section.Section--components-2 .Component,
-  section.Section--components-3 .Component,
-  section.Section--components-4 .Component,
-  section.Section--components-5 .Component,
-  section.Section--components-6 .Component  {
+
+  .Section:not(.Section--components-1) .Component  {
     display: inline-block;
   }
-  section.Section--components-2:not(.is-bg) .Component,
-  section.Section--components-3:not(.is-bg) .Component,
-  section.Section--components-4:not(.is-bg) .Component,
-  section.Section--components-5:not(.is-bg) .Component,
-  section.Section--components-6:not(.is-bg) .Component  {
-    padding: 0;
+  .Section:not(.Section--components-1):not(.is-bg)  {
+    padding: 4vw 10vw;
   }
-  section.Section--components-2 .Component,
-  section.Section--components-3 .Component,
-  section.Section--components-4 .Component,
-  section.Section--components-5 .Component,
-  section.Section--components-6 .Component  {
+  .Section:not(.Section--components-1):not(.is-bg) .Component  {
+    padding: 0 !important;
+  }
+  .Section:not(.Section--components-1) .Component  {
     width: 50%;
   }
-  section.Section--components-2 .Component .Group,
-  section.Section--components-3 .Component .Group,
-  section.Section--components-4 .Component .Group,
-  section.Section--components-5 .Component .Group,
-  section.Section--components-6 .Component .Group  {
+  .Section:not(.Section--components-1) .Component .Group {
     padding: 1vw;
     width: 100%;
   }
 
-  section.Section--components-3 {
+  .Section:not(.Section--components-1) .Component .Bg  {
+    padding: 8px 0 8px 8px;
+  }
 
+  .Section:not(.Section--components-1) .Component:last-of-type .Bg  {
+    padding-right: 8px;
   }
-  section.Section--components-3 .Component  {
-    width: 33%;
+
+  .Section.Section--components-3 .Component  {
+    width: 33.333%;
+    padding: 24px 16px 24px 24px;
   }
-  section.Section--components-4 .Component  {
+  .Section.Section--components-4 .Component  {
     width: 25%;
+    padding: 24px 16px 24px 24px;
   }
-  section.Section--components-5 .Component  {
+  .Section.Section--components-5 .Component  {
     width: 20%;
+    padding: 24px 16px 24px 24px;
   }
-  section.Section--components-6 .Component  {
+  .Section.Section--components-6 .Component  {
     width: 16.6666%;
+    padding: 24px 16px 24px 24px;
   }
-  section.Section--components-3 h1  {
+  .Section:not(.Section--components-1):not(.Section--components-2) .Component:last-of-type{
+    padding-right: 24px;
+  }
+  .Section.Section--components-3 h1  {
     font-size: 1.75rem;
   }
-  section.Section--components-4 h1  {
-    font-size: 1.5rem;
+  .Section.Section--components-4 h1  {
+    font-size: 1.5rem !important;
   }
-  section.Section--components-5 h1  {
-    font-size: 1.25rem;
+  .Section.Section--components-5 h1  {
+    font-size: 1.25rem !important;
   }
-  section.Section--components-6 h1  {
-    font-size: 1rem;
+  .Section.Section--components-6 h1  {
+    font-size: 1rem !important;
   }
 }
 @media screen and (min-width: 1280px) {
-  section .Component {
-    padding: 0 0;
-  }
-  .Group {
-    min-width: 33.3333%;
-    padding: 0 1vw;
-  }
-  .Group .Meta {
-    min-width: 16.666%;
-  }
+
 }
 
 
@@ -596,6 +543,11 @@ right align text only
 Textual groups should not be full width unless it's a
 if title-xxlarge and title-short
   textual headline group full width
+
+minimal > decorated
+text-size contrast
+color contrast
+
 
 
 */
