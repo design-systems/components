@@ -51,14 +51,27 @@ var is_bg = [
   'is-bg',
   'no-bg'
 ]
+var bg_fit = [
+  'bg-fit-cover',
+  'bg-fit-contain'
+]
 var bg_size = [
   'bg-size-full',
-  'bg-size-half'
+  'bg-size-half',
+  'bg-size-third',
+  'bg-size-quarter'
 ]
 var bg_align = [
-  'bg-align-left',
-  'bg-align-right',
-  'bg-align-center'
+  'bg-align-top',
+  'bg-align-center',
+  'bg-align-bottom',
+  'bg-align-stretch'
+]
+var bg_justify = [
+  'bg-justify-left',
+  'bg-justify-center',
+  'bg-justify-right',
+  'bg-justify-stretch'
 ]
 var bg_color = [
   'bg-color-light',
@@ -95,7 +108,7 @@ var group_justify = [
   'justify-between',
   'justify-around'
 ]
-var class_lists = [section_size, flex, is_bg, bg_size, bg_color, title_size, text_align, group_align, group_justify, bg_align]
+var class_lists = [section_size, flex, is_bg, bg_fit, bg_size, bg_color, bg_align, bg_justify, title_size, text_align, group_align, group_justify]
 
 var sections = document.querySelectorAll('.Section');
 for (var i=0; i<sections.length; i++ ) {

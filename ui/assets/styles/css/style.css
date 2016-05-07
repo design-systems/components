@@ -6,11 +6,13 @@ html {
   color: #271325;
   background: #FFF0BA;
 }
-*{
-  /*outline: 1px solid rgba(0,0,0,.05);*/
+*, *:before, *:after{
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+.show-outline *, .Outline *:before, .Outline *:after {
+  outline: 1px solid rgba(9,186,178,.1);
 }
 a{
   color: #ef4044;
@@ -88,7 +90,7 @@ h1 {
   color: #FFF0BA;
   padding: 30px 4vw 10px;
   height: 70px;
-  z-index: 30;
+  z-index: 40;
 }
 
 .Header select {
@@ -282,13 +284,8 @@ h1 {
   height: 100%;
 }
 .Bg .Cover img{
-  min-height: 100%;
-  min-width: 100%;
-  width: auto;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate3d(-50%,-50%,0);
+  width: 100%;
+  height: 100%;
 }
 
 /* Section background size
@@ -304,19 +301,60 @@ h1 {
   width: 50%;
   height: 100%;
 }
+.Section--components-1.bg-size-third .Bg,
+.Section--components-2.bg-size-third .Bg,
+.Section--components-3.bg-size-third .Bg {
+  width: 33.333%;
+  height: 50%;
+}
+.Section--components-1.bg-size-quarter .Bg,
+.Section--components-2.bg-size-quarter .Bg,
+.Section--components-3.bg-size-quarter .Bg {
+  width: 25%;
+  height: 33.333%;
+}
 
-.bg-align-left .Bg {
-  left: 0;
+.bg-fit-cover .Bg img {
+  object-fit: cover;
+  object-position: 60% 50%;
+}
+.bg-fit-contain .Bg img {
+  object-fit: contain;
+}
+.bg-align-top .Bg {
+  top: 0;
+  bottom: auto;
 }
 .bg-align-center .Bg {
+  top: 50%;
+  transform: translate3d(0,-50%,0);
+}
+.bg-align-bottom .Bg {
+  top: auto;
+  bottom: 0;
+}
+.bg-align-stretch .Bg {
+  top: 0;
+  bottom: 0;
+  height: 100% !important;
+}
+
+.bg-justify-left .Bg {
+  left: 0;
+}
+.bg-justify-center .Bg {
   right: auto;
   left: 50%;
   transform: translate3d(-50%,0,0);
-  height: 100%;
 }
-.bg-align-right .Bg {
+.bg-justify-right .Bg {
   right: 0;
   left: auto;
+}
+.bg-justify-stretch .Bg {
+  right: 0;
+  left: 0;
+  width: 100% !important;
 }
 
 
@@ -357,6 +395,29 @@ h1 {
 }
 .Rams .Headline {
   padding: 0;
+}
+
+.Jones .Headline:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  border-top: 8px solid;
+  border-right: 8px solid;
+  border-left: 8px solid;
+  left: 0;
+  top: -40px;
+}
+.Jones .Headline:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  border-bottom: 8px solid;
+  border-right: 8px solid;
+  border-left: 8px solid;
+  left: 0;
+  bottom: -40px;
 }
 
 
