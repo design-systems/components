@@ -106,7 +106,7 @@ h1 {
 
 .Section {
   width: 100%;
-  padding: 4vw 4vw;
+  padding: 0;
   position: relative;
 }
 
@@ -128,6 +128,10 @@ h1 {
   margin: 4vw 0 0;
   border-bottom: 1px solid;
   opacity: .4;
+}
+
+.Component {
+  padding: 4vw 10vw;
 }
 
 .Class-list {
@@ -485,11 +489,14 @@ h1 {
     display: flex;
   }
   .Section {
-    padding: 4vw 10vw;
+    padding: 0;
   }
 
   .Section .Component {
     display: flex;
+    padding: 4vw 4vw;
+    position: relative;
+    height: 100%;
   }
 
   .Group {
@@ -498,8 +505,12 @@ h1 {
   .Group {
     padding: 0 2vw;
   }
-  section.Section--components-2 {
-
+  section.Section--components-2:not(.is-bg),
+  section.Section--components-3:not(.is-bg),
+  section.Section--components-4:not(.is-bg),
+  section.Section--components-5:not(.is-bg),
+  section.Section--components-6:not(.is-bg)  {
+    padding: 4vw 10vw;
   }
   section.Section--components-2 .Component,
   section.Section--components-3 .Component,
@@ -507,6 +518,13 @@ h1 {
   section.Section--components-5 .Component,
   section.Section--components-6 .Component  {
     display: inline-block;
+  }
+  section.Section--components-2:not(.is-bg) .Component,
+  section.Section--components-3:not(.is-bg) .Component,
+  section.Section--components-4:not(.is-bg) .Component,
+  section.Section--components-5:not(.is-bg) .Component,
+  section.Section--components-6:not(.is-bg) .Component  {
+    padding: 0;
   }
   section.Section--components-2 .Component,
   section.Section--components-3 .Component,
