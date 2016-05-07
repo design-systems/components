@@ -16,6 +16,11 @@ Archetypes_array[1] = 'Vignelli';
 Archetypes_array[2] = 'Bass';
 // Archetypes_array[3] = 'Escher';
 
+var CoverCenter_array = new Array();
+CoverCenter_array['Rams'] = '40% 40%';
+CoverCenter_array['Vignelli'] = '60% 43%';
+CoverCenter_array['Bass'] = '43% 22%';
+
 var composition = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
 var covers = document.querySelectorAll('.Cover img');
 var headlines = document.querySelectorAll('.Headline span');
@@ -94,18 +99,21 @@ var group_justify = [
 var class_lists = [section_size, flex, is_bg, bg_fit, bg_size, bg_color, bg_align, bg_justify, title_size, text_align, group_align, group_justify]
 
 var sections = document.querySelectorAll('.Section');
-changePhotos();
 
-document.querySelector('#Composition-input').addEventListener("change", changeComposition);
-document.querySelector('.Shuffle').addEventListener("click", shuffleClasses);
+document.querySelector('#Composition-input').addEventListener("change", function(){
+  composition = document.querySelector('#Composition-input').value;
+  changeComposition()
+});
+document.querySelector('.Shuffle').addEventListener("click", shuffle);
 
 function changeComposition() {
-  composition = document.querySelector('#Composition-input').value;
+  document.querySelector('#Composition-input').value = composition
   document.querySelector('.Composition').className = "Composition " + composition;
   changePhotos();
 }
 function changePhotos() {
   for (var i=0; i<covers.length; i++ ) {
+    covers[i].style.objectPosition = CoverCenter_array[composition]
     covers[i].setAttribute('src','ui/assets/images/'+composition+'.jpg');
   }
   for (var i=0; i<headlines.length; i++ ) {
@@ -114,13 +122,23 @@ function changePhotos() {
   }
 }
 
-for (var i=0; i<sections.length; i++ ) {
-  assignClasses(i);
-}
-var composition = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
 document.querySelector('.Composition').className = "Composition "+ composition
 
-function assignClasses(num){
+function init(){
+  changePhotos();
+  for (var i=0; i<sections.length; i++ ) {
+    createClassList(i);
+  }
+}
+function shuffle(){
+  composition = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+  changeComposition();
+  for (var i=0; i<sections.length; i++ ) {
+    shuffleClassList(i);
+  }
+}
+
+function createClassList(num){
   var section = sections[num];
 
   var list = document.createElement('div');
@@ -129,21 +147,37 @@ function assignClasses(num){
   section.insertBefore(list,section.firstChild);
 
   for (var i=0; i<class_lists.length; i++){
-    var listItem = document.createElement('li')
+    var listItem = document.createElement('li');
     var newClass = class_lists[i][Math.floor(Math.random()*class_lists[i].length)];
     listItem.innerHTML = newClass;
     list.appendChild(listItem);
-    section.classList.add(newClass)
+    section.classList.add(newClass);
   }
 
   list.addEventListener('keypress',function(e){
     if (e.keyCode == 13) {
       e.preventDefault();
-      shuffleClasses()
+      applyClasses(num);
     }
   })
 }
-function shuffleClasses() {
+function shuffleClassList(num){
+  var section = sections[num];
+
+  var list = section.querySelector('.Class-list')
+
+  for (var i=0; i<class_lists.length; i++){
+    var listItem = list.querySelectorAll('li')[i];
+    var newClass = class_lists[i][Math.floor(Math.random()*class_lists[i].length)];
+    listItem.innerHTML = newClass;
+    section.classList.add(newClass);
+  }
+  applyClasses(num);
+}
+function applyClasses(num) {
+  var section = sections[num];
+
+  var list = section.querySelector('.Class-list')
   var items = list.querySelectorAll('li');
   var myClass = 'Section Section--components-' + section.querySelectorAll('.Component').length + " ";
   for (var i=0;i<items.length;i++){
@@ -154,22 +188,4 @@ function shuffleClasses() {
   }
   section.className = myClass;
 }
-function shuffle(argument) {
-  var section = sections[num];
-
-  var list = section.querySelector('.Class-list');
-
-  for (var i=0; i<class_lists.length; i++){
-    var listItem = list.querySelectorAll('li')[i];
-    var newClass = class_lists[i][Math.floor(Math.random()*class_lists[i].length)];
-    listItem.innerHTML = newClass;
-    section.classList.add(newClass)
-  }
-
-  list.addEventListener('keypress',function(e){
-    if (e.keyCode == 13) {
-      e.preventDefault();
-      shuffleClasses()
-    }
-  })
-}
+init()

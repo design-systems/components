@@ -10,7 +10,6 @@ html {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: .5s ease-in-out;
 }
 .show-outline *, .Outline *:before, .Outline *:after {
   outline: 1px solid rgba(9,186,178,.1);
@@ -22,6 +21,7 @@ a{
 h1 {
   font-size: 1.5rem;
   word-wrap: break-word;
+  transition: .6s ease-in-out;
 }
 
 .text-align-left {
@@ -43,6 +43,7 @@ h1 {
 
 .Group{
   padding: 1vw;
+  transition: .6s ease-in-out;
 }
 
 .flex-col .Component{
@@ -100,20 +101,32 @@ h1 {
   top: -4px;
   background: none;
   color: #FFF0BA;
-  width: 170px;
+  width: 140px;
   font-size: 1.1rem;
   color: #FFF0BA;
   border-color: #FFF0BA;
+}
+
+.Header h3 {
+  font-size: 1.06em;
 }
 
 .Header .Shuffle {
   position: absolute;
   left: 50%;
   margin-left: -15px;
-  display: none;
+  cursor: pointer;
 }
 .Header .Shuffle img{
   width: 30px;
+}
+.Header .Shuffle:hover img{
+  opacity: .5;
+  transform: skew(360deg);
+  transition: .2s;
+}
+.Header .Shuffle:active img{
+  opacity: 1;
 }
 
 .Header h3 {
@@ -130,6 +143,7 @@ h1 {
   position: relative;
   display: block;
   align-items: stretch;
+  transition: .6s ease-in-out;
 }
 
 .section-size-fullscreen {
@@ -184,8 +198,7 @@ h1 {
 
 .Class-list li {
   display: none;
-  margin-right: 3px;
-  background: #412D37;
+  background: #271325;
   border-radius: 3px;
   padding: 5px 8px;
   color: #FFF0BA;
@@ -197,6 +210,7 @@ h1 {
   border-radius: 0%;
   background: transparent;
   border: none;
+  height: auto;
 }
 
 .Class-list:focus:after {
@@ -204,7 +218,9 @@ h1 {
 }
 
 .Class-list:focus li {
-  display: inline-block;
+  display: block;
+  border: 1px solid #867466;
+  margin-top: -1px;
 }
 
 .Group {
@@ -246,11 +262,13 @@ h1 {
 .Cover {
   overflow: hidden;
   max-height: 90vh;
+  transition: .6s ease-in-out;
 }
 
 .Cover img {
   position: relative;
   width: 101%;
+  transition: .6s ease-in-out;
 }
 
 
@@ -276,6 +294,7 @@ h1 {
   background: #FFF0BA;
   width: auto;
   min-width: auto;
+  opacity: .9;
 }
 .Section--components-1.is-bg .Group{
   max-width: 66.666%;
@@ -288,6 +307,7 @@ h1 {
   top: 0;
   width: 100%;
   height: 100%;
+  transition: .6s ease-in-out;
 }
 .Bg .Cover{
   position: relative;
