@@ -10,6 +10,7 @@ html {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition: .5s ease-in-out;
 }
 .show-outline *, .Outline *:before, .Outline *:after {
   outline: 1px solid rgba(9,186,178,.1);
@@ -103,6 +104,15 @@ h1 {
   font-size: 1.1rem;
   color: #FFF0BA;
   border-color: #FFF0BA;
+}
+
+.Header .Shuffle {
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+}
+.Header .Shuffle img{
+  width: 30px;
 }
 
 .Header h3 {

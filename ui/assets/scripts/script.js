@@ -20,23 +20,6 @@ var composition = Archetypes_array[Math.floor(Math.random() * Archetypes_array.l
 var covers = document.querySelectorAll('.Cover img');
 var headlines = document.querySelectorAll('.Headline span');
 var authors = document.querySelectorAll('.Author');
-changePhotos();
-
-document.querySelector('#Composition-input').addEventListener("change", changeComposition);
-function changeComposition() {
-  composition = document.querySelector('#Composition-input').value;
-  document.querySelector('.Composition').className = "Composition " + composition;
-  changePhotos();
-}
-function changePhotos() {
-  for (var i=0; i<covers.length; i++ ) {
-    covers[i].setAttribute('src','images/'+composition+'.jpg');
-  }
-  for (var i=0; i<headlines.length; i++ ) {
-    authors[i].textContent = Authors_array[composition]
-    headlines[i].textContent = Headlines_array[composition]
-  }
-}
 
 // CLASS LISTS
 var section_size = [
@@ -111,6 +94,26 @@ var group_justify = [
 var class_lists = [section_size, flex, is_bg, bg_fit, bg_size, bg_color, bg_align, bg_justify, title_size, text_align, group_align, group_justify]
 
 var sections = document.querySelectorAll('.Section');
+changePhotos();
+
+document.querySelector('#Composition-input').addEventListener("change", changeComposition);
+document.querySelector('.Shuffle').addEventListener("click", shuffleClasses);
+
+function changeComposition() {
+  composition = document.querySelector('#Composition-input').value;
+  document.querySelector('.Composition').className = "Composition " + composition;
+  changePhotos();
+}
+function changePhotos() {
+  for (var i=0; i<covers.length; i++ ) {
+    covers[i].setAttribute('src','ui/assets/images/'+composition+'.jpg');
+  }
+  for (var i=0; i<headlines.length; i++ ) {
+    authors[i].textContent = Authors_array[composition]
+    headlines[i].textContent = Headlines_array[composition]
+  }
+}
+
 for (var i=0; i<sections.length; i++ ) {
   assignClasses(i);
 }
@@ -136,15 +139,37 @@ function assignClasses(num){
   list.addEventListener('keypress',function(e){
     if (e.keyCode == 13) {
       e.preventDefault();
-      var items = list.querySelectorAll('li');
-      var myClass = 'Section Section--components-' + section.querySelectorAll('.Component').length + " ";
-      for (var i=0;i<items.length;i++){
-        myClass += items[i].textContent;
-        if(myClass.substr(myClass.length-1) != " "){
-          myClass = myClass + ' '
-        }
-      }
-      section.className = myClass;
+      shuffleClasses()
+    }
+  })
+}
+function shuffleClasses() {
+  var items = list.querySelectorAll('li');
+  var myClass = 'Section Section--components-' + section.querySelectorAll('.Component').length + " ";
+  for (var i=0;i<items.length;i++){
+    myClass += items[i].textContent;
+    if(myClass.substr(myClass.length-1) != " "){
+      myClass = myClass + ' '
+    }
+  }
+  section.className = myClass;
+}
+function shuffle(argument) {
+  var section = sections[num];
+
+  var list = section.querySelector('.Class-list');
+
+  for (var i=0; i<class_lists.length; i++){
+    var listItem = list.querySelectorAll('li')[i];
+    var newClass = class_lists[i][Math.floor(Math.random()*class_lists[i].length)];
+    listItem.innerHTML = newClass;
+    section.classList.add(newClass)
+  }
+
+  list.addEventListener('keypress',function(e){
+    if (e.keyCode == 13) {
+      e.preventDefault();
+      shuffleClasses()
     }
   })
 }
