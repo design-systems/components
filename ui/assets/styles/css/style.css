@@ -150,9 +150,12 @@ h1 {
   width: 100vw;
 }
 
-.section-size-fullscreen:not(.no-bg) {
+.Section--components-1.section-size-fullscreen:not(.no-bg),
+.Section--components-2.section-size-fullscreen:not(.no-bg),
+.Section--components-3.section-size-fullscreen:not(.no-bg) {
   width: 100vw;
   height: 80vh;
+  max-height: 800px;
   overflow: hidden;
 }
 
@@ -277,9 +280,11 @@ h1 {
 .no-bg .Group--graphical {
   display: block;
 }
-.no-bg .Bg {
+.no-bg .Bg,
+.Section:not(.Section--components-1).both-bg .Bg {
   display: none;
 }
+
 .is-bg {
   min-height: 400px;
 }
@@ -296,6 +301,21 @@ h1 {
   min-width: auto;
   opacity: .9;
 }
+.Section--components-1.both-bg .Bg {
+  width: 100% !important;
+  height: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
+  transform: translate3d(0,0,0) !important;
+}
+.Section--components-1.both-bg .Bg .Cover {
+  opacity: .2 !important;
+  -webkit-filter: blur(4px);
+}
+.Section--components-1.both-bg .Bg .Cover img {
+  object-fit: cover !important;
+}
+
 .Section--components-1.is-bg .Group{
   max-width: 66.666%;
 }
@@ -386,6 +406,10 @@ h1 {
   right: 0;
   left: 0;
   width: 100% !important;
+}
+
+.bg-justify-center.bg-align-center .Bg {
+  transform: translate3d(-50%,-50%,0);
 }
 
 
@@ -560,13 +584,13 @@ h1 {
     width: 50%;
   }
 
-  .Section:not(.Section--components-1) .Component  {
-    display: inline-block;
+  .Section:not(.Section--components-1):not(.Section--components-2) .Component  {
+    flex-flow: column;
   }
   .Section:not(.Section--components-1):not(.is-bg)  {
     padding: 4vw 10vw;
   }
-  .Section:not(.Section--components-1):not(.is-bg) .Component  {
+  .Section:not(.Section--components-1):not(.is-bg):not(.both-bg) .Component  {
     padding: 0 !important;
   }
   .Section:not(.Section--components-1) .Component  {

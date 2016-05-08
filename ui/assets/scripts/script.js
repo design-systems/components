@@ -18,7 +18,7 @@ Archetypes_array[2] = 'Bass';
 
 var CoverCenter_array = new Array();
 CoverCenter_array['Rams'] = '40% 40%';
-CoverCenter_array['Vignelli'] = '60% 43%';
+CoverCenter_array['Vignelli'] = '70% 43%';
 CoverCenter_array['Bass'] = '43% 22%';
 
 var composition = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
@@ -37,7 +37,8 @@ var flex = [
 ]
 var is_bg = [
   'is-bg',
-  'no-bg'
+  'no-bg',
+  'both-bg'
 ]
 var bg_fit = [
   'bg-fit-cover',
