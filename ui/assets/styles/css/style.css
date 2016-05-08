@@ -590,7 +590,7 @@ h1 {
   .Section:not(.Section--components-1):not(.is-bg)  {
     padding: 4vw 10vw;
   }
-  .Section:not(.Section--components-1):not(.is-bg):not(.both-bg) .Component  {
+  .Section:not(.Section--components-1):not(.is-bg) .Component  {
     padding: 0 !important;
   }
   .Section:not(.Section--components-1) .Component  {
