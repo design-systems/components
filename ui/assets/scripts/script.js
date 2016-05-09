@@ -119,11 +119,11 @@ function changeComposition() {
 function changePhotos() {
   for (var i=0; i<covers.length; i++ ) {
     covers[i].style.objectPosition = CoverCenter_array[composition]
-    covers[i].setAttribute('src','ui/assets/images/'+composition+'.jpg');
+    covers[i].setAttribute('src','ui/assets/images/'+Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]+'.jpg');
   }
   for (var i=0; i<headlines.length; i++ ) {
-    authors[i].textContent = Authors_array[composition]
-    headlines[i].textContent = Headlines_array[composition]
+    authors[i].textContent = Authors_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]]
+    headlines[i].textContent = Headlines_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]]
   }
 }
 

@@ -22,15 +22,18 @@ h1 {
   font-size: 1.5rem;
   word-wrap: break-word;
   transition: .6s ease-in-out;
+  font-weight: 700;
 }
-
+h5 {
+  font-weight: 500;
+}
 .text-align-left {
   text-align: left;
 }
 .text-align-center {
   text-align: center;
 }
-.text-align-right .Component{
+.text-align-right:not(.align-end) .Component{
   text-align: right;
 }
 .text-align-justify {
@@ -38,7 +41,7 @@ h1 {
 }
 
 .flex-row .Component{
-  display: block;
+  display: flex;
 }
 
 .Group{
@@ -46,6 +49,10 @@ h1 {
   transition: .6s ease-in-out;
 }
 
+.flex-row:not(.Section--components-1) .Component{
+  display: flex;
+  flex-flow: column;
+}
 .flex-col .Component{
   display: flex;
   flex-flow: column;
@@ -54,7 +61,7 @@ h1 {
 .justify-start .Component{
   justify-content: flex-start;
 }
-.justify-center .Component{
+.justify-center.Section--components-1 .Component{
   justify-content: center;
 }
 .justify-end .Component{
@@ -63,7 +70,7 @@ h1 {
 .justify-between .Component{
   justify-content: space-between;
 }
-.justify-around .Component{
+.justify-around.Section--components-1 .Component{
   justify-content: space-around;
 }
 
@@ -541,7 +548,9 @@ h1 {
   padding: 1rem 0 1.5rem;
 }
 
-.Vignelli .Section--components-1.flex-row.align-end .Attribution {
+.Vignelli .Section--components-1.flex-row.align-end .Attribution,
+.Vignelli .Section:not(.Section--components-1).justify-end .Attribution,
+.Vignelli .Section:not(.Section--components-1).flex-row.align-end .Attribution {
   border-top: none;
   border-bottom: calc(4px + .5vh) solid;
 }
@@ -559,6 +568,7 @@ h1 {
 
 .Brockmann .Headline span{
   border-bottom: .125em solid;
+  line-height: 1.5;
   padding: 0;
 }
 
