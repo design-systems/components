@@ -303,7 +303,7 @@ h1 {
 .is-bg .Bg{
   display: block;
 }
-.is-bg .Group{
+.is-bg .Group, .both-bg .Group{
   padding: 2vh 2vw;
   background: #FFF0BA;
   width: auto;
@@ -322,10 +322,10 @@ h1 {
 }
 .Section--components-1.both-bg .Bg .Cover img {
   object-fit: cover !important;
-  -webkit-filter: blur(4px);
-  width: 102%;
-  height: 102%;
-  top: -5px;
+  -webkit-filter: blur(10px);
+  width: 104%;
+  height: 104%;
+  top: -9px;
 }
 
 .Section--components-1.is-bg .Group{
