@@ -11,7 +11,7 @@ html {
   padding: 0;
   margin: 0;
 }
-.show-outline *, .Outline *:before, .Outline *:after {
+.show-outline *, .show-outline *:before, .show-outline *:after {
   outline: 1px solid rgba(9,186,178,.1);
 }
 a{
@@ -153,10 +153,10 @@ h1 {
 .Section--components-1.section-size-fullscreen:not(.no-bg),
 .Section--components-2.section-size-fullscreen:not(.no-bg),
 .Section--components-3.section-size-fullscreen:not(.no-bg) {
-  width: 100vw;
-  height: 80vh;
-  max-height: 800px;
-  overflow: hidden;
+  // width: 100vw;
+  // height: 80vh;
+  // max-height: 800px;
+  // overflow: hidden;
 }
 
 .Section:not(.Section.is-bg):after {
@@ -186,7 +186,7 @@ h1 {
   position: absolute;
   bottom: 4vw;
   right: 4vw;
-  text-align: center;
+  text-align: left;
   height: 26px;
   border-radius: 4px;
   border: 1px solid #271325;
@@ -197,6 +197,10 @@ h1 {
 
 .Class-list:after {
   content: '...';
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 .Class-list li {
@@ -248,6 +252,10 @@ h1 {
 
 .Headline h1 {
 
+}
+
+.Headline h1::first-line {
+  // line-height: 0;
 }
 
 .Attribution {
@@ -490,7 +498,7 @@ h1 {
 .Bass .Attribution span{
   padding: .2rem .4rem;
   -webkit-box-decoration-break: clone;
-  line-height: 1.25;
+  line-height: 1.4;
   background: #271325;
   color: #FFF0BA;
 }
@@ -557,11 +565,11 @@ h1 {
 
 @media screen and (min-width: 960px) {
   h1 {
-    font-size: 2rem;
+    // font-size: 2rem;
   }
 
   .title-size-xxsmall h1 span{
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   .title-size-xsmall h1 span{
     font-size: 1.25rem;
@@ -569,18 +577,18 @@ h1 {
   .title-size-small h1 span{
     font-size: 1.5rem;
   }
-  .title-size-medium h1 span{
+  .title-size-medium:not(.Section--components-4):not(.Section--components-5):not(.Section--components-6) h1 span{
     font-size: 2rem;
   }
-  .Section.Section--components-1.title-size-large h1 span,
-  .Section.Section--components-2.title-size-large h1 span{
+  .Section.Section--components-1.title-size-large:not(.flex-row) h1 span,
+  .Section.Section--components-2.title-size-large:not(.flex-row) h1 span{
     font-size: 3rem;
   }
-  .Section.Section--components-1.title-size-xlarge h1 span{
+  .Section.Section--components-1.title-size-xlarge:not(.flex-row) h1 span{
     font-size: 5rem;
     line-height: 1.25 !important;
   }
-  .Section.Section--components-1.title-size-xxlarge h1 span{
+  .Section.Section--components-1.title-size-xxlarge:not(.flex-row) h1 span{
     font-size: 8rem;
     line-height: 1.25 !important;
   }
