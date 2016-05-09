@@ -156,6 +156,7 @@ h1 {
   // width: 100vw;
   // height: 80vh;
   // max-height: 800px;
+  min-height: 80vh;
   // overflow: hidden;
 }
 
