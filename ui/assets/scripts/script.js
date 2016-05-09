@@ -2,24 +2,28 @@ var Headlines_array = new Array();
 Headlines_array['Rams'] = 'Aware that he was a significant contributor to that world, he asked himself an important question: is my design good design?'
 Headlines_array['Vignelli'] = 'Linear Genius, Bold and Transformative ‘Design Is One’ Centers on the Vignelli Team'
 Headlines_array['Bass'] = 'Saul Bass On His Approach To Title Sequences'
+Headlines_array['Brockmann'] = 'I would advise young people to look at everything they encounter in a critical light … Then I would urge them at all times to be self-critical.'
 // Headlines_array['Escher'] = "The ultimate mind-benders: MC Escher's incredible optical illusions are set to have fans questioning reality with his first major UK exhibition"
 
 var Authors_array = new Array();
 Authors_array['Rams'] = 'Dieter Rams via Vitsœ'
 Authors_array['Vignelli'] = 'Lella & Massimo Vignelli via NYTimes'
 Authors_array['Bass'] = 'Saul Bass via Medium'
+Authors_array['Brockmann'] = 'Josef Müller-Brockmann via Coroflot'
 // Authors_array['Escher'] = 'MC Escher via Dailymail'
 
 var Archetypes_array = new Array();
 Archetypes_array[0] = 'Rams';
 Archetypes_array[1] = 'Vignelli';
 Archetypes_array[2] = 'Bass';
+Archetypes_array[3] = 'Brockmann';
 // Archetypes_array[3] = 'Escher';
 
 var CoverCenter_array = new Array();
 CoverCenter_array['Rams'] = '40% 40%';
 CoverCenter_array['Vignelli'] = '70% 43%';
 CoverCenter_array['Bass'] = '43% 22%';
+CoverCenter_array['Brockmann'] = '52% 29%';
 
 var composition = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
 var covers = document.querySelectorAll('.Cover img');
