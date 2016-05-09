@@ -120,9 +120,17 @@ function changePhotos() {
   for (var i=0; i<covers.length; i++ ) {
     covers[i].style.objectPosition = CoverCenter_array[composition]
     covers[i].setAttribute('src','ui/assets/images/'+Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]+'.jpg');
+    if(Math.random() > .9){
+      covers[i].parentNode.parentNode.style.display = 'none'
+    }
   }
   for (var i=0; i<headlines.length; i++ ) {
     authors[i].textContent = Authors_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]]
+    if(Math.random() > .9){
+      headlines[i].parentNode.parentNode.parentNode.style.display = 'none'
+    }else if(Math.random() > .9){
+      authors[i].parentNode.parentNode.parentNode.style.display = 'none'
+    }
     headlines[i].textContent = Headlines_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]]
   }
 }

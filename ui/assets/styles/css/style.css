@@ -246,6 +246,10 @@ h5 {
 
 }
 
+.Group--graphical .Cover {
+  max-height: 90vh;
+}
+
 .Group--textual {
   z-index: 10;
 }
@@ -280,7 +284,6 @@ h5 {
 
 .Cover {
   overflow: hidden;
-  max-height: 90vh;
   transition: .6s ease-in-out;
 }
 
@@ -378,8 +381,7 @@ h5 {
   height: 50%;
 }
 .Section--components-1.bg-size-quarter .Bg,
-.Section--components-2.bg-size-quarter .Bg,
-.Section--components-3.bg-size-quarter .Bg {
+.Section--components-2.bg-size-quarter .Bg{
   width: 25%;
   height: 33.333%;
 }
@@ -548,9 +550,7 @@ h5 {
   padding: 1rem 0 1.5rem;
 }
 
-.Vignelli .Section--components-1.flex-row.align-end .Attribution,
-.Vignelli .Section:not(.Section--components-1).justify-end .Attribution,
-.Vignelli .Section:not(.Section--components-1).flex-row.align-end .Attribution {
+.Vignelli .Section--components-1.flex-row.align-end .Attribution {
   border-top: none;
   border-bottom: calc(4px + .5vh) solid;
 }
