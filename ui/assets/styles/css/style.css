@@ -310,10 +310,10 @@ h1 {
 }
 .Section--components-1.both-bg .Bg .Cover {
   opacity: .2 !important;
-  -webkit-filter: blur(4px);
 }
 .Section--components-1.both-bg .Bg .Cover img {
   object-fit: cover !important;
+  -webkit-filter: blur(4px);
 }
 
 .Section--components-1.is-bg .Group{
@@ -532,6 +532,27 @@ h1 {
 .Vignelli .Section--components-1.flex-row.align-end .Attribution {
   border-top: none;
   border-bottom: calc(4px + .5vh) solid;
+}
+
+/* Brockmann DESIGN SYSTEM
+**************************/
+
+.Brockmann section {
+
+}
+
+.Brockmann section {
+
+}
+
+.Brockmann .Headline span{
+  border-bottom: .125em solid;
+  padding: 0;
+}
+
+.Brockmann .Attribution span{
+  border-bottom: .125em solid;
+  padding: 0;
 }
 
 @media screen and (min-width: 960px) {
