@@ -440,23 +440,23 @@ h5 {
 
 .bg-color-light {
   background: #FFF0BA;
+  color: #271325;
 }
 .bg-color-light .Bg .Cover{
   opacity: .3;
 }
 .bg-color-light .Group{
   background: transparent !important;
-  color: #271325;
 }
 .bg-color-dark {
   background: #36222F;
+  color: #FFF0BA;
 }
 .bg-color-dark .Bg .Cover{
   opacity: .3;
 }
 .bg-color-dark .Group{
   background: transparent !important;
-  color: #FFF0BA;
 }
 
 /* RAMS DESIGN SYSTEM
@@ -564,6 +564,18 @@ h5 {
 
 .Brockmann section {
 
+}
+
+.Brockmann .no-bg .Component:after,
+.Brockmann .both-bg .Component:after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-right: 1px solid;
+  opacity: .2;
 }
 
 .Brockmann .Headline span{

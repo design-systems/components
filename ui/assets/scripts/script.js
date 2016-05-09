@@ -128,6 +128,7 @@ function changePhotos() {
     authors[i].textContent = Authors_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]]
     if(Math.random() > .9){
       headlines[i].parentNode.parentNode.parentNode.style.display = 'none'
+      authors[i].parentNode.parentNode.parentNode.style.display = 'none'
     }else if(Math.random() > .9){
       authors[i].parentNode.parentNode.parentNode.style.display = 'none'
     }
