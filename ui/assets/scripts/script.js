@@ -23,7 +23,7 @@ var CoverCenter_array = new Array();
 CoverCenter_array['Rams'] = '40% 40%';
 CoverCenter_array['Vignelli'] = '70% 43%';
 CoverCenter_array['Bass'] = '43% 22%';
-CoverCenter_array['Brockman'] = '43% 22%';
+CoverCenter_array['Brockmann'] = '52% 29%';
 
 var composition = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
 var covers = document.querySelectorAll('.Cover img');
