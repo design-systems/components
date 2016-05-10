@@ -179,6 +179,7 @@ h5 {
 
 .Component {
   padding: 4vw 4vw;
+  flex-wrap: wrap;
 }
 
 .Class-list {
@@ -226,6 +227,7 @@ h5 {
   background: transparent;
   border: none;
   height: auto;
+  z-index: 50;
 }
 
 .Class-list:focus:after {
@@ -484,6 +486,17 @@ h5 {
 .bg-color-neutral .Group{
   background: transparent !important;
 }
+.bg-color-pattern{
+  background: url(../../images/pattern.jpg);
+  color: #271325;
+}
+.bg-color-pattern .Bg .Cover{
+  // opacity: .3;
+}
+.bg-color-pattern .Group{
+  background: transparent !important;
+}
+
 
 /* RAMS DESIGN SYSTEM
 **************************/
@@ -714,7 +727,8 @@ h5 {
   }
 
   .Group {
-    width: 50%;
+    width: 33.333%;
+    flex-grow: 1;
   }
 
   .Section:not(.Section--components-1):not(.is-bg)  {
@@ -831,6 +845,8 @@ h5 {
 @media screen and (min-width: 1280px) {
 
 }
+
+
 
 
 /* RULES SCRATCH
