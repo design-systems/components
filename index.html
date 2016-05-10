@@ -7,7 +7,7 @@
 
   <div class="Header">
     <h3><span>The Components</span></h3>
-    <select name="composition" id="Composition-input">
+    <select name="system" id="System-input">
       <option value="Rams">Dieter Rams</option>
       <option value="Vignelli">Massimo Vignelli</option>
       <option value="Bass">Saul Bass</option>
@@ -17,7 +17,7 @@
 
 <!-- RAMS -->
 
-  <div class="Composition Rams">
+  <div class="System Rams">
     <section class="Section Section--bg-fullscreen text-align-center flex-col justify-center align-center title--large">
       <div class="Component">
         <div class="Group Group--graphical">
@@ -169,9 +169,9 @@
 <!-- DEMO -->
 
   <script>
-    document.querySelector('#Composition-input').addEventListener("change", changeComposition);
-    function changeComposition() {
-      document.querySelector('.Composition').className = "Composition " + document.querySelector('#Composition-input').value;
+    document.querySelector('#System-input').addEventListener("change", changeSystem);
+    function changeSystem() {
+      document.querySelector('.System').className = "System " + document.querySelector('#System-input').value;
     }
   </script>
 

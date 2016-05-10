@@ -19,13 +19,32 @@ Archetypes_array[2] = 'Bass';
 Archetypes_array[3] = 'Brockmann';
 // Archetypes_array[3] = 'Escher';
 
+var section_h_padding = [
+  'section-h-padding-none',
+  'section-h-padding-xxsmall',
+  'section-h-padding-xsmall',
+  'section-h-padding-small',
+  'section-h-padding-medium',
+  'section-h-padding-large',
+  'section-h-padding-xlarge'
+]
+var section_v_padding = [
+  'section-v-padding-none',
+  'section-v-padding-xsmall',
+  'section-v-padding-small',
+  'section-v-padding-medium',
+  'section-v-padding-large',
+  'section-v-padding-xlarge'
+]
+
 var CoverCenter_array = new Array();
 CoverCenter_array['Rams'] = '40% 40%';
 CoverCenter_array['Vignelli'] = '70% 43%';
 CoverCenter_array['Bass'] = '43% 22%';
 CoverCenter_array['Brockmann'] = '52% 29%';
 
-var composition = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+var system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+var system_el = document.querySelector('.System');
 var covers = document.querySelectorAll('.Cover img');
 var headlines = document.querySelectorAll('.Headline span');
 var authors = document.querySelectorAll('.Author');
@@ -38,6 +57,35 @@ var section_size = [
 var flex = [
   'flex-row',
   'flex-col'
+]
+var title_size = [
+  'title-size-xxsmall',
+  'title-size-xsmall',
+  'title-size-small',
+  'title-size-medium',
+  'title-size-large',
+  'title-size-xlarge',
+  // 'title-size-xxlarge'
+]
+var text_align = [
+  'text-align-left',
+  'text-align-center',
+  'text-align-right',
+  // 'text-align-justify'
+]
+var group_align = [
+  'align-start',
+  'align-center',
+  'align-end',
+  'align-stretch',
+  'align-baseline'
+]
+var group_justify = [
+  'justify-start',
+  'justify-center',
+  'justify-end',
+  'justify-between',
+  'justify-around'
 ]
 var is_bg = [
   'is-bg',
@@ -69,90 +117,64 @@ var bg_justify = [
 var bg_color = [
   'bg-color-light',
   'bg-color-dark',
+  'bg-color-neutral',
   'bg-color-none'
 ]
-
-var title_size = [
-  'title-size-xxsmall',
-  'title-size-xsmall',
-  'title-size-small',
-  'title-size-medium',
-  'title-size-large',
-  'title-size-xlarge',
-  // 'title-size-xxlarge'
+var bg_padding = [
+  'bg-padding-xsmall',
+  'bg-padding-small',
+  'bg-padding-medium',
+  'bg-padding-large'
 ]
-var text_align = [
-  'text-align-left',
-  'text-align-center',
-  'text-align-right',
-  // 'text-align-justify'
-]
-var group_align = [
-  'align-start',
-  'align-center',
-  'align-end',
-  'align-stretch',
-  'align-baseline'
-]
-var group_justify = [
-  'justify-start',
-  'justify-center',
-  'justify-end',
-  'justify-between',
-  'justify-around'
-]
-var class_lists = [section_size, flex, is_bg, bg_fit, bg_size, bg_color, bg_align, bg_justify, title_size, text_align, group_align, group_justify]
+var item_classes = [section_size, flex, title_size, text_align, group_align, group_justify, is_bg, bg_fit, bg_size, bg_color, bg_align, bg_justify, bg_padding]
+var system_classes = [section_h_padding, section_v_padding]
 
 var sections = document.querySelectorAll('.Section');
 
-document.querySelector('#Composition-input').addEventListener("change", function(){
-  composition = document.querySelector('#Composition-input').value;
-  changeComposition()
+document.querySelector('#System-input').addEventListener("change", function(){
+  system = document.querySelector('#System-input').value;
+  changeSystem()
 });
 document.querySelector('.Shuffle').addEventListener("click", shuffle);
 
-function changeComposition() {
-  document.querySelector('#Composition-input').value = composition
-  document.querySelector('.Composition').className = "Composition " + composition;
+function changeSystem() {
+  document.querySelector('#System-input').value = system
+  system_el.className = "System " + system;
   changePhotos();
+  for (var i=0; i<system_classes.length; i++){
+    var newClass = system_classes[i][Math.floor(Math.random()*system_classes[i].length)];
+    system_el.classList.add(newClass);
+  }
 }
 function changePhotos() {
   for (var i=0; i<covers.length; i++ ) {
-    covers[i].style.objectPosition = CoverCenter_array[composition]
-    covers[i].setAttribute('src','ui/assets/images/'+Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]+'.jpg');
-    if(Math.random() > .9){
-      covers[i].parentNode.parentNode.style.display = 'none'
-    }
+    var myPhoto = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+    covers[i].style.objectPosition = CoverCenter_array[myPhoto]
+    covers[i].setAttribute('src','ui/assets/images/'+myPhoto+'.jpg');
   }
   for (var i=0; i<headlines.length; i++ ) {
     authors[i].textContent = Authors_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]]
-    if(Math.random() > .9){
-      headlines[i].parentNode.parentNode.parentNode.style.display = 'none'
-      authors[i].parentNode.parentNode.parentNode.style.display = 'none'
-    }else if(Math.random() > .9){
-      authors[i].parentNode.parentNode.parentNode.style.display = 'none'
-    }
     headlines[i].textContent = Headlines_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]]
   }
 }
 
-document.querySelector('.Composition').className = "Composition "+ composition
+system_el.className = "System "+ system
 
 function init(){
   changePhotos();
   for (var i=0; i<sections.length; i++ ) {
-    createClassList(i);
+    createItemClassList(i);
   }
 }
 function shuffle(){
-  composition = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
-  changeComposition();
+  system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+  changeSystem();
   for (var i=0; i<sections.length; i++ ) {
-    shuffleClassList(i);
+    shuffleItemClassList(i);
   }
 }
 
-function createClassList(num){
+function createItemClassList(num){
   var section = sections[num];
 
   var list = document.createElement('div');
@@ -160,9 +182,9 @@ function createClassList(num){
   list.setAttribute('contenteditable',true);
   section.insertBefore(list,section.firstChild);
 
-  for (var i=0; i<class_lists.length; i++){
+  for (var i=0; i<item_classes.length; i++){
     var listItem = document.createElement('li');
-    var newClass = class_lists[i][Math.floor(Math.random()*class_lists[i].length)];
+    var newClass = item_classes[i][Math.floor(Math.random()*item_classes[i].length)];
     listItem.innerHTML = newClass;
     list.appendChild(listItem);
     section.classList.add(newClass);
@@ -175,14 +197,14 @@ function createClassList(num){
     }
   })
 }
-function shuffleClassList(num){
+function shuffleItemClassList(num){
   var section = sections[num];
 
   var list = section.querySelector('.Class-list')
 
-  for (var i=0; i<class_lists.length; i++){
+  for (var i=0; i<item_classes.length; i++){
     var listItem = list.querySelectorAll('li')[i];
-    var newClass = class_lists[i][Math.floor(Math.random()*class_lists[i].length)];
+    var newClass = item_classes[i][Math.floor(Math.random()*item_classes[i].length)];
     listItem.innerHTML = newClass;
     section.classList.add(newClass);
   }

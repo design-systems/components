@@ -140,7 +140,7 @@ h5 {
   float: left;
 }
 
-.Composition {
+.System {
   margin-top: 70px;
 }
 
@@ -313,7 +313,7 @@ h5 {
 .is-bg .Bg{
   display: block;
 }
-.is-bg .Group, .both-bg .Group{
+.is-bg .Group, .both-bg .Group:not(.Group--graphical){
   padding: 2vh 2vw;
   background: #FFF0BA;
   width: auto;
@@ -328,7 +328,7 @@ h5 {
   transform: translate3d(0,0,0) !important;
 }
 .Section--components-1.both-bg .Bg .Cover {
-  opacity: .2 !important;
+  opacity: .3 !important;
 }
 .Section--components-1.both-bg .Bg .Cover img {
   object-fit: cover !important;
@@ -359,6 +359,22 @@ h5 {
 .Bg .Cover img{
   width: 100%;
   height: 100%;
+}
+
+.bg-padding-none.Section--components-1:not(.bg-size-third):not(.bg-size-quarter) .Bg{
+  padding: 0 !important;
+}
+.bg-padding-xsmall.Section--components-1:not(.bg-size-third):not(.bg-size-quarter) .Bg{
+  padding: .5vw !important;
+}
+.bg-padding-small.Section--components-1:not(.bg-size-third):not(.bg-size-quarter) .Bg{
+  padding: 1vw !important;
+}
+.bg-padding-medium.Section--components-1:not(.bg-size-third):not(.bg-size-quarter) .Bg{
+  padding: 2vw !important;
+}
+.bg-padding-large.Section--components-1:not(.bg-size-third):not(.bg-size-quarter) .Bg{
+  padding: 3vw !important;
 }
 
 /* Section background size
@@ -458,6 +474,16 @@ h5 {
 .bg-color-dark .Group{
   background: transparent !important;
 }
+.bg-color-neutral {
+  background: #93806F;
+  color: #FFF0BA;
+}
+.bg-color-neutral .Bg .Cover{
+  opacity: .3;
+}
+.bg-color-neutral .Group{
+  background: transparent !important;
+}
 
 /* RAMS DESIGN SYSTEM
 **************************/
@@ -523,7 +549,9 @@ h5 {
 }
 
 .Bass .bg-color-dark .Headline span,
-.Bass .bg-color-dark .Attribution span{
+.Bass .bg-color-dark .Attribution span,
+.Bass .bg-color-neutral .Headline span,
+.Bass .bg-color-neutral .Attribution span{
   background: #FFF0BA;
   color: #271325;
 }
@@ -589,6 +617,12 @@ h5 {
   padding: 0;
 }
 
+/* Hide Blocks */
+
+.wo-title .Group--textual{
+
+}
+
 @media screen and (min-width: 960px) {
   h1 {
     // font-size: 2rem;
@@ -630,20 +664,118 @@ h5 {
 
   .Section .Component {
     display: flex;
-    padding: 4vw 10vw;
     position: relative;
     width: 100%;
+  }
+  .section-h-padding-none .Component{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section-h-padding-xxsmall .Component{
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  .section-h-padding-xsmall .Component{
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+  .section-h-padding-small .Component{
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  .section-h-padding-medium .Component{
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  .section-h-padding-large .Component{
+    padding-left: 12vw;
+    padding-right: 12vw;
+  }
+
+  .section-v-padding-none .Component{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .section-v-padding-xsmall .Component{
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+  }
+  .section-v-padding-small .Component{
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
+  .section-v-padding-medium .Component{
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+  }
+  .section-v-padding-large .Component{
+    padding-top: 6vw;
+    padding-bottom: 6vw;
   }
 
   .Group {
     width: 50%;
   }
 
-  .Section:not(.Section--components-1):not(.Section--components-2) .Component  {
-    flex-flow: column;
-  }
   .Section:not(.Section--components-1):not(.is-bg)  {
     padding: 4vw 10vw;
+  }
+  .section-h-padding-none .Section:not(.Section--components-1):not(.is-bg){
+    padding-left: 2;
+    padding-right: 2;
+  }
+  .section-h-padding-xxsmall .Section:not(.Section--components-1):not(.is-bg){
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+  .section-h-padding-xsmall .Section:not(.Section--components-1):not(.is-bg){
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .section-h-padding-small .Section:not(.Section--components-1):not(.is-bg){
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+  .section-h-padding-medium .Section:not(.Section--components-1):not(.is-bg){
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  .section-h-padding-large .Section:not(.Section--components-1):not(.is-bg){
+    padding-left: 12vw;
+    padding-right: 12vw;
+  }
+  .section-h-padding-xlarge .Section:not(.Section--components-1):not(.is-bg){
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+
+  .section-v-padding-none .Section:not(.Section--components-1):not(.is-bg){
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .section-v-padding-xsmall .Section:not(.Section--components-1):not(.is-bg){
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+  }
+  .section-v-padding-small .Section:not(.Section--components-1):not(.is-bg){
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
+  .section-v-padding-medium .Section:not(.Section--components-1):not(.is-bg){
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+  }
+  .section-v-padding-large .Section:not(.Section--components-1):not(.is-bg){
+    padding-top: 6vw;
+    padding-bottom: 6vw;
+  }
+  .section-v-padding-xlarge .Section:not(.Section--components-1):not(.is-bg){
+    padding-top: 8vw;
+    padding-bottom: 8vw;
+  }
+
+  .Section:not(.Section--components-1):not(.Section--components-2) .Component  {
+    flex-flow: column;
   }
   .Section:not(.Section--components-1):not(.is-bg) .Component  {
     padding: 0 !important;
