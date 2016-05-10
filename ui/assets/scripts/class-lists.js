@@ -35,7 +35,9 @@ var section_size = [
 ]
 var flex = [
   'flex-row',
-  'flex-col'
+  'flex-col',
+  'flex-col-reverse',
+  'flex-row-reverse',
 ]
 var title_size = [
   'title-size-xxsmall',

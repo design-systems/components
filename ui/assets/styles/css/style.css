@@ -42,6 +42,16 @@ h5 {
 
 .flex-row .Component{
   display: flex;
+  flex-flow: row;
+}
+
+.flex-row-reverse .Component{
+  display: flex;
+  flex-flow: row-reverse;
+}
+.flex-row-reverse .Component{
+  display: flex;
+  flex-flow: col-reverse;
 }
 
 .Group{
@@ -491,7 +501,7 @@ h5 {
   color: #271325;
 }
 .bg-color-pattern .Bg .Cover{
-  // opacity: .3;
+  opacity: .3;
 }
 .bg-color-pattern .Group{
   background: transparent !important;
@@ -591,7 +601,8 @@ h5 {
   padding: 1rem 0 1.5rem;
 }
 
-.Vignelli .Section--components-1.flex-row.align-end .Attribution {
+.Vignelli .Section--components-1.flex-row.align-end .Attribution,
+.Vignelli .Section--components-1.flex-row-reverse.align-end .Attribution {
   border-top: none;
   border-bottom: calc(4px + .5vh) solid;
 }
@@ -607,8 +618,8 @@ h5 {
 
 }
 
-.Brockmann .no-bg .Component:after,
-.Brockmann .both-bg .Component:after {
+.Brockmann .no-bg .Component:not(:last-of-type):after,
+.Brockmann .both-bg .Component:not(:last-of-type):after {
   content: "";
   z-index: 11;
   position: absolute;
@@ -653,15 +664,15 @@ h5 {
   .title-size-medium:not(.Section--components-4):not(.Section--components-5):not(.Section--components-6) h1 span{
     font-size: 2rem;
   }
-  .Section.Section--components-1.title-size-large:not(.flex-row) h1 span,
-  .Section.Section--components-2.title-size-large:not(.flex-row) h1 span{
+  .Section.Section--components-1.title-size-large) h1 span,
+  .Section.Section--components-2.flex-col.title-size-large) h1 span{
     font-size: 3rem;
   }
-  .Section.Section--components-1.title-size-xlarge:not(.flex-row) h1 span{
+  .Section.Section--components-1.title-size-xlarge:not(.flex-row):not(.flex-row-reverse) h1 span {
     font-size: 5rem;
     line-height: 1.25 !important;
   }
-  .Section.Section--components-1.title-size-xxlarge:not(.flex-row) h1 span{
+  .Section.Section--components-1.title-size-xxlarge:not(.flex-row):not(.flex-row-reverse) h1 span,{
     font-size: 8rem;
     line-height: 1.25 !important;
   }
@@ -728,7 +739,6 @@ h5 {
 
   .Group {
     width: 33.333%;
-    flex-grow: 1;
   }
 
   .Section:not(.Section--components-1):not(.is-bg)  {
@@ -788,8 +798,11 @@ h5 {
     padding-bottom: 8vw;
   }
 
-  .Section:not(.Section--components-1):not(.Section--components-2) .Component  {
+  .Section:not(.Section--components-1):not(.Section--components-2).flex-row .Component  {
     flex-flow: column;
+  }
+  .Section:not(.Section--components-1):not(.Section--components-2).flex-row-reverse .Component  {
+    flex-flow: column-reverse;
   }
   .Section:not(.Section--components-1):not(.is-bg) .Component  {
     padding: 0 !important;
@@ -797,7 +810,7 @@ h5 {
   .Section:not(.Section--components-1) .Component  {
     width: 50%;
   }
-  .Section:not(.Section--components-1) .Component .Group {
+  .Section:not(.Section--components-1):not(.Section--components-2) .Component .Group {
     padding: 1vw;
     width: 100%;
   }
