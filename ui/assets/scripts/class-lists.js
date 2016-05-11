@@ -15,7 +15,7 @@ var section_h_padding = [
   'section-h-padding-xlarge'
 ]
 var section_v_padding = [
-  'section-v-padding-none',
+  // 'section-v-padding-none',
   'section-v-padding-xsmall',
   'section-v-padding-small',
   'section-v-padding-medium',

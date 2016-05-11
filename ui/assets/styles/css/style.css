@@ -23,9 +23,16 @@ h1 {
   word-wrap: break-word;
   transition: .6s ease-in-out;
   font-weight: 700;
+  line-height: 1.25;
 }
 h5 {
   font-weight: 500;
+}
+p {
+  line-height: 1.4;
+  margin: 1em 0;
+  font-size: 1.1rem;
+  text-align: justify;
 }
 .text-align-left {
   text-align: left;
@@ -49,14 +56,15 @@ h5 {
   display: flex;
   flex-flow: row-reverse;
 }
-.flex-row-reverse .Component{
+.flex-col-reverse .Component{
   display: flex;
-  flex-flow: col-reverse;
+  flex-flow: column-reverse;
 }
 
 .Group{
   padding: 1vw;
   transition: .6s ease-in-out;
+  max-width: 960px;
 }
 
 .flex-row:not(.Section--components-1) .Component{
@@ -296,7 +304,7 @@ h5 {
 
 .Cover {
   overflow: hidden;
-  transition: .6s ease-in-out;
+  // transition: .6s ease-in-out;
 }
 
 .Cover img {
@@ -678,7 +686,7 @@ h5 {
   }
   .Section.Section--components-1.title-size-xlarge .Group--textual,
   .Section.Section--components-1.title-size-xxlarge .Group--textual {
-    max-width: 100% !important;
+    max-width: 960px !important;
   }
 
   .Section {
@@ -721,12 +729,12 @@ h5 {
     padding-bottom: 0;
   }
   .section-v-padding-xsmall .Component{
-    padding-top: 1vw;
-    padding-bottom: 1vw;
-  }
-  .section-v-padding-small .Component{
     padding-top: 2vw;
     padding-bottom: 2vw;
+  }
+  .section-v-padding-small .Component{
+    padding-top: 3vw;
+    padding-bottom: 3vw;
   }
   .section-v-padding-medium .Component{
     padding-top: 4vw;
@@ -735,6 +743,10 @@ h5 {
   .section-v-padding-large .Component{
     padding-top: 6vw;
     padding-bottom: 6vw;
+  }
+  .section-v-padding-xlarge .Component{
+    padding-top: 8vw;
+    padding-bottom: 8vw;
   }
 
   .Group {
@@ -798,10 +810,10 @@ h5 {
     padding-bottom: 8vw;
   }
 
-  .Section:not(.Section--components-1):not(.Section--components-2).flex-row .Component  {
+  .Section:not(.Section--components-1).flex-row .Component  {
     flex-flow: column;
   }
-  .Section:not(.Section--components-1):not(.Section--components-2).flex-row-reverse .Component  {
+  .Section:not(.Section--components-1).flex-row-reverse .Component  {
     flex-flow: column-reverse;
   }
   .Section:not(.Section--components-1):not(.is-bg) .Component  {
