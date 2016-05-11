@@ -6,8 +6,8 @@ Archetypes_array[3] = 'Brockmann';
 // Archetypes_array[3] = 'Escher';
 
 var section_h_padding = [
-  'section-h-padding-none',
-  'section-h-padding-xxsmall',
+  // 'section-h-padding-none',
+  // 'section-h-padding-xxsmall',
   'section-h-padding-xsmall',
   'section-h-padding-small',
   'section-h-padding-medium',
@@ -67,6 +67,20 @@ var group_justify = [
   'justify-end',
   'justify-between',
   'justify-around'
+]
+var component_h_padding = [
+  'component-h-padding-xsmall',
+  'component-h-padding-small',
+  'component-h-padding-medium',
+  'component-h-padding-large',
+  'component-h-padding-xlarge'
+]
+var component_v_padding = [
+  'component-v-padding-xsmall',
+  'component-v-padding-small',
+  'component-v-padding-medium',
+  'component-v-padding-large',
+  'component-v-padding-xlarge'
 ]
 var is_bg = [
   'is-bg',

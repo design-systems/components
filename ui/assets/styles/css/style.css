@@ -10,6 +10,7 @@ html {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  // outline: 1px solid rgba(9,186,178,.1);
 }
 .show-outline *, .show-outline *:before, .show-outline *:after {
   outline: 1px solid rgba(9,186,178,.1);
@@ -33,6 +34,23 @@ p {
   margin: 1em 0;
   font-size: 1.1rem;
   text-align: justify;
+}
+button{
+  border: none;
+  outline: none;
+  padding: 12px 28px;
+  text-transform: uppercase;
+  background: #271325;
+  color: #FFF0BA;
+  border-radius: 3px;
+  letter-spacing: .1rem;
+  margin: 3em 0 0;
+  font-weight: 900;
+  font-size: .8rem;
+}
+.bg-color-dark button{
+  background: #FFF0BA;
+  color: #271325;
 }
 .text-align-left {
   text-align: left;
@@ -73,6 +91,10 @@ p {
 }
 .flex-col .Component{
   display: flex;
+  flex-flow: column;
+}
+
+.Section:not(.Section--components-1) .Component{
   flex-flow: column;
 }
 
@@ -699,6 +721,7 @@ p {
     position: relative;
     width: 100%;
   }
+
   .section-h-padding-none .Component{
     padding-left: 0;
     padding-right: 0;
@@ -722,6 +745,10 @@ p {
   .section-h-padding-large .Component{
     padding-left: 12vw;
     padding-right: 12vw;
+  }
+    .section-h-padding-xlarge .Component{
+    padding-left: 15vw;
+    padding-right: 15vw;
   }
 
   .section-v-padding-none .Component{
@@ -747,6 +774,10 @@ p {
   .section-v-padding-xlarge .Component{
     padding-top: 8vw;
     padding-bottom: 8vw;
+  }
+
+  .Section--components-1 .Group{
+    width: 50%;
   }
 
   .Section--components-1.flex-row .Group {
@@ -817,7 +848,7 @@ p {
     flex-flow: column-reverse;
   }
   .Section:not(.Section--components-1):not(.is-bg) .Component  {
-    padding: 0 !important;
+    // padding: 0;
   }
   .Section:not(.Section--components-1) .Component  {
     width: 50%;
@@ -865,6 +896,61 @@ p {
   }
   .Section.Section--components-6 h1  {
     font-size: 1rem !important;
+  }
+
+
+  .Section.component-h-padding-none .Component{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .Section.component-h-padding-xxsmall .Component{
+    padding-left: .25vw;
+    padding-right: .25vw;
+  }
+  .Section.component-h-padding-xsmall .Component{
+    padding-left: .5vw;
+    padding-right: .5vw;
+  }
+  .Section.component-h-padding-small .Component{
+    padding-left: .75vw;
+    padding-right: .75vw;
+  }
+  .Section.component-h-padding-medium .Component{
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  .Section.component-h-padding-large .Component{
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+  }
+  .Section.component-h-padding-xlarge .Component{
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+  .Section.component-v-padding-none .Component{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .Section.component-v-padding-xsmall .Component{
+    padding-top: .25vw;
+    padding-bottom: .25vw;
+  }
+  .Section.component-v-padding-small .Component{
+    padding-top: .5vw;
+    padding-bottom: .5vw;
+  }
+  .Section.component-v-padding-medium .Component{
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+  }
+  .Section.component-v-padding-large .Component{
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+  }
+  .Section.component-v-padding-xlarge .Component{
+    padding-top: 2vw;
+    padding-bottom: 2vw;
   }
 }
 @media screen and (min-width: 1280px) {
