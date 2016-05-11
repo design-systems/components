@@ -738,7 +738,7 @@ h5 {
   }
 
   .Group {
-    width: 33.333%;
+    flex: 1;
   }
 
   .Section:not(.Section--components-1):not(.is-bg)  {
