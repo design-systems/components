@@ -749,7 +749,7 @@ p {
     padding-bottom: 8vw;
   }
 
-  .Group {
+  .Section--components-1.flex-row .Group {
     flex: 1;
   }
 
