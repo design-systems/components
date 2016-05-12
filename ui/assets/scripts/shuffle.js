@@ -6,7 +6,6 @@ var headlines = document.querySelectorAll('.Headline span');
 var authors = document.querySelectorAll('.Author');
 
 // MOVED TO COMPONENTS var item_classes = [section_size, flex, title_size, text_align, group_align, group_justify, is_bg, bg_fit, bg_size, bg_color, bg_align, bg_justify, bg_padding]
-var system_classes = [section_h_padding, section_v_padding]
 
 var sections = document.querySelectorAll('.Section');
 
@@ -40,10 +39,10 @@ function changePhotos() {
 system_el.className = "System "+ system
 
 function init(){
-  changePhotos();
   for (var i=0; i<sections.length; i++ ) {
     createItemClassList(i);
   }
+  changeSystem()
 }
 function shuffle(){
   system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];

@@ -186,7 +186,7 @@ button{
 
 .Section {
   width: 100%;
-  padding: 0;
+  padding: 4vw;
   position: relative;
   display: block;
   align-items: stretch;
@@ -311,7 +311,7 @@ button{
   // line-height: 0;
 }
 
-.Attribution {
+.Group--textual .Attribution {
   margin: 0 0 1em 0;
 }
 
@@ -818,6 +818,9 @@ button{
   .Section:not(.Section--components-1):not(.Section--components-2) .Component .Group {
     padding: 1vw;
     width: 100%;
+  }
+  .Section:not(.Section--components-1):not(.Section--components-2).is-bg.bg-color-none .Component .Group {
+    padding: 3vw;
   }
 
   .Section:not(.Section--components-1) .Component .Bg  {

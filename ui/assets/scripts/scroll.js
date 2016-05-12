@@ -46,7 +46,7 @@
     for(var i=0;i<covers.length;i++){
       var cover = covers[i];
       var newTop = Math.floor(cover.parentNode.parentNode.getBoundingClientRect().top + (scrollTop/20))
-      console.log(cover.parentNode.parentNode.getBoundingClientRect().top - (scrollTop/15))
+      // console.log(cover.parentNode.parentNode.getBoundingClientRect().top - (scrollTop/15))
       // cover.style.WebkitTransform = 'translate3d(0,'+ newTop + 'px,0)'
     }
   }
