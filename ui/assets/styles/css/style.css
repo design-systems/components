@@ -218,7 +218,6 @@ button{
 }
 
 .Component {
-  padding: 4vw 4vw;
   flex-wrap: wrap;
 }
 
@@ -313,7 +312,7 @@ button{
 }
 
 .Attribution {
-
+  margin: 0 0 1em 0;
 }
 
 .Attribution .Author {
@@ -348,6 +347,7 @@ button{
 
 .is-bg {
   min-height: 400px;
+  padding: 0 !important;
 }
 .is-bg .Group--graphical{
   display: none;
@@ -355,13 +355,25 @@ button{
 .is-bg .Bg{
   display: block;
 }
-.is-bg .Group, .both-bg .Group:not(.Group--graphical){
+.is-bg .Group,
+.both-bg .Group:not(.Group--graphical){
   padding: 2vh 2vw;
   background: #FFF0BA;
   width: auto;
   min-width: auto;
   opacity: .9;
 }
+.Section--components-1.is-bg .Component,
+.Section--components-2.is-bg .Component,
+.Section--components-3.is-bg .Component   {
+  padding: 4vw !important;
+}
+.Section--components-4.is-bg .Component,
+.Section--components-5.is-bg .Component,
+.Section--components-6.is-bg .Component   {
+  padding: 2vw !important;
+}
+
 .Section--components-1.both-bg .Bg {
   width: 100% !important;
   height: 100% !important;
@@ -791,63 +803,6 @@ button{
     flex: 1;
   }
 
-  .Section:not(.Section--components-1):not(.is-bg)  {
-    padding: 4vw 10vw;
-  }
-  .section-h-padding-none .Section:not(.Section--components-1):not(.is-bg){
-    padding-left: 2;
-    padding-right: 2;
-  }
-  .section-h-padding-xxsmall .Section:not(.Section--components-1):not(.is-bg){
-    padding-left: 3vw;
-    padding-right: 3vw;
-  }
-  .section-h-padding-xsmall .Section:not(.Section--components-1):not(.is-bg){
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-  .section-h-padding-small .Section:not(.Section--components-1):not(.is-bg){
-    padding-left: 8vw;
-    padding-right: 8vw;
-  }
-  .section-h-padding-medium .Section:not(.Section--components-1):not(.is-bg){
-    padding-left: 10vw;
-    padding-right: 10vw;
-  }
-  .section-h-padding-large .Section:not(.Section--components-1):not(.is-bg){
-    padding-left: 12vw;
-    padding-right: 12vw;
-  }
-  .section-h-padding-xlarge .Section:not(.Section--components-1):not(.is-bg){
-    padding-left: 15vw;
-    padding-right: 15vw;
-  }
-
-  .section-v-padding-none .Section:not(.Section--components-1):not(.is-bg){
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .section-v-padding-xsmall .Section:not(.Section--components-1):not(.is-bg){
-    padding-top: 1vw;
-    padding-bottom: 1vw;
-  }
-  .section-v-padding-small .Section:not(.Section--components-1):not(.is-bg){
-    padding-top: 2vw;
-    padding-bottom: 2vw;
-  }
-  .section-v-padding-medium .Section:not(.Section--components-1):not(.is-bg){
-    padding-top: 4vw;
-    padding-bottom: 4vw;
-  }
-  .section-v-padding-large .Section:not(.Section--components-1):not(.is-bg){
-    padding-top: 6vw;
-    padding-bottom: 6vw;
-  }
-  .section-v-padding-xlarge .Section:not(.Section--components-1):not(.is-bg){
-    padding-top: 8vw;
-    padding-bottom: 8vw;
-  }
-
   .Section:not(.Section--components-1).flex-row .Component  {
     flex-flow: column;
   }
@@ -875,19 +830,19 @@ button{
 
   .Section.Section--components-3 .Component  {
     width: 33.333%;
-    padding: 24px 16px 24px 24px;
+    // padding: 24px 16px 24px 24px;
   }
   .Section.Section--components-4 .Component  {
     width: 25%;
-    padding: 24px 16px 24px 24px;
+    // padding: 24px 16px 24px 24px;
   }
   .Section.Section--components-5 .Component  {
     width: 20%;
-    padding: 24px 16px 24px 24px;
+    // padding: 24px 16px 24px 24px;
   }
   .Section.Section--components-6 .Component  {
     width: 16.6666%;
-    padding: 24px 16px 24px 24px;
+    // padding: 24px 16px 24px 24px;
   }
   .Section:not(.Section--components-1):not(.Section--components-2) .Component:last-of-type{
     padding-right: 24px;
