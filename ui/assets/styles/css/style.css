@@ -307,11 +307,14 @@ button{
 
 .Hamburger{
   transition: .4s ease-out;
-  height: 70px;
+  height: 62px;
   overflow: hidden;
+  padding: 0;
 }
 .Group--links {
-  padding-top: 3em;
+  padding: 3em 0 0 0;
+  width: 100% !important;
+  max-width: none;
 }
 .Group--links .Icon{
   margin-left: 4vw;
@@ -321,8 +324,8 @@ button{
   opacity: 0;
   display: block;
   font-weight: 600;
-  font-size: 5em;
-  margin-left: 4vw;
+  // font-size: 5em;
+  margin: .5rem 4vw;
   transition: .3s ease-out;
 }
 .Group--links a{
@@ -343,6 +346,7 @@ button{
 }
 .Hamburger.Active .Group--links .Link {
   opacity: 1;
+  transform: translate3d(0,3rem,0);
 }
 
 .Hamburger.Active {
@@ -922,12 +926,12 @@ button{
     padding-right: 1vw;
   }
   .Section.component-h-padding-large .Component{
-    padding-left: 1.5vw;
-    padding-right: 1.5vw;
+    padding-left: 1.25vw;
+    padding-right: 1.25vw;
   }
   .Section.component-h-padding-xlarge .Component{
-    padding-left: 2vw;
-    padding-right: 2vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
   }
 
   .Section.component-v-padding-none .Component{
