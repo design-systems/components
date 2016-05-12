@@ -10,6 +10,7 @@ html {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  // outline: 1px solid #645244;
 }
 .show-outline *, .show-outline *:before, .show-outline *:after {
   outline: 1px solid rgba(9,186,178,.1);
@@ -22,15 +23,42 @@ h1 {
   font-size: 1.5rem;
   word-wrap: break-word;
   transition: .6s ease-in-out;
+  font-weight: 700;
+  line-height: 1.25;
 }
-
+h5 {
+  font-weight: 500;
+}
+p {
+  line-height: 1.4;
+  margin: 1em 0;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+button{
+  border: none;
+  outline: none;
+  padding: 12px 28px;
+  text-transform: uppercase;
+  background: #271325;
+  color: #FFF0BA;
+  border-radius: 3px;
+  letter-spacing: .1rem;
+  margin: 3em 0 0;
+  font-weight: 900;
+  font-size: .8rem;
+}
+.bg-color-dark button{
+  background: #FFF0BA;
+  color: #271325;
+}
 .text-align-left {
   text-align: left;
 }
 .text-align-center {
   text-align: center;
 }
-.text-align-right .Component{
+.text-align-right:not(.align-end) .Component{
   text-align: right;
 }
 .text-align-justify {
@@ -38,12 +66,23 @@ h1 {
 }
 
 .flex-row .Component{
-  display: block;
+  display: flex;
+  flex-flow: row;
+}
+
+.flex-row-reverse .Component{
+  display: flex;
+  flex-flow: row-reverse;
+}
+.flex-col-reverse .Component{
+  display: flex;
+  flex-flow: column-reverse;
 }
 
 .Group{
   padding: 1vw;
   transition: .6s ease-in-out;
+  max-width: 960px;
 }
 
 .flex-col .Component{
@@ -54,7 +93,7 @@ h1 {
 .justify-start .Component{
   justify-content: flex-start;
 }
-.justify-center .Component{
+.justify-center.Section--components-1 .Component{
   justify-content: center;
 }
 .justify-end .Component{
@@ -63,7 +102,7 @@ h1 {
 .justify-between .Component{
   justify-content: space-between;
 }
-.justify-around .Component{
+.justify-around.Section--components-1 .Component{
   justify-content: space-around;
 }
 
@@ -133,13 +172,13 @@ h1 {
   float: left;
 }
 
-.Composition {
+.System {
   margin-top: 70px;
 }
 
 .Section {
   width: 100%;
-  padding: 0;
+  padding: 4vw;
   position: relative;
   display: block;
   align-items: stretch;
@@ -150,9 +189,9 @@ h1 {
   width: 100vw;
 }
 
-.Section--components-1.section-size-fullscreen:not(.no-bg),
-.Section--components-2.section-size-fullscreen:not(.no-bg),
-.Section--components-3.section-size-fullscreen:not(.no-bg) {
+.Section--components-1.section-size-fullscreen:not(.wo-bgcover),
+.Section--components-2.section-size-fullscreen:not(.wo-bgcover),
+.Section--components-3.section-size-fullscreen:not(.wo-bgcover) {
   // width: 100vw;
   // height: 80vh;
   // max-height: 800px;
@@ -160,18 +199,8 @@ h1 {
   // overflow: hidden;
 }
 
-.Section:not(.Section.is-bg):after {
-  content: "";
-  position: relative;
-  display: block;
-  width: 100%;
-  margin: 4vw 0 0;
-  border-bottom: 1px solid;
-  opacity: .4;
-}
-
 .Component {
-  padding: 4vw 4vw;
+  flex-wrap: wrap;
 }
 
 .Class-list {
@@ -219,6 +248,7 @@ h1 {
   background: transparent;
   border: none;
   height: auto;
+  z-index: 50;
 }
 
 .Class-list:focus:after {
@@ -237,6 +267,10 @@ h1 {
 
 .Group--graphical {
 
+}
+
+.Group--graphical .Cover {
+  max-height: 90vh;
 }
 
 .Group--textual {
@@ -259,8 +293,8 @@ h1 {
   // line-height: 0;
 }
 
-.Attribution {
-
+.Group--textual .Attribution {
+  margin: 0 0 1em 0;
 }
 
 .Attribution .Author {
@@ -273,8 +307,7 @@ h1 {
 
 .Cover {
   overflow: hidden;
-  max-height: 90vh;
-  transition: .6s ease-in-out;
+  // transition: .6s ease-in-out;
 }
 
 .Cover img {
@@ -286,46 +319,70 @@ h1 {
 
 /* Section background image
 **************************/
-.no-bg .Group--graphical {
+.wo-bgcover .Group--graphical {
   display: block;
 }
-.no-bg .Bg,
-.Section:not(.Section--components-1).both-bg .Bg {
+.wo-bgcover .Bg,
+.Section:not(.Section--components-1).and-bgcover .Bg {
   display: none;
 }
 
-.is-bg {
+.Section--components-1.w-bgcover,
+.Section--components-1.and-bgcover {
   min-height: 400px;
+  padding: 0 !important;
 }
-.is-bg .Group--graphical{
+
+.w-bgcover .Group--graphical{
   display: none;
 }
-.is-bg .Bg{
+.w-bgcover .Bg{
   display: block;
 }
-.is-bg .Group{
+.w-bgcover .Group,
+.and-bgcover .Group {
   padding: 2vh 2vw;
+}
+.w-bgcover .Group,
+.and-bgcover .Group:not(.Group--graphical){
   background: #FFF0BA;
   width: auto;
   min-width: auto;
   opacity: .9;
 }
-.Section--components-1.both-bg .Bg {
+.Section--components-1.w-bgcover .Component,
+.Section--components-2.w-bgcover .Component,
+.Section--components-3.w-bgcover .Component,
+.Section--components-1.and-bgcover .Component,
+.Section--components-2.and-bgcover .Component,
+.Section--components-3.and-bgcover .Component    {
+  padding: 4vw !important;
+}
+.Section--components-4.w-bgcover .Component,
+.Section--components-5.w-bgcover .Component,
+.Section--components-6.w-bgcover .Component   {
+  padding: 2vw !important;
+}
+
+.Section--components-1.and-bgcover .Bg {
   width: 100% !important;
   height: 100% !important;
   left: 0 !important;
   top: 0 !important;
   transform: translate3d(0,0,0) !important;
 }
-.Section--components-1.both-bg .Bg .Cover {
-  opacity: .2 !important;
+.Section--components-1.and-bgcover .Bg .Cover {
+  opacity: .1 !important;
 }
-.Section--components-1.both-bg .Bg .Cover img {
+.Section--components-1.and-bgcover .Bg .Cover img {
   object-fit: cover !important;
-  -webkit-filter: blur(4px);
+  // -webkit-filter: blur(10px);
+  width: 104%;
+  height: 104%;
+  top: -9px;
 }
 
-.Section--components-1.is-bg .Group{
+.Section--components-1.w-bgcover .Group{
   max-width: 66.666%;
 }
 
@@ -348,76 +405,91 @@ h1 {
   height: 100%;
 }
 
+.bgcover-padding-none.Section--components-1:not(.bgcover-size-third):not(.bgcover-size-quarter) .Bg{
+  padding: 0 !important;
+}
+.bgcover-padding-xsmall.Section--components-1:not(.bgcover-size-third):not(.bgcover-size-quarter) .Bg{
+  padding: .5vw !important;
+}
+.bgcover-padding-small.Section--components-1:not(.bgcover-size-third):not(.bgcover-size-quarter) .Bg{
+  padding: 1vw !important;
+}
+.bgcover-padding-medium.Section--components-1:not(.bgcover-size-third):not(.bgcover-size-quarter) .Bg{
+  padding: 2vw !important;
+}
+.bgcover-padding-large.Section--components-1:not(.bgcover-size-third):not(.bgcover-size-quarter) .Bg{
+  padding: 3vw !important;
+}
+
 /* Section background size
 **************************/
 
-.bg-size-full .Bg {
+.bgcover-size-full .Bg {
   width: 100%;
   height: 100%;
 }
-.Section--components-1.bg-size-half .Bg,
-.Section--components-2.bg-size-half .Bg,
-.Section--components-3.bg-size-half .Bg {
+.Section--components-1.bgcover-size-half .Bg,
+.Section--components-2.bgcover-size-half .Bg,
+.Section--components-3.bgcover-size-half .Bg {
   width: 50%;
   height: 100%;
 }
-.Section--components-1.bg-size-third .Bg,
-.Section--components-2.bg-size-third .Bg,
-.Section--components-3.bg-size-third .Bg {
+.Section--components-1.bgcover-size-third .Bg,
+.Section--components-2.bgcover-size-third .Bg,
+.Section--components-3.bgcover-size-third .Bg {
   width: 33.333%;
   height: 50%;
 }
-.Section--components-1.bg-size-quarter .Bg,
-.Section--components-2.bg-size-quarter .Bg,
-.Section--components-3.bg-size-quarter .Bg {
+.Section--components-1.bgcover-size-quarter .Bg,
+.Section--components-2.bgcover-size-quarter .Bg{
   width: 25%;
   height: 33.333%;
 }
 
-.bg-fit-cover .Bg img {
+.bgcover-fit-cover .Bg img {
   object-fit: cover;
   object-position: 60% 50%;
 }
-.bg-fit-contain .Bg img {
+.bgcover-fit-contain .Bg img {
   object-fit: contain;
 }
-.bg-align-top .Bg {
+.bgcover-align-top .Bg {
   top: 0;
   bottom: auto;
 }
-.bg-align-center .Bg {
+.bgcover-align-center .Bg {
   top: 50%;
   transform: translate3d(0,-50%,0);
 }
-.bg-align-bottom .Bg {
+.bgcover-align-bottom .Bg {
   top: auto;
   bottom: 0;
 }
-.bg-align-stretch .Bg {
+.bgcover-align-stretch .Bg {
   top: 0;
   bottom: 0;
   height: 100% !important;
 }
 
-.bg-justify-left .Bg {
+.bgcover-justify-left .Bg {
   left: 0;
 }
-.bg-justify-center .Bg {
+.bgcover-justify-center .Bg {
   right: auto;
   left: 50%;
   transform: translate3d(-50%,0,0);
 }
-.bg-justify-right .Bg {
+.bgcover-justify-right .Bg {
   right: 0;
   left: auto;
 }
-.bg-justify-stretch .Bg {
+.bgcover-justify-stretch .Bg {
   right: 0;
   left: 0;
   width: 100% !important;
 }
 
-.bg-justify-center.bg-align-center .Bg {
+.bgcover-justify-center.bgcover-align-center .Bg {
   transform: translate3d(-50%,-50%,0);
 }
 
@@ -428,24 +500,52 @@ h1 {
 
 .bg-color-light {
   background: #FFF0BA;
+  color: #271325;
 }
 .bg-color-light .Bg .Cover{
   opacity: .3;
 }
 .bg-color-light .Group{
   background: transparent !important;
-  color: #271325;
 }
 .bg-color-dark {
   background: #36222F;
+  color: #FFF0BA;
 }
 .bg-color-dark .Bg .Cover{
   opacity: .3;
 }
 .bg-color-dark .Group{
   background: transparent !important;
+}
+.bg-color-neutral {
+  background: #93806F;
   color: #FFF0BA;
 }
+.bg-color-neutral .Bg .Cover{
+  opacity: .3;
+}
+.bg-color-neutral .Group{
+  background: transparent !important;
+}
+.bg-color-pattern{
+  background: url(../../images/pattern.jpg);
+  color: #271325;
+}
+.bg-color-pattern .Bg .Cover{
+  opacity: .3;
+}
+.bg-color-pattern .Group{
+  background: transparent !important;
+}
+.bg-color-none {
+  background: #FFF0BA;
+  color: #271325;
+}
+.bg-color-none .Group{
+  background: #FFF0BA;
+}
+
 
 /* RAMS DESIGN SYSTEM
 **************************/
@@ -511,9 +611,15 @@ h1 {
 }
 
 .Bass .bg-color-dark .Headline span,
-.Bass .bg-color-dark .Attribution span{
+.Bass .bg-color-dark .Attribution span,
+.Bass .bg-color-neutral .Headline span,
+.Bass .bg-color-neutral .Attribution span{
   background: #FFF0BA;
   color: #271325;
+}
+.Bass .w-bgcover.bg-color-none p {
+  background: #FFF0BA;
+  padding: 1.5vw;
 }
 
 /* VIGNELLI DESIGN SYSTEM
@@ -538,7 +644,8 @@ h1 {
   padding: 1rem 0 1.5rem;
 }
 
-.Vignelli .Section--components-1.flex-row.align-end .Attribution {
+.Vignelli .Section--components-1.flex-row.align-end .Attribution,
+.Vignelli .Section--components-1.flex-row-reverse.align-end .Attribution {
   border-top: none;
   border-bottom: calc(4px + .5vh) solid;
 }
@@ -554,8 +661,21 @@ h1 {
 
 }
 
+.Brockmann .wo-bgcover .Component:not(:last-of-type):after,
+.Brockmann .and-bgcover .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-right: 1px solid;
+  opacity: .2;
+}
+
 .Brockmann .Headline span{
   border-bottom: .125em solid;
+  line-height: 1.5;
   padding: 0;
 }
 
@@ -564,39 +684,13 @@ h1 {
   padding: 0;
 }
 
-@media screen and (min-width: 960px) {
-  h1 {
-    // font-size: 2rem;
-  }
+/* Hide Blocks */
 
-  .title-size-xxsmall h1 span{
-    font-size: 1rem;
-  }
-  .title-size-xsmall h1 span{
-    font-size: 1.25rem;
-  }
-  .title-size-small h1 span{
-    font-size: 1.5rem;
-  }
-  .title-size-medium:not(.Section--components-4):not(.Section--components-5):not(.Section--components-6) h1 span{
-    font-size: 2rem;
-  }
-  .Section.Section--components-1.title-size-large:not(.flex-row) h1 span,
-  .Section.Section--components-2.title-size-large:not(.flex-row) h1 span{
-    font-size: 3rem;
-  }
-  .Section.Section--components-1.title-size-xlarge:not(.flex-row) h1 span{
-    font-size: 5rem;
-    line-height: 1.25 !important;
-  }
-  .Section.Section--components-1.title-size-xxlarge:not(.flex-row) h1 span{
-    font-size: 8rem;
-    line-height: 1.25 !important;
-  }
-  .Section.Section--components-1.title-size-xlarge .Group--textual,
-  .Section.Section--components-1.title-size-xxlarge .Group--textual {
-    max-width: 100% !important;
-  }
+.wo-title .Group--textual{
+
+}
+
+@media screen and (min-width: 960px) {
 
   .Section {
     padding: 0;
@@ -605,59 +699,151 @@ h1 {
 
   .Section .Component {
     display: flex;
-    padding: 4vw 10vw;
     position: relative;
     width: 100%;
   }
 
-  .Group {
+  .Section--components-4 p,
+  .Section--components-5 p,
+  .Section--components-6 p {
+    text-align: inherit;
+  }
+
+/* DESKTOP TITLE SIZE */
+  .title-size-xxsmall h1,
+  .title-size-xxsmall h1{
+    font-size: 1rem;
+  }
+  .title-size-xsmall h1{
+    font-size: 1.25rem;
+  }
+  .title-size-small h1{
+    font-size: 1.5rem;
+  }
+  .title-size-medium:nth-last-child(-n + 4):first-child h1,
+  .title-size-medium:nth-last-child(-n + 4):first-child ~ *  h1{
+    font-size: 2rem;
+  }
+/* DESKTOP TITLE SIZE */
+  .Section.Section--components-1.title-size-large h1,
+  .Section.Section--components-2.flex-col.title-size-large h1{
+    font-size: 3rem;
+  }
+  .Section.Section--components-1.title-size-xlarge:not(.flex-row):not(.flex-row-reverse) h1 {
+    font-size: 5rem;
+    line-height: 1.25 !important;
+  }
+  .Section.Section--components-1.title-size-xxlarge:not(.flex-row):not(.flex-row-reverse) h1,{
+    font-size: 8rem;
+    line-height: 1.25 !important;
+  }
+  .Section.Section--components-1.title-size-xlarge .Group--textual,
+  .Section.Section--components-1.title-size-xxlarge .Group--textual {
+    max-width: 960px !important;
+  }
+
+  .section-h-padding-none .Section{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section-h-padding-xxsmall .Section{
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  .section-h-padding-xsmall .Section{
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+  .section-h-padding-small .Section{
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  .section-h-padding-medium .Section{
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  .section-h-padding-large .Section{
+    padding-left: 12vw;
+    padding-right: 12vw;
+  }
+  .section-h-padding-xlarge .Section{
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
+
+  .section-v-padding-none .Section{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .section-v-padding-xsmall .Section{
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
+  .section-v-padding-small .Section{
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+  }
+  .section-v-padding-medium .Section{
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+  }
+  .section-v-padding-large .Section{
+    padding-top: 6vw;
+    padding-bottom: 6vw;
+  }
+  .section-v-padding-xlarge .Section{
+    padding-top: 8vw;
+    padding-bottom: 8vw;
+  }
+
+  .Section--components-1 .Group{
     width: 50%;
   }
 
-  .Section:not(.Section--components-1):not(.Section--components-2) .Component  {
+  .Section--components-1.flex-row .Group {
+    flex: 1;
+  }
+
+  .Section:not(.Section--components-1).flex-row .Component  {
     flex-flow: column;
   }
-  .Section:not(.Section--components-1):not(.is-bg)  {
-    padding: 4vw 10vw;
-  }
-  .Section:not(.Section--components-1):not(.is-bg) .Component  {
-    padding: 0 !important;
+  .Section:not(.Section--components-1).flex-row-reverse .Component  {
+    flex-flow: column-reverse;
   }
   .Section:not(.Section--components-1) .Component  {
     width: 50%;
   }
-  .Section:not(.Section--components-1) .Component .Group {
+  .Section:not(.Section--components-1):not(.Section--components-2) .Component .Group {
     padding: 1vw;
     width: 100%;
+  }
+  .Section:not(.Section--components-1):not(.Section--components-2).w-bgcover.bg-color-none .Component .Group {
+    padding: 3vw;
   }
 
   .Section:not(.Section--components-1) .Component .Bg  {
     padding: 8px 0 8px 8px;
   }
 
-  .Section:not(.Section--components-1) .Component:last-of-type .Bg  {
-    padding-right: 8px;
-  }
+  // .Section:not(.Section--components-1) .Component:last-of-type .Bg  {
+  //   padding-right: 8px;
+  // }
 
   .Section.Section--components-3 .Component  {
     width: 33.333%;
-    padding: 24px 16px 24px 24px;
   }
   .Section.Section--components-4 .Component  {
     width: 25%;
-    padding: 24px 16px 24px 24px;
   }
   .Section.Section--components-5 .Component  {
     width: 20%;
-    padding: 24px 16px 24px 24px;
   }
   .Section.Section--components-6 .Component  {
     width: 16.6666%;
-    padding: 24px 16px 24px 24px;
   }
-  .Section:not(.Section--components-1):not(.Section--components-2) .Component:last-of-type{
-    padding-right: 24px;
-  }
+  // .Section:not(.Section--components-1):not(.Section--components-2) .Component:last-of-type{
+  //   padding-right: 24px;
+  // }
   .Section.Section--components-3 h1  {
     font-size: 1.75rem;
   }
@@ -670,10 +856,67 @@ h1 {
   .Section.Section--components-6 h1  {
     font-size: 1rem !important;
   }
+
+
+  .Section.component-h-padding-none .Component{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .Section.component-h-padding-xxsmall .Component{
+    padding-left: .25vw;
+    padding-right: .25vw;
+  }
+  .Section.component-h-padding-xsmall .Component{
+    padding-left: .5vw;
+    padding-right: .5vw;
+  }
+  .Section.component-h-padding-small .Component{
+    padding-left: .75vw;
+    padding-right: .75vw;
+  }
+  .Section.component-h-padding-medium .Component{
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  .Section.component-h-padding-large .Component{
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+  }
+  .Section.component-h-padding-xlarge .Component{
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+  .Section.component-v-padding-none .Component{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .Section.component-v-padding-xsmall .Component{
+    padding-top: .25vw;
+    padding-bottom: .25vw;
+  }
+  .Section.component-v-padding-small .Component{
+    padding-top: .5vw;
+    padding-bottom: .5vw;
+  }
+  .Section.component-v-padding-medium .Component{
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+  }
+  .Section.component-v-padding-large .Component{
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+  }
+  .Section.component-v-padding-xlarge .Component{
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
 }
 @media screen and (min-width: 1280px) {
 
 }
+
+
 
 
 /* RULES SCRATCH
