@@ -273,11 +273,7 @@ button{
   max-height: 90vh;
 }
 
-.Group--textual {
-  z-index: 10;
-}
-
-.Group--meta {
+.Group:not(.Group--graphical), {
   z-index: 10;
 }
 
@@ -634,21 +630,21 @@ button{
 }
 
 .Vignelli .Headline{
-  border-top: calc(4px + .5vh) solid;
   border-bottom: calc(4px + .5vh) solid;
-  padding: 1rem 0 1.5rem;
 }
 
+.Vignelli .Headline,
+.Vignelli .Paragraph,
 .Vignelli .Attribution {
   border-top: calc(4px + .5vh) solid;
   padding: 1rem 0 1.5rem;
 }
 
-.Vignelli .Section--components-1.flex-row.align-end .Attribution,
-.Vignelli .Section--components-1.flex-row-reverse.align-end .Attribution {
-  border-top: none;
-  border-bottom: calc(4px + .5vh) solid;
-}
+// .Vignelli .Section--components-1.flex-row.align-end .Attribution,
+// .Vignelli .Section--components-1.flex-row-reverse.align-end .Attribution {
+//   border-top: none;
+//   border-bottom: calc(4px + .5vh) solid;
+// }
 
 /* Brockmann DESIGN SYSTEM
 **************************/
@@ -817,10 +813,14 @@ button{
     padding: 1vw;
     width: 100%;
   }
-  .Section:not(.Section--components-1):not(.Section--components-2).w-bgcover.bg-color-none .Component .Group {
-    padding: 3vw;
+  .Section--components-3.w-bgcover.bg-color-none .Component .Group,
+  .Section--components-4.w-bgcover.bg-color-none .Component .Group {
+    padding: 2vw;
   }
-
+  .Section--components-5.w-bgcover.bg-color-none .Component .Group,
+  .Section--components-6.w-bgcover.bg-color-none .Component .Group {
+    padding: 1vw;
+  }
   .Section:not(.Section--components-1) .Component .Bg  {
     padding: 8px 0 8px 8px;
   }
