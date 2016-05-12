@@ -82,15 +82,6 @@ var component_v_padding = [
   'component-v-padding-large',
   'component-v-padding-xlarge'
 ]
-var is_bg = [
-  'is-bg',
-  'no-bg',
-  'both-bg'
-]
-var bg_fit = [
-  'bg-fit-cover',
-  'bg-fit-contain'
-]
 var bg_color = [
   'bg-color-light',
   'bg-color-dark',
@@ -98,27 +89,36 @@ var bg_color = [
   'bg-color-pattern',
   'bg-color-none'
 ]
-var bg_size = [
-  'bg-size-full',
-  'bg-size-half',
-  'bg-size-third',
-  'bg-size-quarter'
+var w_bgcover = [
+  'w-bgcover',
+  'wo-bgcover',
+  'and-bgcover'
 ]
-var bg_align = [
-  'bg-align-top',
-  'bg-align-center',
-  'bg-align-bottom',
-  'bg-align-stretch'
+var bgcover_fit = [
+  'bgcover-fit-cover',
+  'bgcover-fit-contain'
 ]
-var bg_justify = [
-  'bg-justify-left',
-  'bg-justify-center',
-  'bg-justify-right',
-  'bg-justify-stretch'
+var bgcover_size = [
+  'bgcover-size-full',
+  'bgcover-size-half',
+  'bgcover-size-third',
+  'bgcover-size-quarter'
 ]
-var bg_padding = [
-  'bg-padding-xsmall',
-  'bg-padding-small',
-  'bg-padding-medium',
-  'bg-padding-large'
+var bgcover_align = [
+  'bgcover-align-top',
+  'bgcover-align-center',
+  'bgcover-align-bottom',
+  'bgcover-align-stretch'
+]
+var bgcover_justify = [
+  'bgcover-justify-left',
+  'bgcover-justify-center',
+  'bgcover-justify-right',
+  'bgcover-justify-stretch'
+]
+var bgcover_padding = [
+  'bgcover-padding-xsmall',
+  'bgcover-padding-small',
+  'bgcover-padding-medium',
+  'bgcover-padding-large'
 ]

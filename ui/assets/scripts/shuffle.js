@@ -32,7 +32,7 @@ function changePhotos() {
   }
   for (var i=0; i<headlines.length; i++ ) {
     authors[i].textContent = Authors_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]]
-    headlines[i].textContent = Headlines_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]]
+    headlines[i].textContent = Headlines_array[Math.floor(Math.random() * Headlines_array.length)]
   }
 }
 

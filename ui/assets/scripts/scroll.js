@@ -29,13 +29,13 @@
   // })
 
   function scrollHandler() {
-    var oldScrollTop = scrollTop;
-    scrollTop = document.body.scrollTop;
+    // var oldScrollTop = scrollTop;
+    // scrollTop = document.body.scrollTop;
 
-    if(oldScrollTop != scrollTop){
-      var nextMove = scrollTop - oldScrollTop;
-      shiftCovers();
-    }
+    // if(oldScrollTop != scrollTop){
+    //   var nextMove = scrollTop - oldScrollTop;
+    //   shiftCovers();
+    // }
   }
 
   function setCoverTop(argument) {
@@ -45,7 +45,7 @@
   function shiftCovers() {
     for(var i=0;i<covers.length;i++){
       var cover = covers[i];
-      var newTop = Math.floor(cover.parentNode.parentNode.getBoundingClientRect().top + (scrollTop/20))
+      // var newTop = Math.floor(cover.parentNode.parentNode.getBoundingClientRect().top + (scrollTop/20))
       // console.log(cover.parentNode.parentNode.getBoundingClientRect().top - (scrollTop/15))
       // cover.style.WebkitTransform = 'translate3d(0,'+ newTop + 'px,0)'
     }

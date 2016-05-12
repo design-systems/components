@@ -10,7 +10,7 @@ html {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  // outline: 1px solid rgba(9,186,178,.1);
+  // outline: 1px solid #645244;
 }
 .show-outline *, .show-outline *:before, .show-outline *:after {
   outline: 1px solid rgba(9,186,178,.1);
@@ -85,16 +85,8 @@ button{
   max-width: 960px;
 }
 
-.flex-row:not(.Section--components-1) .Component{
-  display: flex;
-  flex-flow: column;
-}
 .flex-col .Component{
   display: flex;
-  flex-flow: column;
-}
-
-.Section:not(.Section--components-1) .Component{
   flex-flow: column;
 }
 
@@ -197,24 +189,14 @@ button{
   width: 100vw;
 }
 
-.Section--components-1.section-size-fullscreen:not(.no-bg),
-.Section--components-2.section-size-fullscreen:not(.no-bg),
-.Section--components-3.section-size-fullscreen:not(.no-bg) {
+.Section--components-1.section-size-fullscreen:not(.wo-bgcover),
+.Section--components-2.section-size-fullscreen:not(.wo-bgcover),
+.Section--components-3.section-size-fullscreen:not(.wo-bgcover) {
   // width: 100vw;
   // height: 80vh;
   // max-height: 800px;
   min-height: 80vh;
   // overflow: hidden;
-}
-
-.Section:not(.Section.is-bg):after {
-  content: "";
-  position: relative;
-  display: block;
-  width: 100%;
-  margin: 4vw 0 0;
-  border-bottom: 1px solid;
-  opacity: .4;
 }
 
 .Component {
@@ -337,62 +319,70 @@ button{
 
 /* Section background image
 **************************/
-.no-bg .Group--graphical {
+.wo-bgcover .Group--graphical {
   display: block;
 }
-.no-bg .Bg,
-.Section:not(.Section--components-1).both-bg .Bg {
+.wo-bgcover .Bg,
+.Section:not(.Section--components-1).and-bgcover .Bg {
   display: none;
 }
 
-.is-bg {
+.Section--components-1.w-bgcover,
+.Section--components-1.and-bgcover {
   min-height: 400px;
   padding: 0 !important;
 }
-.is-bg .Group--graphical{
+
+.w-bgcover .Group--graphical{
   display: none;
 }
-.is-bg .Bg{
+.w-bgcover .Bg{
   display: block;
 }
-.is-bg .Group,
-.both-bg .Group:not(.Group--graphical){
+.w-bgcover .Group,
+.and-bgcover .Group {
   padding: 2vh 2vw;
+}
+.w-bgcover .Group,
+.and-bgcover .Group:not(.Group--graphical){
   background: #FFF0BA;
   width: auto;
   min-width: auto;
   opacity: .9;
 }
-.Section--components-1.is-bg .Component,
-.Section--components-2.is-bg .Component,
-.Section--components-3.is-bg .Component   {
+.Section--components-1.w-bgcover .Component,
+.Section--components-2.w-bgcover .Component,
+.Section--components-3.w-bgcover .Component,
+.Section--components-1.and-bgcover .Component,
+.Section--components-2.and-bgcover .Component,
+.Section--components-3.and-bgcover .Component    {
   padding: 4vw !important;
 }
-.Section--components-4.is-bg .Component,
-.Section--components-5.is-bg .Component,
-.Section--components-6.is-bg .Component   {
+.Section--components-4.w-bgcover .Component,
+.Section--components-5.w-bgcover .Component,
+.Section--components-6.w-bgcover .Component   {
   padding: 2vw !important;
 }
 
-.Section--components-1.both-bg .Bg {
+.Section--components-1.and-bgcover .Bg {
   width: 100% !important;
   height: 100% !important;
   left: 0 !important;
   top: 0 !important;
   transform: translate3d(0,0,0) !important;
 }
-.Section--components-1.both-bg .Bg .Cover {
-  opacity: .3 !important;
+.Section--components-1.and-bgcover .Bg .Cover {
+  opacity: .1 !important;
 }
-.Section--components-1.both-bg .Bg .Cover img {
+.Section--components-1.and-bgcover .Bg .Cover img {
   object-fit: cover !important;
-  -webkit-filter: blur(10px);
+  // -webkit-filter: blur(10px);
   width: 104%;
   height: 104%;
   top: -9px;
 }
 
-.Section--components-1.is-bg .Group{
+.Section--components-1.w-bgcover .Group{
   max-width: 66.666%;
 }
 
@@ -415,91 +405,91 @@ button{
   height: 100%;
 }
 
-.bg-padding-none.Section--components-1:not(.bg-size-third):not(.bg-size-quarter) .Bg{
+.bgcover-padding-none.Section--components-1:not(.bgcover-size-third):not(.bgcover-size-quarter) .Bg{
   padding: 0 !important;
 }
-.bg-padding-xsmall.Section--components-1:not(.bg-size-third):not(.bg-size-quarter) .Bg{
+.bgcover-padding-xsmall.Section--components-1:not(.bgcover-size-third):not(.bgcover-size-quarter) .Bg{
   padding: .5vw !important;
 }
-.bg-padding-small.Section--components-1:not(.bg-size-third):not(.bg-size-quarter) .Bg{
+.bgcover-padding-small.Section--components-1:not(.bgcover-size-third):not(.bgcover-size-quarter) .Bg{
   padding: 1vw !important;
 }
-.bg-padding-medium.Section--components-1:not(.bg-size-third):not(.bg-size-quarter) .Bg{
+.bgcover-padding-medium.Section--components-1:not(.bgcover-size-third):not(.bgcover-size-quarter) .Bg{
   padding: 2vw !important;
 }
-.bg-padding-large.Section--components-1:not(.bg-size-third):not(.bg-size-quarter) .Bg{
+.bgcover-padding-large.Section--components-1:not(.bgcover-size-third):not(.bgcover-size-quarter) .Bg{
   padding: 3vw !important;
 }
 
 /* Section background size
 **************************/
 
-.bg-size-full .Bg {
+.bgcover-size-full .Bg {
   width: 100%;
   height: 100%;
 }
-.Section--components-1.bg-size-half .Bg,
-.Section--components-2.bg-size-half .Bg,
-.Section--components-3.bg-size-half .Bg {
+.Section--components-1.bgcover-size-half .Bg,
+.Section--components-2.bgcover-size-half .Bg,
+.Section--components-3.bgcover-size-half .Bg {
   width: 50%;
   height: 100%;
 }
-.Section--components-1.bg-size-third .Bg,
-.Section--components-2.bg-size-third .Bg,
-.Section--components-3.bg-size-third .Bg {
+.Section--components-1.bgcover-size-third .Bg,
+.Section--components-2.bgcover-size-third .Bg,
+.Section--components-3.bgcover-size-third .Bg {
   width: 33.333%;
   height: 50%;
 }
-.Section--components-1.bg-size-quarter .Bg,
-.Section--components-2.bg-size-quarter .Bg{
+.Section--components-1.bgcover-size-quarter .Bg,
+.Section--components-2.bgcover-size-quarter .Bg{
   width: 25%;
   height: 33.333%;
 }
 
-.bg-fit-cover .Bg img {
+.bgcover-fit-cover .Bg img {
   object-fit: cover;
   object-position: 60% 50%;
 }
-.bg-fit-contain .Bg img {
+.bgcover-fit-contain .Bg img {
   object-fit: contain;
 }
-.bg-align-top .Bg {
+.bgcover-align-top .Bg {
   top: 0;
   bottom: auto;
 }
-.bg-align-center .Bg {
+.bgcover-align-center .Bg {
   top: 50%;
   transform: translate3d(0,-50%,0);
 }
-.bg-align-bottom .Bg {
+.bgcover-align-bottom .Bg {
   top: auto;
   bottom: 0;
 }
-.bg-align-stretch .Bg {
+.bgcover-align-stretch .Bg {
   top: 0;
   bottom: 0;
   height: 100% !important;
 }
 
-.bg-justify-left .Bg {
+.bgcover-justify-left .Bg {
   left: 0;
 }
-.bg-justify-center .Bg {
+.bgcover-justify-center .Bg {
   right: auto;
   left: 50%;
   transform: translate3d(-50%,0,0);
 }
-.bg-justify-right .Bg {
+.bgcover-justify-right .Bg {
   right: 0;
   left: auto;
 }
-.bg-justify-stretch .Bg {
+.bgcover-justify-stretch .Bg {
   right: 0;
   left: 0;
   width: 100% !important;
 }
 
-.bg-justify-center.bg-align-center .Bg {
+.bgcover-justify-center.bgcover-align-center .Bg {
   transform: translate3d(-50%,-50%,0);
 }
 
@@ -627,6 +617,10 @@ button{
   background: #FFF0BA;
   color: #271325;
 }
+.Bass .w-bgcover.bg-color-none p {
+  background: #FFF0BA;
+  padding: 1.5vw;
+}
 
 /* VIGNELLI DESIGN SYSTEM
 **************************/
@@ -667,8 +661,8 @@ button{
 
 }
 
-.Brockmann .no-bg .Component:not(:last-of-type):after,
-.Brockmann .both-bg .Component:not(:last-of-type):after {
+.Brockmann .wo-bgcover .Component:not(:last-of-type):after,
+.Brockmann .and-bgcover .Component:not(:last-of-type):after {
   content: "";
   z-index: 11;
   position: absolute;
@@ -697,38 +691,6 @@ button{
 }
 
 @media screen and (min-width: 960px) {
-  h1 {
-    // font-size: 2rem;
-  }
-
-  .title-size-xxsmall h1 span{
-    font-size: 1rem;
-  }
-  .title-size-xsmall h1 span{
-    font-size: 1.25rem;
-  }
-  .title-size-small h1 span{
-    font-size: 1.5rem;
-  }
-  .title-size-medium:not(.Section--components-4):not(.Section--components-5):not(.Section--components-6) h1 span{
-    font-size: 2rem;
-  }
-  .Section.Section--components-1.title-size-large) h1 span,
-  .Section.Section--components-2.flex-col.title-size-large) h1 span{
-    font-size: 3rem;
-  }
-  .Section.Section--components-1.title-size-xlarge:not(.flex-row):not(.flex-row-reverse) h1 span {
-    font-size: 5rem;
-    line-height: 1.25 !important;
-  }
-  .Section.Section--components-1.title-size-xxlarge:not(.flex-row):not(.flex-row-reverse) h1 span,{
-    font-size: 8rem;
-    line-height: 1.25 !important;
-  }
-  .Section.Section--components-1.title-size-xlarge .Group--textual,
-  .Section.Section--components-1.title-size-xxlarge .Group--textual {
-    max-width: 960px !important;
-  }
 
   .Section {
     padding: 0;
@@ -739,6 +701,45 @@ button{
     display: flex;
     position: relative;
     width: 100%;
+  }
+
+  .Section--components-4 p,
+  .Section--components-5 p,
+  .Section--components-6 p {
+    text-align: inherit;
+  }
+
+/* DESKTOP TITLE SIZE */
+  .title-size-xxsmall h1,
+  .title-size-xxsmall h1{
+    font-size: 1rem;
+  }
+  .title-size-xsmall h1{
+    font-size: 1.25rem;
+  }
+  .title-size-small h1{
+    font-size: 1.5rem;
+  }
+  .title-size-medium:nth-last-child(-n + 4):first-child h1,
+  .title-size-medium:nth-last-child(-n + 4):first-child ~ *  h1{
+    font-size: 2rem;
+  }
+/* DESKTOP TITLE SIZE */
+  .Section.Section--components-1.title-size-large h1,
+  .Section.Section--components-2.flex-col.title-size-large h1{
+    font-size: 3rem;
+  }
+  .Section.Section--components-1.title-size-xlarge:not(.flex-row):not(.flex-row-reverse) h1 {
+    font-size: 5rem;
+    line-height: 1.25 !important;
+  }
+  .Section.Section--components-1.title-size-xxlarge:not(.flex-row):not(.flex-row-reverse) h1,{
+    font-size: 8rem;
+    line-height: 1.25 !important;
+  }
+  .Section.Section--components-1.title-size-xlarge .Group--textual,
+  .Section.Section--components-1.title-size-xxlarge .Group--textual {
+    max-width: 960px !important;
   }
 
   .section-h-padding-none .Section{
@@ -809,9 +810,6 @@ button{
   .Section:not(.Section--components-1).flex-row-reverse .Component  {
     flex-flow: column-reverse;
   }
-  .Section:not(.Section--components-1):not(.is-bg) .Component  {
-    // padding: 0;
-  }
   .Section:not(.Section--components-1) .Component  {
     width: 50%;
   }
@@ -819,7 +817,7 @@ button{
     padding: 1vw;
     width: 100%;
   }
-  .Section:not(.Section--components-1):not(.Section--components-2).is-bg.bg-color-none .Component .Group {
+  .Section:not(.Section--components-1):not(.Section--components-2).w-bgcover.bg-color-none .Component .Group {
     padding: 3vw;
   }
 
@@ -827,29 +825,25 @@ button{
     padding: 8px 0 8px 8px;
   }
 
-  .Section:not(.Section--components-1) .Component:last-of-type .Bg  {
-    padding-right: 8px;
-  }
+  // .Section:not(.Section--components-1) .Component:last-of-type .Bg  {
+  //   padding-right: 8px;
+  // }
 
   .Section.Section--components-3 .Component  {
     width: 33.333%;
-    // padding: 24px 16px 24px 24px;
   }
   .Section.Section--components-4 .Component  {
     width: 25%;
-    // padding: 24px 16px 24px 24px;
   }
   .Section.Section--components-5 .Component  {
     width: 20%;
-    // padding: 24px 16px 24px 24px;
   }
   .Section.Section--components-6 .Component  {
     width: 16.6666%;
-    // padding: 24px 16px 24px 24px;
   }
-  .Section:not(.Section--components-1):not(.Section--components-2) .Component:last-of-type{
-    padding-right: 24px;
-  }
+  // .Section:not(.Section--components-1):not(.Section--components-2) .Component:last-of-type{
+  //   padding-right: 24px;
+  // }
   .Section.Section--components-3 h1  {
     font-size: 1.75rem;
   }
