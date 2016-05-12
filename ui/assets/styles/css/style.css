@@ -16,7 +16,11 @@ html {
   outline: 1px solid rgba(9,186,178,.1);
 }
 a{
-  color: #ef4044;
+  color: inherit;
+}
+a:hover{
+  opacity: .7;
+  transition: .2s;
 }
 
 h1 {
@@ -299,6 +303,51 @@ button{
 
 .Attribution .Source {
 
+}
+
+.Hamburger{
+  transition: .4s ease-out;
+  height: 70px;
+  overflow: hidden;
+}
+.Group--links {
+  padding-top: 3em;
+}
+.Group--links .Icon{
+  margin-left: 4vw;
+}
+.Group--links .Link{
+  flex: 1;
+  opacity: 0;
+  display: block;
+  font-weight: 600;
+  font-size: 5em;
+  margin-left: 4vw;
+  transition: .3s ease-out;
+}
+.Group--links a{
+  text-decoration: none;
+}
+
+.Hamburger .Group--links .Icon {
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+  font-size: 1em;
+  top: 20px;
+}
+
+.Hamburger.Active .Group--links {
+
+}
+.Hamburger.Active .Group--links .Link {
+  opacity: 1;
+}
+
+.Hamburger.Active {
+  width: 100vw;
+  height: 100vh;
 }
 
 .Cover {
@@ -678,12 +727,6 @@ button{
 .Brockmann .Attribution span{
   border-bottom: .125em solid;
   padding: 0;
-}
-
-/* Hide Blocks */
-
-.wo-title .Group--textual{
-
 }
 
 @media screen and (min-width: 960px) {

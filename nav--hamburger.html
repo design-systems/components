@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="ui/assets/styles/css/style.css">
+  </head>
+
+<!-- RAMS -->
+  <body>
+    <div class="Header">
+      <h3><span>The Components</span></h3>
+      <div class="Shuffle"><img src="ui/assets/images/shuffle.svg" alt=""></div>
+      <select name="system" id="System-input">
+        <option value="Rams">Dieter Rams</option>
+        <option value="Vignelli">The Vignellis</option>
+        <option value="Bass">Saul Bass</option>
+        <option value="Brockmann">Josef Müller-Brockmann</option>
+  <!--       <option value="Escher">MC Escher</option> -->
+      </select>
+    </div>
+    <div class="System">
+      <section class="Section Section--components-1">
+        <div class="Component Hamburger">
+          <div class="Group Group--links">
+            <div class="Icon"><a href="#menu">☰</a></div>
+            <div class="Link">
+              <a href="#team">Team</a>
+            </div>
+            <div class="Link">
+              <a href="#design">Design</a>
+            </div>
+            <div class="Link">
+              <a href="#culture">Culture</a>
+            </div>
+            <div class="Link">
+              <a href="#technology">Technology</a>
+            </div>
+            <div class="Link">
+              <a href="#thoughts">Thoughts</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      document.querySelector('.Hamburger .Icon a').addEventListener('click',function(){
+        if(document.querySelector('.Hamburger .Icon a').textContent == "☰"){
+          document.querySelector('.Hamburger .Icon a').textContent = "✕";
+          document.querySelector('.Hamburger').classList.toggle('Active')
+        }
+        else if(document.querySelector('.Hamburger .Icon a').textContent == "✕") {
+          document.querySelector('.Hamburger .Icon a').textContent = "☰";
+          document.querySelector('.Hamburger').classList.toggle('Active')
+        }
+      })
+    </script>
+    <script src="ui/assets/scripts/fixtures.js"></script>
+    <script src="ui/assets/scripts/class-lists.js"></script>
+    <script>
+      var system_classes = []
+      var item_classes = [bg_color, ['wo-bgcover'], ['bgcover-fit-cover'], bgcover_padding]
+    </script>
+    <script src="ui/assets/scripts/shuffle.js"></script>
+    <script src="ui/assets/scripts/scroll.js"></script>
+  </body>
+</html>
