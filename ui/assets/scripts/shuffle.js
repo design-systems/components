@@ -5,7 +5,7 @@ var covers = document.querySelectorAll('.Cover img');
 var headlines = document.querySelectorAll('.Headline span');
 var authors = document.querySelectorAll('.Author');
 
-// MOVED TO COMPONENTS var item_classes = [section_size, flex, title_size, text_align, group_align, group_justify, is_bg, bg_fit, bg_size, bg_color, bg_align, bg_justify, bg_padding]
+// MOVED TO COMPONENTS var item_classes = [section_height, flex, title_size, text_align, group_align, group_justify, is_bg, bg_fit, bg_size, bg_color, bg_align, bg_justify, bg_padding]
 
 var sections = document.querySelectorAll('.Section');
 
@@ -57,7 +57,7 @@ function shuffle(){
 function createItemClassList(num){
   var section = sections[num];
 
-  var list = document.createElement('div');
+  var list = document.createElement('span');
   list.classList.add('Class-list');
   list.setAttribute('contenteditable',true);
   section.insertBefore(list,section.firstChild);

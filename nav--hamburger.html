@@ -8,10 +8,10 @@
   </head>
 
 <!-- RAMS -->
-  <body>
+  <body style="height: 4000px;">
     <div class="Header">
       <h3><span>The Components</span></h3>
-      <div class="Shuffle"><img src="ui/assets/images/shuffle.svg" alt=""></div>
+      <div class="Shuffle"></div>
       <select name="system" id="System-input">
         <option value="Rams">Dieter Rams</option>
         <option value="Vignelli">The Vignellis</option>
@@ -21,8 +21,8 @@
       </select>
     </div>
     <div class="System">
-      <section class="Section Section--components-1">
-        <div class="Component Hamburger">
+      <section class="Section Section--components-1 Nav">
+        <div class="Component Nav--hamburger">
           <div class="Group Group--links">
             <div class="Icon"><a href="#menu">☰</a></div>
             <div class="Link">
@@ -45,16 +45,27 @@
       </section>
     </div>
     <script>
-      document.querySelector('.Hamburger .Icon a').addEventListener('click',function(){
-        if(document.querySelector('.Hamburger .Icon a').textContent == "☰"){
-          document.querySelector('.Hamburger .Icon a').textContent = "✕";
-          document.querySelector('.Hamburger').classList.toggle('Active')
+      var Nav = document.querySelector('.Nav')
+      document.querySelector('.Nav--hamburger .Icon a').addEventListener('click',function(){
+        if(document.querySelector('.Nav--hamburger .Icon a').textContent == "☰"){
+          document.querySelector('.Nav--hamburger .Icon a').textContent = "✕";
+          document.querySelector('.Nav--hamburger').classList.toggle('Active')
         }
-        else if(document.querySelector('.Hamburger .Icon a').textContent == "✕") {
-          document.querySelector('.Hamburger .Icon a').textContent = "☰";
-          document.querySelector('.Hamburger').classList.toggle('Active')
+        else if(document.querySelector('.Nav--hamburger .Icon a').textContent == "✕") {
+          document.querySelector('.Nav--hamburger .Icon a').textContent = "☰";
+          document.querySelector('.Nav--hamburger').classList.toggle('Active')
         }
       })
+      window.addEventListener('wheel',scrollDirectionHandler)
+      function scrollDirectionHandler(e) {
+        var scroll = e.deltaY
+        console.log(scroll)
+        if(scroll > 0 && !Nav.classList.contains('Hidden')) {
+          Nav.classList.add('Hidden');
+        }else if(scroll < 0 && Nav.classList.contains('Hidden')){
+          Nav.classList.remove('Hidden');
+        }
+      }
     </script>
     <script src="ui/assets/scripts/fixtures.js"></script>
     <script src="ui/assets/scripts/class-lists.js"></script>

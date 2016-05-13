@@ -29,9 +29,9 @@ CoverCenter_array['Vignelli'] = '70% 43%';
 CoverCenter_array['Bass'] = '43% 22%';
 CoverCenter_array['Brockmann'] = '52% 29%';
 
-var section_size = [
-  'section-size-fullscreen',
-  'section-size-auto'
+var section_height = [
+  'section-height-fullscreen',
+  'section-height-auto'
 ]
 var flex = [
   'flex-row',
