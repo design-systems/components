@@ -48,7 +48,7 @@ button{
   color: #FFF0BA;
   border-radius: 3px;
   letter-spacing: .1rem;
-  margin: 3em 0 0;
+  margin: 2rem 0 1.5rem;
   font-weight: 900;
   font-size: .8rem;
 }
@@ -682,7 +682,8 @@ button{
 
 }
 
-.Vignelli .Headline{
+.Vignelli .flex-row .Group:last-of-type div:last-of-type,
+.Vignelli .flex-col .Group:last-of-type div:last-of-type {
   border-bottom: calc(4px + .5vh) solid;
 }
 
@@ -693,11 +694,11 @@ button{
   padding: 1rem 0 1.5rem;
 }
 
-// .Vignelli .Section--components-1.flex-row.align-end .Attribution,
-// .Vignelli .Section--components-1.flex-row-reverse.align-end .Attribution {
-//   border-top: none;
-//   border-bottom: calc(4px + .5vh) solid;
-// }
+.Vignelli .flex-row.align-end .Attribution:only-of-type,
+.Vignelli .flex-row-reverse.align-end .Attribution:only-of-type {
+  border-top: none;
+  border-bottom: calc(4px + .5vh) solid;
+}
 
 /* Brockmann DESIGN SYSTEM
 **************************/
