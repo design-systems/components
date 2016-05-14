@@ -387,7 +387,7 @@ button{
 .w-bgcover .Group,
 .and-bgcover .Group:not(.Group--graphical){
   background: #FFF0BA;
-  width: auto;
+  // width: auto;
   min-width: auto;
   opacity: .9;
 }
@@ -633,9 +633,16 @@ button{
   padding-top: 11px;
 }
 
+.Article .Group {
+  // width: 100% !important;
+}
 .Article .Cover img {
-  object-fit: contain;
+  object-fit: cover;
   max-height: 70vh;
+}
+
+.Article .Group--Column .Cover img {
+  margin-top: .9em;
 }
 
 .Article .Cover{
@@ -645,13 +652,24 @@ button{
 .Article .Quote {
   font-size: 1.8rem;
   font-style: italic;
-  padding-left: 2rem;
+  padding-left: 2em;
   line-height: 1.3;
   border-left: 8px solid;
   text-align: left;
   font-weight: 700;
+  margin-bottom: 2em;
 }
 
+.Article.w-bgcover .Component {
+  padding-top: 50vh !important;
+}
+
+.Article.and-bgcover .Bg{
+  max-height: 50vh !important;
+}
+.Article.and-bgcover .Component{
+  padding-top: 20vh !important;
+}
 
 
 /* RAMS DESIGN SYSTEM
