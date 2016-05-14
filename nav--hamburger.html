@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 
 <html>
   <head>
@@ -12,7 +11,7 @@
     <div class="Header">
       <h3><span>The Components</span></h3>
       <div class="Shuffle"></div>
-      <select name="system" id="System-input">
+      <select name="system" id="System-input" style="display: none">
         <option value="Rams">Dieter Rams</option>
         <option value="Vignelli">The Vignellis</option>
         <option value="Bass">Saul Bass</option>
@@ -45,24 +44,44 @@
       </section>
     </div>
     <script>
-      var Nav = document.querySelector('.Nav')
-      document.querySelector('.Nav--hamburger .Icon a').addEventListener('click',function(){
-        if(document.querySelector('.Nav--hamburger .Icon a').textContent == "☰"){
-          document.querySelector('.Nav--hamburger .Icon a').textContent = "✕";
-          document.querySelector('.Nav--hamburger').classList.toggle('Active')
+      var touchStartY;
+      var touchMoved;
+      var scrollTop;
+      var oldScrollTop;
+      var Nav = document.querySelector('.Nav');
+      var HamburgerContainer = document.querySelector('.Nav--hamburger');
+      var HamburgerIcon = HamburgerContainer.querySelector('.Icon a');
+
+      HamburgerIcon.addEventListener('click',hamburgerClickHandler);
+      window.addEventListener('touchmove',scrollDirectionHandler)
+      Nav.addEventListener('wheel',navScrollHandler);
+      window.addEventListener('wheel',scrollDirectionHandler);
+      window.addEventListener('mousemove',mousemoveHandler);
+      function navScrollHandler(e) {
+        e.stopPropagation();
+      }
+      function hamburgerClickHandler() {
+        if(HamburgerIcon.textContent == "☰"){
+          HamburgerIcon.textContent = "✕";
+          HamburgerContainer.classList.add('Active');
         }
-        else if(document.querySelector('.Nav--hamburger .Icon a').textContent == "✕") {
-          document.querySelector('.Nav--hamburger .Icon a').textContent = "☰";
-          document.querySelector('.Nav--hamburger').classList.toggle('Active')
+        else if(HamburgerIcon.textContent == "✕") {
+          HamburgerIcon.textContent = "☰";
+          HamburgerContainer.classList.remove('Active');
+          HamburgerContainer.scrollTop = 0;
         }
-      })
-      window.addEventListener('wheel',scrollDirectionHandler)
+      }
       function scrollDirectionHandler(e) {
-        var scroll = e.deltaY
-        console.log(scroll)
-        if(scroll > 0 && !Nav.classList.contains('Hidden')) {
+        oldScrollTop = scrollTop;
+        scrollTop = document.body.scrollTop;
+        if(scrollTop > oldScrollTop && !Nav.classList.contains('Hidden')) {
           Nav.classList.add('Hidden');
-        }else if(scroll < 0 && Nav.classList.contains('Hidden')){
+        }else if(scrollTop < oldScrollTop && Nav.classList.contains('Hidden')){
+          Nav.classList.remove('Hidden');
+        }
+      }
+      function mousemoveHandler(e) {
+        if(e.pageY - document.body.scrollTop < 100 && Nav.classList.contains('Hidden')){
           Nav.classList.remove('Hidden');
         }
       }

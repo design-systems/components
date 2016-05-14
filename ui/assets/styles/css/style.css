@@ -217,6 +217,7 @@ button{
 .Nav--hamburger.Active {
   width: 100vw;
   height: 100vh;
+  overflow: auto;
 }
 .Section.Nav{
   transition: .3s ease-out;
