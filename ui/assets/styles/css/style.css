@@ -40,7 +40,7 @@ p {
   line-height: 1.4;
   margin: 1em 0;
   font-size: 1.1rem;
-  text-align: justify;
+  text-align: left;
 }
 button{
   border: none;
@@ -117,7 +117,11 @@ button{
 }
 
 .Headline {
+  margin: 1em 0 1em 0;
+}
 
+.Headline:only-of-type {
+  margin: 0;
 }
 
 .Headline h1 {
@@ -134,6 +138,14 @@ button{
 
 .Attribution .Source {
 
+}
+
+.Attribution {
+  margin: 1em 0 1em 0;
+}
+
+.Attribution:only-of-type {
+  margin: 0;
 }
 
 .Group{
@@ -153,10 +165,6 @@ button{
 
 .Group:not(.Group--graphical), {
   z-index: 10;
-}
-
-.Group--textual .Attribution {
-  margin: 0 0 1em 0;
 }
 
 .Group--links a{
@@ -590,6 +598,23 @@ button{
   color: #271325;
 }
 
+/* Articles
+***********************************/
+
+.Article p {
+  font-size: 1.2rem;
+  font-family: 'Georgia', 'Times', '_serif';
+  line-height: 1.6;
+}
+
+.Article .Cover img {
+  object-fit: contain;
+  max-height: 70vh;
+}
+
+.Article .Cover{
+  width: auto;
+}
 
 
 /* RAMS DESIGN SYSTEM
@@ -737,10 +762,10 @@ button{
   /* Section Desktop Resets
   **************************/
 
-  .Section--components-4 p,
-  .Section--components-5 p,
-  .Section--components-6 p {
-    text-align: inherit;
+  .Section--components-1 p,
+  .Section--components-2 p,
+  .Section--components-3 p {
+    text-align: justify;
   }
   .Section:not(.Section--components-1) .Component .Bg  {
     padding: 8px 0 8px 8px;
@@ -748,8 +773,8 @@ button{
   .Section--components-1 .Group{
     width: 50%;
   }
-  .Section--components-1.flex-row .Group,
-  .Section--components-1.flex-row-reverse .Group  {
+  .Section--components-1:not(.Article).flex-row .Group,
+  .Section--components-1:not(.Article).flex-row-reverse .Group  {
     flex: 1;
   }
   .Section:not(.Section--components-1):not(.Section--components-2) .Component .Group {
@@ -866,12 +891,12 @@ button{
 
   .flex-row .Component{
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
   }
 
   .flex-row-reverse .Component{
     display: flex;
-    flex-flow: row-reverse;
+    flex-flow: row-reverse wrap;
   }
   .flex-col-reverse .Component{
     display: flex;
