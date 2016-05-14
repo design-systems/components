@@ -122,3 +122,9 @@ var bgcover_padding = [
   'bgcover-padding-medium',
   'bgcover-padding-large'
 ]
+var dropcap_size = [
+  'dropcap-size-3',
+  'dropcap-size-4',
+  'dropcap-size-5',
+  'dropcap-size-6'
+]
