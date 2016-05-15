@@ -96,6 +96,15 @@ function applyClasses(num) {
   var list = section.querySelector('.Class-list')
   var items = list.querySelectorAll('li');
   var myClass = 'Section Section--components-' + section.querySelectorAll('.Component').length + " ";
+  if(section.classList.contains('Article')){
+    myClass = myClass + "Article "
+  }
+  if(section.classList.contains('Nav')){
+    myClass = myClass + "Nav "
+  }
+  if(section.classList.contains('Footer')){
+    myClass = myClass + "Footer "
+  }
   for (var i=0;i<items.length;i++){
     myClass += items[i].textContent;
     if(myClass.substr(myClass.length-1) != " "){
