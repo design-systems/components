@@ -863,7 +863,7 @@ button{
   }
   .Section--components-1:not(.Article).flex-row .Group,
   .Section--components-1:not(.Article).flex-row-reverse .Group  {
-    flex: 1;
+    flex: 1 1 33.333%;
   }
   .Section:not(.Section--components-1):not(.Section--components-2) .Component .Group {
     padding: 1vw;
