@@ -7,7 +7,8 @@
   var itemTops; // array holds item top position
 
   var isTouchDevice;
-  var covers = document.querySelectorAll('.Cover');
+  var bg = document.querySelector('.Bg .Cover img');
+  var bgStartY = bg.style.objectPosition.substr(bg.style.objectPosition.indexOf(' ')+1, 2);
   resizeHandler(); // Calculate sizes right away
   // EVENTS
   /////////
@@ -29,28 +30,21 @@
   // })
 
   function scrollHandler() {
-    // var oldScrollTop = scrollTop;
-    // scrollTop = document.body.scrollTop;
-
-    // if(oldScrollTop != scrollTop){
-    //   var nextMove = scrollTop - oldScrollTop;
-    //   shiftCovers();
-    // }
+    scrollTop = document.body.scrollTop;
+    shiftCover();
   }
 
   function setCoverTop(argument) {
     // body...
   }
 
-  function shiftCovers() {
-    for(var i=0;i<covers.length;i++){
-      var cover = covers[i];
-      // var newTop = Math.floor(cover.parentNode.parentNode.getBoundingClientRect().top + (scrollTop/20))
-      // console.log(cover.parentNode.parentNode.getBoundingClientRect().top - (scrollTop/15))
-      // cover.style.WebkitTransform = 'translate3d(0,'+ newTop + 'px,0)'
-    }
+  function shiftCover() {
+    bg.style.webkitTransform = 'translate3d(0,'+scrollTop/3+'px,0)';
+    bg.style.webkitTransitionDuration = '0s';
   }
-
+  function replaceRange(s, start, end, substitute) {
+      return s.substring(0, start) + substitute + s.substring(end);
+  }
   function resizeHandler () { // Set the size of images and preload them
     _winW = window.width;
     _winW = window.height;
@@ -60,6 +54,6 @@
     }else{
       smallScreen = true;
     }
-    shiftCovers();
+    shiftCover();
   }
 })()
