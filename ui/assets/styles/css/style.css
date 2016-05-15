@@ -43,6 +43,9 @@ p {
   font-size: 1.1rem;
   text-align: left;
 }
+p:first-of-type {
+  margin: 0 0 1em;
+}
 button{
   border: none;
   outline: none;
@@ -145,6 +148,10 @@ button{
   margin: 1em 0 1em 0;
 }
 
+.Attribution:first-of-type {
+  margin: 0em 0 1em 0;
+}
+
 .Attribution:only-of-type {
   margin: 0;
 }
@@ -243,6 +250,7 @@ button{
 
 .Component {
   flex-wrap: wrap;
+  margin-bottom: 4rem;
 }
 
 .Section {
@@ -427,10 +435,6 @@ button{
   width: 100%;
   height: 100%;
   top: -9px;
-}
-
-.Section--components-1.w-bgcover .Group{
-  max-width: 66.666%;
 }
 
 .Bg {
@@ -721,6 +725,11 @@ button{
 .Bass .Group {
   background: transparent !important;
 }
+.Bass .Section--components-5.w-bgcover .Component .Group,
+.Bass .Section--components-6.w-bgcover .Component .Group {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 .Bass .Headline span,
 .Bass .Attribution span,
 .Bass .Quote span{
@@ -844,10 +853,13 @@ button{
     text-align: justify;
   }
   .Section:not(.Section--components-1) .Component .Bg  {
-    padding: 8px 0 8px 8px;
+    padding: 8px 4px 8px 4px;
   }
   .Section--components-1 .Group{
     width: 50%;
+  }
+  .Section--components-1.w-bgcover .Group{
+    max-width: 66.666%;
   }
   .Section--components-1:not(.Article).flex-row .Group,
   .Section--components-1:not(.Article).flex-row-reverse .Group  {
@@ -872,6 +884,7 @@ button{
     flex-flow: column-reverse;
   }
   .Section .Component {
+    margin-bottom: 0;
     display: flex;
     position: relative;
     width: 100%;
