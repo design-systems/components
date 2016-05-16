@@ -6,7 +6,7 @@ Archetypes_array[3] = 'Brockmann';
 // Archetypes_array[3] = 'Escher';
 
 var section_h_padding = [
-  // 'section-h-padding-none',
+  'section-h-padding-none',
   // 'section-h-padding-xxsmall',
   'section-h-padding-xsmall',
   'section-h-padding-small',
@@ -38,6 +38,12 @@ var flex = [
   'flex-col',
   'flex-col-reverse',
   'flex-row-reverse',
+]
+var group_flex = [
+  'group-flex-row',
+  'group-flex-col',
+  // 'flex-col-reverse',
+  // 'flex-row-reverse',
 ]
 var title_size = [
   'title-size-xxsmall',

@@ -179,7 +179,6 @@ button{
   text-decoration: none;
 }
 .Group--links {
-  padding: 3em 0 0 0;
   width: 100% !important;
   max-width: none;
 }
@@ -190,6 +189,78 @@ button{
   // font-size: 5em;
   transition: .3s ease-out;
 }
+
+
+
+/* Nav
+**************************/
+
+
+.Section.Nav{
+  transition: .3s ease-out;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid #93806F;
+  padding: 0vw;
+}
+.Section.Nav .Component {
+  margin: 0;
+}
+.Section.Nav.Hidden {
+  transition: .3s ease-in;
+  transform: translate3d(0,-100%,0);
+}
+
+
+/* Nav List
+**************************/
+
+.Nav--list-row{
+  transition: .4s ease-out;
+  height: 62px;
+  overflow: auto;
+  padding: 0;
+  width: 100%;
+}
+.Section.text-align-left .Nav--list-row .Group--links .Icon{
+  margin-left: 4vw;
+}
+.Section.text-align-center .Nav--list-row .Group--links .Icon{
+  left: 50%;
+  transform: translate3d(-50%,0,0);
+}
+.Section.text-align-right .Nav--list-row .Group--links .Icon{
+  margin-right: 4vw;
+  right: 0;
+}
+.Nav--list-row .Group--links .Link{
+  opacity: 1;
+  margin: .2rem 2rem 0;
+  transform: rotateX(20deg);
+  display: inline-block;
+  // transform-origin: 0 50%;
+}
+.Nav--list-row .Group--links .Icon {
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+  font-size: 1.25em;
+  top: 16px;
+}
+
+.Nav--list-row.Active .Group--links .Link {
+  opacity: 1;
+  transform: translate3d(0,.5em,0);
+}
+
+.Nav--list-row.Active {
+  height: 100vh;
+  overflow: auto;
+}
+
+/* Nav Hamburger
+**************************/
 
 .Nav--hamburger{
   transition: .4s ease-out;
@@ -224,8 +295,8 @@ button{
   top: 16px;
 }
 
-.Nav--hamburger.Active .Group--links {
-
+.Nav--hamburger .Group--links {
+  padding: 3em 0 0 0;
 }
 
 .Nav--hamburger.Active .Group--links .Link {
@@ -237,16 +308,9 @@ button{
   height: 100vh;
   overflow: auto;
 }
-.Section.Nav{
-  transition: .3s ease-out;
-  position: fixed;
-  width: 100%;
-  border-bottom: 1px solid #93806F;
-}
-.Section.Nav.Hidden {
-  transition: .3s ease-in;
-  transform: translate3d(0,-100%,0);
-}
+
+/* Section Height
+**************************/
 
 .Component {
   flex-wrap: wrap;
@@ -342,7 +406,7 @@ button{
 .justify-start .Component{
   justify-content: flex-start;
 }
-.justify-center.Section--components-1 .Component{
+.justify-center .Component{
   justify-content: center;
 }
 .justify-end .Component{
@@ -351,7 +415,7 @@ button{
 .justify-between .Component{
   justify-content: space-between;
 }
-.justify-around.Section--components-1 .Component{
+.justify-around .Component{
   justify-content: space-around;
 }
 
@@ -388,8 +452,8 @@ button{
 .w-bgcover .Group--graphical{
   display: none;
 }
-.w-bgcover .Group,
-.and-bgcover .Group {
+.w-bgcover:not(.Article) .Group,
+.and-bgcover:not(.Article) .Group {
   padding: 2vh 2vw;
 }
 .w-bgcover .Group,
@@ -1013,17 +1077,17 @@ button{
     font-size: 1rem !important;
   }
 
-  .title-size-xxsmall h1,
-  .title-size-xxsmall h1{
+  .Section.title-size-xxsmall h1,
+  .Section.title-size-xxsmall h1{
     font-size: 1rem;
   }
-  .title-size-xsmall h1{
+  .Section.title-size-xsmall h1{
     font-size: 1.25rem;
   }
-  .title-size-small h1{
+  .Section.title-size-small h1{
     font-size: 1.5rem;
   }
-  .title-size-medium h1{
+  .Section.title-size-medium h1{
     font-size: 2rem;
   }
 
@@ -1047,10 +1111,8 @@ button{
 
   /* Section Padding
   **************************/
-
   .section-h-padding-none .Section{
-    padding-left: 0;
-    padding-right: 0;
+    padding: 2vw;
   }
   .section-h-padding-xxsmall .Section{
     padding-left: 2vw;
@@ -1076,10 +1138,8 @@ button{
     padding-left: 15vw;
     padding-right: 15vw;
   }
-
   .section-v-padding-none .Section{
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 2vw;
   }
   .section-v-padding-xsmall .Section{
     padding-top: 2vw;
@@ -1101,9 +1161,20 @@ button{
     padding-top: 8vw;
     padding-bottom: 8vw;
   }
+
+  .section-h-padding-none .Section--components-1:not(.Article){
+    padding: 0;
+  }
+  .section-h-padding-none .Section--components-1:not(.Article) .Component{
+    padding: 0;
+  }
+  .section-h-padding-none .Section--components-1:not(.Article) .Component .Group--graphical{
+    padding: 0;
+  }
+  .section-h-padding-none .Section--components-1:not(.Article):not(.flex-row):not(.flex-row-reverse) .Component .Group:not(.Group--graphical){
+    padding: 4vw 8vw;
+  }
 }
-
-
 
 
 /* RULES SCRATCH
@@ -1124,9 +1195,7 @@ text-size contrast
 color contrast
 
 
-
 */
-
 
 
 /* DEMO UI */
