@@ -48,28 +48,32 @@
       var touchMoved;
       var scrollTop;
       var oldScrollTop;
+      var _winW;
+      var _winH;
       var Nav = document.querySelector('.Nav');
-      var HamburgerContainer = document.querySelector('.Nav--list-row');
-      var HamburgerIcon = HamburgerContainer.querySelector('.Icon a');
+      var NavContainer = document.querySelector('.Nav--list-row');
+      var NavIcon = NavContainer.querySelector('.Icon a');
+      var _navW = NavContainer.querySelector('.Link:last-of-type').getBoundingClientRect().right;
 
-      HamburgerIcon.addEventListener('click',hamburgerClickHandler);
+      NavIcon.addEventListener('click',navClickHandler);
       window.addEventListener('touchmove',scrollDirectionHandler)
       Nav.addEventListener('wheel',navScrollHandler);
       window.addEventListener('wheel',scrollDirectionHandler);
       window.addEventListener('mousemove',mousemoveHandler);
       window.addEventListener('resize',resizeHandler);
+      resizeHandler()
       function navScrollHandler(e) {
         e.stopPropagation();
       }
-      function hamburgerClickHandler() {
-        if(HamburgerIcon.textContent == "☰"){
-          HamburgerIcon.textContent = "✕";
-          HamburgerContainer.classList.add('Active');
+      function navClickHandler() {
+        if(NavIcon.textContent == "☰"){
+          NavIcon.textContent = "✕";
+          NavContainer.classList.add('Active');
         }
-        else if(HamburgerIcon.textContent == "✕") {
-          HamburgerIcon.textContent = "☰";
-          HamburgerContainer.classList.remove('Active');
-          HamburgerContainer.scrollTop = 0;
+        else if(NavIcon.textContent == "✕") {
+          NavIcon.textContent = "☰";
+          NavContainer.classList.remove('Active');
+          NavContainer.scrollTop = 0;
         }
       }
       function scrollDirectionHandler(e) {
@@ -86,8 +90,20 @@
           Nav.classList.remove('Hidden');
         }
       }
-      function resizeHandler(e) {
-        // body...
+      function resizeHandler () { // Set the size of images and preload them
+        _winW = window.innerWidth;
+        _winH = window.innerHeight;
+
+        if(_winW > 1000){
+          smallScreen = false;
+        }else{
+          smallScreen = true;
+        }
+        if(_navW > _winW) {
+          NavContainer.classList.add('nav-overflow')
+        }else{
+          NavContainer.classList.remove('nav-overflow')
+        }
       }
     </script>
     <script src="ui/assets/scripts/fixtures.js"></script>
