@@ -20,7 +20,7 @@
       </select>
     </div>
     <div class="System">
-      <section class="Section Section--components-1 Nav">
+      <section class="Section Section--components-1 Section--nav">
         <div class="Component Nav--list-row">
           <div class="Group Group--links">
             <div class="Icon"><a href="#menu">☰</a></div>
@@ -50,7 +50,7 @@
       var oldScrollTop;
       var _winW;
       var _winH;
-      var Nav = document.querySelector('.Nav');
+      var Nav = document.querySelector('.Section--nav');
       var NavContainer = document.querySelector('.Nav--list-row');
       var NavIcon = NavContainer.querySelector('.Icon a');
       var _navW = NavContainer.querySelector('.Link:last-of-type').getBoundingClientRect().right;
@@ -106,13 +106,11 @@
         }
       }
     </script>
-    <script src="ui/assets/scripts/fixtures.js"></script>
     <script src="ui/assets/scripts/class-lists.js"></script>
     <script>
       var system_classes = []
       var item_classes = [bg_color, ['title-size-xxsmall'], text_align]
     </script>
     <script src="ui/assets/scripts/shuffle.js"></script>
-    <script src="ui/assets/scripts/scroll.js"></script>
   </body>
 </html>

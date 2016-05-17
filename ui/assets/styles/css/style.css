@@ -190,13 +190,28 @@ button{
   transition: .3s ease-out;
 }
 
+.Component {
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.Section {
+  width: 100%;
+  padding: 4vw;
+  position: relative;
+  display: block;
+  align-items: stretch;
+  transition: .6s ease-in-out;
+}
+
 
 
 /* Nav
 **************************/
 
 
-.Section.Nav{
+.Section--nav{
   transition: .3s ease-out;
   position: fixed;
   width: 100%;
@@ -206,14 +221,14 @@ button{
   left: 0;
   z-index: 10;
 }
-.Section.Nav .Component {
+.Section--nav .Component {
   margin: 0;
 }
-.Section.Nav.Hidden {
+.Section--nav.Hidden {
   transition: .3s ease-in;
   transform: translate3d(0,-100%,0);
 }
-.Section.Nav .Class-list {
+.Section--nav .Class-list {
   display: none;
 }
 
@@ -341,42 +356,28 @@ button{
   overflow: auto;
 }
 
-/* Section Height
+/* Section Footer
 **************************/
 
-.Component {
-  flex-wrap: wrap;
-  margin-bottom: 4rem;
-}
-
-.Section {
-  width: 100%;
-  padding: 4vw;
-  position: relative;
-  display: block;
-  align-items: stretch;
-  transition: .6s ease-in-out;
-}
-
-.Section.Footer {
+.Section--footer {
   position: fixed;
   bottom: 0;
   border-top: 1px solid #93806F;
   // padding: 4vw;
 }
 
-.Section.Footer .Group {
+.Section--footer .Group {
   margin: 0 2vw 0 0;
   padding: 0 !important;
 }
-.Section.Footer .Component {
+.Section--footer .Component {
   flex: 1;
 }
-.Section.Footer .Component:first-of-type {
+.Section--footer .Component:first-of-type {
   flex: 2;
   padding-right: 2vw;
 }
-.Section.Footer .Component:not(:last-of-type):after {
+.Section--footer .Component:not(:last-of-type):after {
   content: "";
   z-index: 11;
   position: absolute;
@@ -386,10 +387,10 @@ button{
   border-right: 1px solid;
   opacity: .2;
 }
-.Section.Footer .Link {
+.Section--footer .Link {
   margin: 0 3vw 1.5rem;
 }
-.Section.Footer .Link a{
+.Section--footer .Link a{
   font-weight: 200;
 }
 
@@ -480,8 +481,8 @@ button{
 .w-bgcover .Group--graphical{
   display: none;
 }
-.w-bgcover:not(.Article) .Group,
-.and-bgcover:not(.Article) .Group {
+.w-bgcover:not(.Section--article) .Group,
+.and-bgcover:not(.Section--article) .Group {
   padding: 2vh 2vw;
 }
 .w-bgcover .Group,
@@ -501,10 +502,10 @@ button{
 .Section--components-2.w-bgcover .Component,
 .Section--components-3.w-bgcover .Component,
 .Section--components-1.and-bgcover .Component,
-.Section--components-2.and-bgcover .Component,
-.Section--components-3.and-bgcover .Component    {
+.Section--components-2.and-bgcover .Component {
   padding: 4vw !important;
 }
+.Section--components-3.and-bgcover .Component,
 .Section--components-4.w-bgcover .Component,
 .Section--components-5.w-bgcover .Component,
 .Section--components-6.w-bgcover .Component   {
@@ -515,7 +516,6 @@ button{
   width: 100% !important;
   height: 100% !important;
   left: 0 !important;
-  top: 0 !important;
   transform: translate3d(0,0,0) !important;
 }
 .Section--components-1.and-bgcover .Bg .Cover {
@@ -533,7 +533,6 @@ button{
   position: absolute;
   padding: 0;
   left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   transition: .6s ease-in-out;
@@ -542,7 +541,6 @@ button{
   position: relative;
   width: 100%;
   height: 100%;
-  max-height: 80vh;
 }
 .Bg .Cover img{
   width: 100%;
@@ -701,14 +699,14 @@ button{
 /* Articles
 ***********************************/
 
-.Article p {
+.Section--article p {
   font-size: 1.2rem;
   font-family: 'Georgia', 'Times', '_serif';
   line-height: 1.618;
   margin-top: 2em;
 }
 
-.Article p:first-child:first-letter {
+.Section--article p:first-child:first-letter {
   float: left;
   font-size: 6.85rem;
   line-height: 5rem;
@@ -720,33 +718,33 @@ button{
   margin-left: -8px;
   position: relative;
 }
-.Article p.Dropcap--3:first-child:first-letter {
+.Section--article p.Dropcap--3:first-child:first-letter {
   font-size: 6.85rem;
 }
 
-.Article p.Dropcap--4:first-child:first-letter {
+.Section--article p.Dropcap--4:first-child:first-letter {
   font-size: 9.5rem;
   line-height: 6rem;
   padding-top: 11px;
 }
 
-.Article .Group {
-  // width: 100% !important;
+.Section--article .Bg{
+  top: 0;
 }
-.Article .Cover img {
+.Section--article .Cover img {
   object-fit: cover;
   max-height: 80vh;
 }
 
-.Article .Group--Column .Cover img {
+.Section--article .Group--Column .Cover img {
   margin-top: .9em;
 }
 
-.Article .Cover{
+.Section--article .Cover{
   width: auto;
 }
 
-.Article .Quote {
+.Section--article .Quote {
   font-size: 1.8rem;
   font-style: italic;
   padding-left: 2em;
@@ -757,14 +755,14 @@ button{
   margin-bottom: 2em;
 }
 
-.Article.w-bgcover .Component {
+.Section--article.w-bgcover .Component {
   padding-top: 35vh !important;
 }
 
-.Article.and-bgcover .Bg{
+.Section--article.and-bgcover .Bg{
   max-height: 50vh !important;
 }
-.Article.and-bgcover .Component{
+.Section--article.and-bgcover .Component{
   padding-top: 20vh !important;
 }
 
@@ -861,7 +859,7 @@ button{
 }
 .Bass .w-bgcover.bg-color-none p {
   background: #FFF0BA;
-  padding: 1.5vw;
+  padding: 1.5vw !important;
 }
 .Bass p {
   padding: 0 !important;
@@ -878,9 +876,11 @@ button{
 .Vignelli section {
 
 }
-
-.Vignelli .flex-row .Group:last-of-type div:last-of-type,
-.Vignelli .flex-col .Group:last-of-type div:last-of-type {
+.Vignelli .flex-col .Group:last-of-type:not(.Group--graphical) div:last-of-type,
+.Vignelli .flex-row:not(.Section--components-1) .Group:last-of-type:not(.Group--graphical) div:last-of-type {
+  border-bottom: calc(4px + .5vh) solid;
+}
+.Vignelli .flex-row.Section--components-1 .Group:not(.Group--graphical) div:last-of-type {
   border-bottom: calc(4px + .5vh) solid;
 }
 
@@ -936,6 +936,10 @@ button{
 
 @media screen and (min-width: 960px) {
 
+  .Bg .Cover {
+    max-height: 80vh;
+  }
+
   /* Section Desktop Resets
   **************************/
 
@@ -953,8 +957,8 @@ button{
   .Section--components-1.w-bgcover .Group{
     max-width: 66.666%;
   }
-  .Section--components-1:not(.Article).flex-row .Group,
-  .Section--components-1:not(.Article).flex-row-reverse .Group  {
+  .Section--components-1:not(.Section--article).flex-row .Group,
+  .Section--components-1:not(.Section--article).flex-row-reverse .Group  {
     flex: 1 1 33.333%;
   }
   .Section:not(.Section--components-1):not(.Section--components-2) .Component .Group {
@@ -1190,16 +1194,16 @@ button{
     padding-bottom: 8vw;
   }
 
-  .section-h-padding-none .Section--components-1:not(.Article){
+  .section-h-padding-none .Section--components-1.groups-2{
     padding: 0;
   }
-  .section-h-padding-none .Section--components-1:not(.Article) .Component{
+  .section-h-padding-none .Section--components-1.groups-2 .Component{
     padding: 0;
   }
-  .section-h-padding-none .Section--components-1:not(.Article) .Component .Group--graphical{
+  .section-h-padding-none .Section--components-1.groups-2 .Component .Group--graphical{
     padding: 0;
   }
-  .section-h-padding-none .Section--components-1:not(.Article):not(.flex-row):not(.flex-row-reverse) .Component .Group:not(.Group--graphical){
+  .section-h-padding-none .Section--components-1.groups-2 .Component .Group:not(.Group--graphical){
     padding: 4vw 8vw;
   }
 }
@@ -1231,7 +1235,7 @@ color contrast
 .System {
   margin-top: 70px;
 }
-.Section.Nav {
+.Section--nav {
   top: 70px;
 }
 .Class-list {
@@ -1242,7 +1246,7 @@ color contrast
   z-index: 10;
   display: inline-block;
   width: 36px;
-  font-size: .9em;
+  font-size: 1em;
   bottom: 4vw;
   right: 4vw;
   text-align: left;

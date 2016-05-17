@@ -5,9 +5,12 @@ var covers = document.querySelectorAll('.Cover img');
 var headlines = document.querySelectorAll('.Headline span');
 var authors = document.querySelectorAll('.Author');
 
-// MOVED TO COMPONENTS var item_classes = [section_height, flex, title_size, text_align, group_align, group_justify, is_bg, bg_fit, bg_size, bg_color, bg_align, bg_justify, bg_padding]
-
 var sections = document.querySelectorAll('.Section');
+var sectionClasses = []
+for (var i = 0;i< sections.length; i++) {
+  sectionClasses[i] = sections[i].classList + ' ';
+}
+// adjust if multiple sections
 
 document.querySelector('#System-input').addEventListener("change", function(){
   system = document.querySelector('#System-input').value;
@@ -25,37 +28,34 @@ function changeSystem() {
   }
 }
 function changePhotos() {
+  var headline = Headlines_array[Math.floor(Math.random() * Headlines_array.length)];
+  var author = Authors_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]];
+  var myPhoto = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
   for (var i=0; i<covers.length; i++ ) {
-    var myPhoto = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
     covers[i].style.objectPosition = CoverCenter_array[myPhoto]
     covers[i].setAttribute('src','ui/assets/images/'+myPhoto+'.jpg');
   }
   for (var i=0; i<headlines.length; i++ ) {
-    headlines[i].textContent = Headlines_array[Math.floor(Math.random() * Headlines_array.length)]
+    headlines[i].textContent = headline;
   }
   for (var i=0; i<authors.length; i++ ) {
-    authors[i].textContent = Authors_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]]
+    authors[i].textContent = author
   }
 }
 
-system_el.className = "System "+ system
-
 function init(){
-  for (var i=0; i<sections.length; i++ ) {
-    createItemClassList(i);
-  }
+  system_el.className = "System "+ system
+  createItemClassList();
   changeSystem()
 }
 function shuffle(){
   system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
   changeSystem();
-  for (var i=0; i<sections.length; i++ ) {
-    shuffleItemClassList(i);
-  }
+  shuffleItemClassList();
 }
 
-function createItemClassList(num){
-  var section = sections[num];
+function createItemClassList(){
+  var section = sections[0];
 
   var list = document.createElement('span');
   list.classList.add('Class-list');
@@ -67,50 +67,47 @@ function createItemClassList(num){
     var newClass = item_classes[i][Math.floor(Math.random()*item_classes[i].length)];
     listItem.innerHTML = newClass;
     list.appendChild(listItem);
-    section.classList.add(newClass);
+    for (var j=0; j<sections.length; j++ ) {
+      sections[j].classList.add(newClass);
+    }
   }
 
   list.addEventListener('keypress',function(e){
     if (e.keyCode == 13) {
       e.preventDefault();
-      applyClasses(num);
+      applyClasses();
     }
   })
 }
-function shuffleItemClassList(num){
-  var section = sections[num];
+function shuffleItemClassList(){
+  var section = sections[0];
 
-  var list = section.querySelector('.Class-list')
+  var list = sections[0].querySelector('.Class-list')
 
   for (var i=0; i<item_classes.length; i++){
     var listItem = list.querySelectorAll('li')[i];
     var newClass = item_classes[i][Math.floor(Math.random()*item_classes[i].length)];
     listItem.innerHTML = newClass;
-    section.classList.add(newClass);
-  }
-  applyClasses(num);
-}
-function applyClasses(num) {
-  var section = sections[num];
-
-  var list = section.querySelector('.Class-list')
-  var items = list.querySelectorAll('li');
-  var myClass = 'Section Section--components-' + section.querySelectorAll('.Component').length + " ";
-  if(section.classList.contains('Article')){
-    myClass = myClass + "Article "
-  }
-  if(section.classList.contains('Nav')){
-    myClass = myClass + "Nav "
-  }
-  if(section.classList.contains('Footer')){
-    myClass = myClass + "Footer "
-  }
-  for (var i=0;i<items.length;i++){
-    myClass += items[i].textContent;
-    if(myClass.substr(myClass.length-1) != " "){
-      myClass = myClass + ' '
+    for (var j=0; j<sections.length; j++ ) {
+      sections[j].classList.add(newClass);
     }
   }
-  section.className = myClass;
+  applyClasses();
+}
+function applyClasses() {
+  var section = sections[0];
+
+  var list = sections[0].querySelector('.Class-list')
+  var items = list.querySelectorAll('li');
+  for (var j=0; j<sections.length; j++ ) {
+    var myClass = sectionClasses[j];
+    for (var i=0;i<items.length;i++){
+      myClass += items[i].textContent;
+      if(myClass.substr(myClass.length-1) != " "){
+        myClass = myClass + ' '
+      }
+    }
+    sections[j].className = myClass;
+  }
 }
 init()

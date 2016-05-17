@@ -20,7 +20,7 @@
       </select>
     </div>
     <div class="System">
-      <section class="Section Section--components-1 Nav">
+      <section class="Section Section--components-1 Section--nav">
         <div class="Component Nav--hamburger">
           <div class="Group Group--links">
             <div class="Icon"><a href="#menu">☰</a></div>
@@ -48,7 +48,7 @@
       var touchMoved;
       var scrollTop;
       var oldScrollTop;
-      var Nav = document.querySelector('.Nav');
+      var Nav = document.querySelector('.Section--nav');
       var HamburgerContainer = document.querySelector('.Nav--hamburger');
       var HamburgerIcon = HamburgerContainer.querySelector('.Icon a');
 
@@ -86,13 +86,11 @@
         }
       }
     </script>
-    <script src="ui/assets/scripts/fixtures.js"></script>
     <script src="ui/assets/scripts/class-lists.js"></script>
     <script>
       var system_classes = []
       var item_classes = [bg_color, title_size, text_align, ['wo-bgcover'], ['bgcover-fit-cover'], bgcover_padding]
     </script>
     <script src="ui/assets/scripts/shuffle.js"></script>
-    <script src="ui/assets/scripts/scroll.js"></script>
   </body>
 </html>
