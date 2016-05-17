@@ -483,7 +483,7 @@ button{
 }
 .w-bgcover:not(.Section--article) .Group,
 .and-bgcover:not(.Section--article) .Group {
-  padding: 2vh 2vw;
+  padding: 2rem 2vw;
 }
 .w-bgcover .Group,
 .and-bgcover .Group:not(.Group--graphical){
@@ -836,9 +836,9 @@ button{
 .Bass .Quote:before{
   content: "“";
   position: absolute;
-  left: -60px;
-  font-size: 5em;
-  margin-top: -36px;
+  left: -23px;
+  font-size: 2em;
+  margin-top: -14px;
   font-weight: 200;
 }
 .Bass .Attribution {
@@ -857,13 +857,23 @@ button{
   background: #FFF0BA;
   color: #271325;
 }
-.Bass .w-bgcover.bg-color-none p {
+.Bass .w-bgcover.bg-color-none .Paragraph {
   background: #FFF0BA;
   padding: 1.5vw !important;
 }
 .Bass p {
   padding: 0 !important;
 }
+
+@media screen and (min-width: 960px) {
+  .Bass .Quote:before{
+    left: -60px;
+    font-size: 5em;
+    margin-top: -36px;
+  }
+}
+
+
 
 
 /* VIGNELLI DESIGN SYSTEM
@@ -948,8 +958,11 @@ button{
   .Section--components-3 p {
     text-align: justify;
   }
-  .Section:not(.Section--components-1) .Component .Bg  {
+  .Section:not(.Section--components-1) .Component .Bg {
     padding: 8px 4px 8px 4px;
+  }
+  .Section.w-bgcover {
+    padding: 0 4px;
   }
   .Section--components-1 .Group{
     width: 50%;
