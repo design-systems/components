@@ -836,9 +836,9 @@ button{
 .Bass .Quote:before{
   content: "“";
   position: absolute;
-  left: -23px;
-  font-size: 2em;
-  margin-top: -14px;
+  left: -18px;
+  font-size: 1.5em;
+  margin-top: -11px;
   font-weight: 200;
 }
 .Bass .Attribution {
