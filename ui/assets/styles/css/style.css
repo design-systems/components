@@ -157,7 +157,7 @@ button{
 }
 
 .Group{
-  padding: 1vw;
+  padding: 1rem 1vw;
   transition: .6s ease-in-out;
   max-width: 960px;
   position: relative;
