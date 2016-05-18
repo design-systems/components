@@ -67,6 +67,7 @@ button{
 .Cover img {
   position: relative;
   width: 101%;
+  display: block;
   transition: .6s ease-in-out;
 }
 
@@ -124,8 +125,12 @@ button{
   margin: 1em 0 1em 0;
 }
 
-.Headline:only-of-type {
-  margin: 0;
+.Healine:first-of-type {
+  margin: 0em 0 1em 0;
+}
+
+.Headline:first-of-type {
+  margin-top: 0;
 }
 
 .Headline h1 {
@@ -157,10 +162,11 @@ button{
 }
 
 .Group{
-  padding: 1rem 1vw;
+  padding: 0rem 1vw 1rem;
   transition: .6s ease-in-out;
   max-width: 960px;
   position: relative;
+  display: inline-block;
 }
 
 .Group--graphical {
@@ -239,8 +245,8 @@ button{
 .Nav--list-row{
   transition: .4s ease-out;
   height: 62px;
-  overflow: auto;
-  padding: 0;
+  overflow: hidden;
+  padding: 1rem 0 0;
   width: 100%;
 }
 .Section.text-align-left .Nav--list-row .Group--links .Icon{
@@ -268,7 +274,7 @@ button{
   z-index: 2;
   opacity: 0;
   font-size: 1.25em;
-  top: 16px;
+  top: 0px;
 }
 
 .Nav--list-row .Group--links {
@@ -303,7 +309,7 @@ button{
 }
 
 .Nav--list-row.nav-overflow .Group--links{
-  padding: 3em 0 0 0;
+  padding: 3em 0 100px 0;
 }
 
 /* Nav Hamburger
@@ -343,7 +349,7 @@ button{
 }
 
 .Nav--hamburger .Group--links {
-  padding: 3em 0 0 0;
+  padding: 3em 0 100px 0;
 }
 
 .Nav--hamburger.Active .Group--links .Link {
@@ -360,7 +366,7 @@ button{
 **************************/
 
 .Section--footer {
-  position: fixed;
+  // position: fixed;
   bottom: 0;
   border-top: 1px solid #93806F;
   // padding: 4vw;
@@ -388,7 +394,7 @@ button{
   opacity: .2;
 }
 .Section--footer .Link {
-  margin: 0 3vw 1.5rem;
+  margin: 0 0 1rem;
 }
 .Section--footer .Link a{
   font-weight: 200;
@@ -483,7 +489,7 @@ button{
 }
 .w-bgcover:not(.Section--article) .Group,
 .and-bgcover:not(.Section--article) .Group {
-  padding: 2rem 2vw;
+  padding: 2rem 1.5rem;
 }
 .w-bgcover .Group,
 .and-bgcover .Group:not(.Group--graphical){
@@ -944,14 +950,30 @@ button{
   padding: 0;
 }
 
+/* MISC
+**************************************/
+
+.overflow-x {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 @media screen and (min-width: 960px) {
 
   .Bg .Cover {
     max-height: 80vh;
   }
+  .w-bgcover:not(.Section--article) .Group,
+  .and-bgcover:not(.Section--article) .Group {
+    padding: 2rem 2vw;
+  }
 
   .Section--article .Quote {
     padding-left: 4rem;
+  }
+
+  .Section--footer .Link {
+    margin: 0 3vw 1.5rem;
   }
 
   /* Section Desktop Resets
@@ -968,14 +990,14 @@ button{
   .Section.w-bgcover {
     padding: 0 4px;
   }
-  .Section--components-1 .Group{
+  .Section--components-1 .Group {
     width: 50%;
   }
-  .Section--components-1.w-bgcover .Group{
+  .Section--components-1.w-bgcover .Group {
     max-width: 66.666%;
   }
   .Section--components-1:not(.Section--article).flex-row .Group,
-  .Section--components-1:not(.Section--article).flex-row-reverse .Group  {
+  .Section--components-1:not(.Section--article).flex-row-reverse .Group {
     flex: 1 1 33.333%;
   }
   .Section:not(.Section--components-1):not(.Section--components-2) .Component .Group {
@@ -990,15 +1012,15 @@ button{
   .Section--components-6.w-bgcover.bg-color-none .Component .Group {
     padding: 1vw;
   }
-  .Section:not(.Section--components-1).flex-row .Component  {
+  .Section:not(.Section--components-1).flex-row .Component {
     flex-flow: column;
   }
-  .Section:not(.Section--components-1).flex-row-reverse .Component  {
+  .Section:not(.Section--components-1).flex-row-reverse .Component {
     flex-flow: column-reverse;
   }
   .Section .Component {
     margin-bottom: 0;
-    display: flex;
+    display: inline-block;
     position: relative;
     width: 100%;
   }
@@ -1036,6 +1058,7 @@ button{
   }
   .Section.Section--components-1.square-4 .Group--graphical{
     flex: 1 1 50%;
+    padding: 1vw;
   }
   .Section.Section--components-1.square-4 .Group--graphical:nth-child(-n+2){
     align-self: flex-end;
@@ -1106,7 +1129,7 @@ button{
 
   .flex-row .Component{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
   }
 
   .flex-row-reverse .Component{
@@ -1121,6 +1144,14 @@ button{
   .flex-col .Component{
     display: flex;
     flex-flow: column;
+  }
+
+  .flex-wrap .Component{
+    flex-wrap: wrap;
+  }
+
+  .flex-nowrap .Component{
+    flex-wrap: nowrap;
   }
 
   /* Title Sizing
@@ -1237,28 +1268,6 @@ button{
     padding: 4vw 8vw;
   }
 }
-
-
-/* RULES SCRATCH
-if element width less than 500,
-  no justified text
-  full width
-  small title (unless title-short)
-
-right align text only
-  if the textual group it's in is justified right
-
-Textual groups should not be full width unless it's a
-if title-xxlarge and title-short
-  textual headline group full width
-
-minimal > decorated
-text-size contrast
-color contrast
-
-
-*/
-
 
 /* DEMO UI */
 
