@@ -1031,6 +1031,19 @@ button{
     width: 16.6666%;
   }
 
+  .Section.Section--components-1.square-4 {
+    padding: 10vh 20vw;
+  }
+  .Section.Section--components-1.square-4 .Group--graphical{
+    flex: 1 1 50%;
+  }
+  .Section.Section--components-1.square-4 .Group--graphical:nth-child(-n+2){
+    align-self: flex-end;
+  }
+  .Section.Section--components-1.square-4 .Group--graphical:nth-child(n+3){
+    align-self: flex-start;
+  }
+
   /* Component Padding
   **************************/
 
