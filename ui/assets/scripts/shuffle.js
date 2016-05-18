@@ -1,6 +1,7 @@
 
 var system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
 var system_el = document.querySelector('.System');
+var images = document.querySelectorAll('.Image img');
 var covers = document.querySelectorAll('.Cover img');
 var headlines = document.querySelectorAll('.Headline span');
 var authors = document.querySelectorAll('.Author');
@@ -31,8 +32,12 @@ function changePhotos() {
   var headline = Headlines_array[Math.floor(Math.random() * Headlines_array.length)];
   var author = Authors_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]];
   var myPhoto = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+  for (var i=0; i<images.length; i++ ) {
+    images[i].style.objectPosition = ImageCenter_array[myPhoto]
+    images[i].setAttribute('src','ui/assets/images/'+myPhoto+'.jpg');
+  }
   for (var i=0; i<covers.length; i++ ) {
-    covers[i].style.objectPosition = CoverCenter_array[myPhoto]
+    covers[i].style.objectPosition = ImageCenter_array[myPhoto]
     covers[i].setAttribute('src','ui/assets/images/'+myPhoto+'.jpg');
   }
   for (var i=0; i<headlines.length; i++ ) {

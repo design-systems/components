@@ -23,11 +23,11 @@ var section_v_padding = [
   'section-v-padding-xlarge'
 ]
 
-var CoverCenter_array = new Array();
-CoverCenter_array['Rams'] = '40% 40%';
-CoverCenter_array['Vignelli'] = '70% 43%';
-CoverCenter_array['Bass'] = '43% 22%';
-CoverCenter_array['Brockmann'] = '52% 29%';
+var ImageCenter_array = new Array();
+ImageCenter_array['Rams'] = '40% 40%';
+ImageCenter_array['Vignelli'] = '70% 43%';
+ImageCenter_array['Bass'] = '43% 22%';
+ImageCenter_array['Brockmann'] = '52% 29%';
 
 var section_height = [
   'section-height-fullscreen',
