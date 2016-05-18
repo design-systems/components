@@ -20,7 +20,7 @@
       </select>
     </div>
     <div class="System">
-      <section class="Section Section--components-1 Section--article flex-wrap">
+      <section class="Section Section--components-1 article-graphical--hanging Section--article">
         <div class="Component">
           <div class="Bg">
             <div class="Cover">
@@ -36,11 +36,8 @@
             <div class="Headline">
               <h1><span>Aware that he was a significant contributor to that world, he asked himself an important question: is my design good design?</span></h1>
             </div>
-            <div class="Attribution">
-              <h5><span class="Author">Dieter Rams via Vitsœ</span></h5>
-            </div>
             <div class="Paragraph">
-              <p class="Dropcap--3">
+              <p class="Dropcap--4">
                 Graphic designer and Oscar-winning director Saul Bass worked with some of the most creative filmmakers in Hollywood to set the tone for their work through his unique title sequences for films ranging from Psycho to Goodfellas.
               </p>
               <p>
@@ -181,7 +178,11 @@
               <p>
                 But it’s all film, and film is wonderful. I’m a filmmaker and I intend to continue making films of all kinds, in any manner, shape, or form — short or long.
               </p>
-            </div>
+          </div>
+        </div>
+        <div class="Group Group--meta">
+          <div class="Attribution">
+            <h5><span class="Author">Dieter Rams via Vitsœ</span></h5>
           </div>
         </div>
       </section>
@@ -190,7 +191,7 @@
     <script src="ui/assets/scripts/class-lists.js"></script>
     <script>
       var system_classes = [section_h_padding, section_v_padding]
-      var item_classes = [['flex-col'], section_height, title_size, group_align, group_justify, bg_color, w_bgcover]
+      var item_classes = [title_size.slice(0,title_size.length-2), bg_color, ['and-bgcover', 'wo-bgcover']]
     </script>
     <script src="ui/assets/scripts/shuffle.js"></script>
     <script src="ui/assets/scripts/scroll.js"></script>

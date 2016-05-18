@@ -770,8 +770,13 @@ button{
   padding-top: 35vh !important;
 }
 
-.Section--article.and-bgcover .Bg{
-  max-height: 50vh !important;
+.Section--article.w-bgcover .Component {
+  padding-top: 35vh !important;
+}
+
+.Section--article.w-bgcover .Group,
+.Section--article.and-bgcover .Group{
+  padding-top: 1rem;
 }
 .Section--article.and-bgcover .Component{
   padding-top: 20vh !important;
@@ -1372,7 +1377,7 @@ button{
     // max-width: none;
   }
 
-  /* textual 3col
+  /* textual 2col
   **********************/
 
   .Section.Section--components-1.col-2 {
@@ -1391,6 +1396,37 @@ button{
     padding: 2vw 1vw 0;
     margin: auto;
     // max-width: none;
+  }
+
+  /* Article-graphical--hanging
+  **********************/
+
+  .Section.Section--components-1.article-graphical--hanging {
+    display: block;
+    // padding: 4vw;
+  }
+  .Section.Section--components-1.article-graphical--hanging .Group{
+    // left: 25%
+  }
+  .Section.Section--components-1.article-graphical--hanging .Component{
+    text-align: left;
+  }
+  .Section.Section--components-1.article-graphical--hanging .Group--graphical{
+    width: 20%;
+    left: 3vw;
+    position: fixed;
+    vertical-align:top;
+  }
+  .Section.Section--components-1.article-graphical--hanging .Group--column{
+    // width: 33.333%;
+    vertical-align:top;
+    left: 25%;
+  }
+  .Section.Section--components-1.article-graphical--hanging .Group--meta{
+    position: fixed;
+    width: 20%;
+    right: 3vw;
+    text-align: right;
   }
 }
 

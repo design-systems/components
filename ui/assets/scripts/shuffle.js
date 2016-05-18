@@ -32,14 +32,14 @@ function changePhotos() {
   var headline = Headlines_array[Math.floor(Math.random() * Headlines_array.length)];
   var author = Authors_array[Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]];
   var myPhoto = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
-  // for (var i=0; i<images.length; i++ ) {
-  //   images[i].style.objectPosition = ImageCenter_array[myPhoto]
-  //   images[i].setAttribute('src','ui/assets/images/'+myPhoto+'.jpg');
-  // }
-  // for (var i=0; i<covers.length; i++ ) {
-  //   covers[i].style.objectPosition = ImageCenter_array[myPhoto]
-  //   covers[i].setAttribute('src','ui/assets/images/'+myPhoto+'.jpg');
-  // }
+  for (var i=0; i<images.length; i++ ) {
+    images[i].style.objectPosition = ImageCenter_array[myPhoto]
+    images[i].setAttribute('src','ui/assets/images/'+myPhoto+'.jpg');
+  }
+  for (var i=0; i<covers.length; i++ ) {
+    covers[i].style.objectPosition = ImageCenter_array[myPhoto]
+    covers[i].setAttribute('src','ui/assets/images/'+myPhoto+'.jpg');
+  }
   for (var i=0; i<headlines.length; i++ ) {
     headlines[i].textContent = headline;
   }
