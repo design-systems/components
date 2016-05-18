@@ -67,7 +67,7 @@ button{
 .Cover img,
 .Image img {
   position: relative;
-  width: 101%;
+  width: 100%;
   display: block;
   transition: .6s ease-in-out;
 }
@@ -1326,6 +1326,72 @@ button{
     text-align: right;
   }
 
+
+  /* bricks
+  **********************/
+
+  .Section.Section--components-1.bricks {
+    display: block;
+  }
+  .Section.Section--components-1.bricks .Component{
+    display: block;
+    column-count: 3;
+    column-width: 33.333%;
+    column-gap: 0;
+    column-fill: balance;
+  }
+  .Section.Section--components-1.bricks .Group{
+    display: inline-block;
+    width: 100%;
+    padding: 2vw 1vw 0;
+  }
+  .Section.Section--components-1.bricks .Group--graphical .Image{
+    overflow: visible;
+  }
+
+
+  /* textual 3col
+  **********************/
+
+  .Section.Section--components-1.col-3 {
+    display: block;
+  }
+  .Section.Section--components-1.col-3 .Group--textual{
+    display: block;
+    column-count: 3;
+    column-width: 33.333%;
+    column-gap: 3vw;
+    column-fill: balance;
+  }
+  .Section.Section--components-1.col-3 .Group{
+    display: inline-block;
+    width: 100%;
+    padding: 2vw 1vw 0;
+    margin: auto;
+    max-width: 1280px;
+    // max-width: none;
+  }
+
+  /* textual 3col
+  **********************/
+
+  .Section.Section--components-1.col-2 {
+    display: block;
+  }
+  .Section.Section--components-1.col-2 .Group--textual{
+    display: block;
+    column-count: 2;
+    column-width: 33.333%;
+    column-gap: 4vw;
+    column-fill: balance;
+  }
+  .Section.Section--components-1.col-2 .Group{
+    display: inline-block;
+    width: 100%;
+    padding: 2vw 1vw 0;
+    margin: auto;
+    // max-width: none;
+  }
 }
 
 /* DEMO UI */
