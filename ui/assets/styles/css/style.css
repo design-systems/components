@@ -26,7 +26,7 @@ a:hover{
 h1 {
   font-size: 1.5rem;
   word-wrap: break-word;
-  transition: .6s ease-in-out;
+  transition: .6s ease-out;
   font-weight: 700;
   line-height: 1.25;
 }
@@ -61,7 +61,7 @@ button{
 .Cover,
 .Image {
   overflow: hidden;
-  // transition: .6s ease-in-out;
+  // transition: .6s ease-out;
 }
 
 .Cover img,
@@ -69,7 +69,7 @@ button{
   position: relative;
   width: 100%;
   display: block;
-  transition: .6s ease-in-out;
+  transition: .6s ease-out;
 }
 
 .Header {
@@ -164,7 +164,7 @@ button{
 
 .Group{
   padding: 0rem 1vw 1rem;
-  transition: .6s ease-in-out;
+  transition: .6s ease-out;
   max-width: 960px;
   position: relative;
   display: block;
@@ -209,7 +209,7 @@ button{
   position: relative;
   display: block;
   align-items: stretch;
-  transition: .6s ease-in-out;
+  transition: .6s ease-out;
 }
 
 
@@ -290,6 +290,7 @@ button{
 .Nav--list-row.Active.nav-overflow {
   height: 100vh;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .Nav--list-row.nav-overflow .Group--links .Icon {
@@ -361,6 +362,7 @@ button{
 .Nav--hamburger.Active {
   height: 100vh;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Section Footer
@@ -380,11 +382,15 @@ button{
 .Section--footer .Component {
   flex: 1;
 }
-.Section--footer .Component:first-of-type {
+.Section--footer:not(.Section--components-2) .Component:first-of-type {
   flex: 2;
-  padding-right: 2vw;
+  padding-right: 4vw;
 }
-.Section--footer .Component:not(:last-of-type):after {
+.Section--footer.Section--components-2 .Component:last-of-type {
+  flex: 3;
+  padding-right: 4vw;
+}
+.Section--footer:not(.Section--components-2) .Component:not(:last-of-type):after {
   content: "";
   z-index: 11;
   position: absolute;
@@ -542,7 +548,7 @@ button{
   left: 0;
   width: 100%;
   height: 100%;
-  transition: .6s ease-in-out;
+  transition: .6s ease-out;
 }
 .Bg .Cover{
   position: relative;
@@ -590,12 +596,12 @@ button{
 .Section--components-2.bgcover-size-third .Bg,
 .Section--components-3.bgcover-size-third .Bg {
   width: 33.333%;
-  height: 50%;
+  height: 100%;
 }
 .Section--components-1.bgcover-size-quarter .Bg,
 .Section--components-2.bgcover-size-quarter .Bg{
   width: 25%;
-  height: 33.333%;
+  height: 100%;
 }
 
 .bgcover-fit-cover .Bg img {
@@ -968,7 +974,20 @@ button{
 }
 .overflow-x {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
   white-space: nowrap;
+}
+.overflow-x .Component * {
+  white-space: normal;
+}
+
+/* COMPONENTS
+********************/
+.graphical--slider .dots,
+.graphical--slider .arrow-left,
+.graphical--slider .arrow-right{
+  display: none;
 }
 
 @media screen and (min-width: 960px) {
@@ -1295,6 +1314,7 @@ button{
     padding: 4vw;
   }
   .Section.Section--components-1.graphical-column--hanging .Group{
+    display: inline-block;
     left: 25%
   }
   .Section.Section--components-1.graphical-column--hanging .Component{
@@ -1335,26 +1355,37 @@ button{
   }
 
 
-  /* bricks
+  /* graphical--cols
   **********************/
 
-  .Section.Section--components-1.bricks {
+
+
+  .Section.Section--components-1.graphical--cols {
     display: block;
   }
-  .Section.Section--components-1.bricks .Component{
+  .Section.Section--components-1.graphical--cols .Component{
     display: block;
     column-count: 3;
     column-width: 33.333%;
     column-gap: 0;
     column-fill: balance;
   }
-  .Section.Section--components-1.bricks .Group{
+  .Section.Section--components-1.graphical--cols .Group{
     display: inline-block;
     width: 100%;
     padding: 2vw 1vw 0;
   }
-  .Section.Section--components-1.bricks .Group--graphical .Image{
+  .Section.Section--components-1.graphical--cols .Group--graphical .Image{
     overflow: visible;
+  }
+
+  .Section.Section--components-1.graphical--2col .Component{
+    column-count: 2;
+    column-width: 50%;
+  }
+  .Section.Section--components-1.graphical--4col .Component{
+    column-count: 4;
+    column-width: 25%;
   }
 
 
@@ -1409,6 +1440,149 @@ button{
     // text-align: left;
   }
 
+
+  /* Image Slider
+  **********************/
+
+  .graphical--slider .Component{
+    min-height: 500px;
+  }
+  .graphical--slider .dots{
+    position: absolute;
+    bottom: 4.5vh;
+    left: 50%;
+    transform: translate3d(-50%,0,0);
+    z-index: 10;
+    display: block;
+  }
+  .graphical--slider .dots li{
+    position: relative;
+    width: 5px;
+    height: 5px;
+    background: #271325;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 10px;
+    opacity: .2;
+  }
+  .graphical--slider.bg-color-dark .dots li,
+  .graphical--slider.bg-color-neutral .dots li{
+    background: #FFF0BA;
+  }
+  .graphical--slider .dots li.current{
+    opacity: 1;
+  }
+  .graphical--slider .arrow-left,
+  .graphical--slider .arrow-right {
+    position: absolute;
+    display: block;
+    left: 4vw;
+    top: 45%;
+    border: 2px solid;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding-top: 5px;
+    padding-right: 1px;
+    font-size: .8rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: .2s ease-out;
+    z-index: 10;
+  }
+  .graphical--slider .arrow-left:hover,
+  .graphical--slider .arrow-right:hover {
+    background: inherit;
+    transform: scale(1.1);
+  }
+  .graphical--slider .arrow-left.disabled,
+  .graphical--slider .arrow-right.disabled {
+    opacity: .3;
+    pointer-events: none;
+  }
+  .graphical--slider .arrow-right {
+    right: 4vw;
+    left: auto;
+    padding-right: 0;
+    padding-left: 1px;
+  }
+
+  .graphical--slider .Group--graphical {
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-30%,-50%,0);
+    opacity: 0;
+    width: 100%;
+    top: 50%;
+    max-height: 80vh;
+    padding: 0;
+  }
+  .graphical--slider .Group--graphical .Image {
+    height: 100%;
+  }
+  .graphical--slider .Group--graphical img {
+    max-height: 60vh;
+    width: auto;
+    max-width: 100%;
+    margin: auto;
+  }
+  .graphical--slider .Group--graphical.current{
+    transform: translate3d(-50%,-50%,0);
+    transition-delay: .2s;
+    opacity: 1;
+  }
+  .graphical--slider .Group--graphical.past{
+    transform: translate3d(-70%,-50%,0);
+    transition-easing: linear;
+    transition-duration: .3s;
+  }
+
+  .graphical--slider .Group--graphical .Headline {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 1rem 2rem;
+    max-width: 960px;
+    background: #FFF0BA;
+    opacity: .7;
+  }
+  .graphical--slider.bg-color-dark .Group--graphical .Headline,
+  .graphical--slider.bg-color-neutral .Group--graphical .Headline {
+    background: #271325;
+  }
+
+
+  /* Image Slider Bottom Left UI
+  **********************/
+
+  .graphical--slider-bottom-ui .dots{
+    bottom: auto;
+    top: 2.1rem;
+  }
+  .graphical--slider-bottom-ui .arrow-left,
+  .graphical--slider-bottom-ui .arrow-right {
+    top: auto;
+    bottom: 3.5vh;
+    left: 50%;
+    margin-left: -47px;
+  }
+  .graphical--slider-bottom-ui .arrow-right {
+    margin-left: 17px;
+  }
+
+  /* Image Slider Top UI
+  **********************/
+
+  .graphical--slider-top-ui .arrow-left,
+  .graphical--slider-top-ui .arrow-right {
+    left: 50%;
+    top: 4.5vh;
+    margin-left: -47px;
+  }
+  .graphical--slider-top-ui .arrow-right {
+    margin-left: 17px;
+  }
 
   /* Article-graphical--hanging
   **********************/
