@@ -20,8 +20,8 @@
   <!--       <option value="Escher">MC Escher</option> -->
       </select>
     </div>
-    <div class="System">
-      <section class="Section Section--components-1 graphical--slider inline-block overflow-x">
+    <div class="System section-h-padding-xsmall">
+      <section class="Section Section--components-1 graphical--slider inline-block overflow-x section-height-fullscreen title-size-small group-justify-start">
         <div class="arrow-right">&gt;</div>
         <div class="arrow-left disabled">&lt;</div>
         <div class="dots"></div>
@@ -78,8 +78,8 @@
     <script src="ui/assets/scripts/fixtures.js"></script>
     <script src="ui/assets/scripts/class-lists.js"></script>
     <script>
-      var system_classes = [['section-h-padding-xsmall']]
-      var item_classes = [['section-height-fullscreen'], ['title-size-small'], text_align, group_align, ['justify-start'], bg_color]
+      var mySiteClasses = []
+      var mySectionClasses = ['text-align', 'group-align', 'section-bg-color'] // section-height-fullscreen', 'title-size-small justify-start
 
       var currentImage = 0;
       var Images = document.querySelectorAll('.Group--graphical');
