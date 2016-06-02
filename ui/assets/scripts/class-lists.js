@@ -97,46 +97,48 @@ var theStylist =
       'group-bg-color': {
         'Y_group-bg-color': {
           'group-bg-color-none': { $class: ['group-bg-color-none'] },
-          'group-bg-color-dark': { $class: ['group-bg-color-dark'] },
-          'group-bg-color-light': { $class: ['group-bg-color-light'] },
+          // 'group-bg-color-dark': { $class: ['group-bg-color-dark'] },
+          // 'group-bg-color-light': { $class: ['group-bg-color-light'] },
+          // 'group-bg-color-pattern': { $class: ['group-bg-color-pattern'] },
+          // 'group-bg-color-neutral': { $class: ['group-bg-color-neutral'] },
         },
       },
-      'group-h-inset': {
-        'Y_group-h-inset': {
-          'group-h-inset-none': { $class: ['group-h-inset-none'] },
-          'group-h-inset-xsmall': { $class: ['group-h-inset-xsmall'] },
-          'group-h-inset-small': { $class: ['group-h-inset-small'] },
-          'group-h-inset-medium': { $class: ['group-h-inset-medium'] },
-          'group-h-inset-large': { $class: ['group-h-inset-large'] },
-        },
-      },
-      'group-v-inset': {
-        'Y_group-v-inset': {
-          'group-v-inset-none': { $class: ['group-v-inset-none'] },
-          'group-v-inset-xsmall': { $class: ['group-v-inset-xsmall'] },
-          'group-v-inset-small': { $class: ['group-v-inset-small'] },
-          'group-v-inset-medium': { $class: ['group-v-inset-medium'] },
-          'group-v-inset-large': { $class: ['group-v-inset-large'] },
-        },
-      },
-      'group-h-overlap': {
-        'Y_group-h-overlap': {
-          'group-h-overlap-none': { $class: ['group-h-overlap-none'] },
-          'group-h-overlap-xsmall': { $class: ['group-h-overlap-xsmall'] },
-          'group-h-overlap-small': { $class: ['group-h-overlap-small'] },
-          'group-h-overlap-medium': { $class: ['group-h-overlap-medium'] },
-          'group-h-overlap-large': { $class: ['group-h-overlap-large'] },
-        },
-      },
-      'group-v-overlap': {
-        'Y_group-v-overlap': {
-          'group-v-overlap-none': { $class: ['group-v-overlap-none'] },
-          'group-v-overlap-xsmall': { $class: ['group-v-overlap-xsmall'] },
-          'group-v-overlap-small': { $class: ['group-v-overlap-small'] },
-          'group-v-overlap-medium': { $class: ['group-v-overlap-medium'] },
-          'group-v-overlap-large': { $class: ['group-v-overlap-large'] },
-        },
-      },
+      // 'group-h-inset': {
+      //   'Y_group-h-inset': {
+      //     'group-h-inset-none': { $class: ['group-h-inset-none'] },
+      //     'group-h-inset-xsmall': { $class: ['group-h-inset-xsmall'] },
+      //     'group-h-inset-small': { $class: ['group-h-inset-small'] },
+      //     'group-h-inset-medium': { $class: ['group-h-inset-medium'] },
+      //     'group-h-inset-large': { $class: ['group-h-inset-large'] },
+      //   },
+      // },
+      // 'group-v-inset': {
+      //   'Y_group-v-inset': {
+      //     'group-v-inset-none': { $class: ['group-v-inset-none'] },
+      //     'group-v-inset-xsmall': { $class: ['group-v-inset-xsmall'] },
+      //     'group-v-inset-small': { $class: ['group-v-inset-small'] },
+      //     'group-v-inset-medium': { $class: ['group-v-inset-medium'] },
+      //     'group-v-inset-large': { $class: ['group-v-inset-large'] },
+      //   },
+      // },
+      // 'group-h-overlap': {
+      //   'Y_group-h-overlap': {
+      //     'group-h-overlap-none': { $class: ['group-h-overlap-none'] },
+      //     'group-h-overlap-xsmall': { $class: ['group-h-overlap-xsmall'] },
+      //     'group-h-overlap-small': { $class: ['group-h-overlap-small'] },
+      //     'group-h-overlap-medium': { $class: ['group-h-overlap-medium'] },
+      //     'group-h-overlap-large': { $class: ['group-h-overlap-large'] },
+      //   },
+      // },
+      // 'group-v-overlap': {
+      //   'Y_group-v-overlap': {
+      //     'group-v-overlap-none': { $class: ['group-v-overlap-none'] },
+      //     'group-v-overlap-xsmall': { $class: ['group-v-overlap-xsmall'] },
+      //     'group-v-overlap-small': { $class: ['group-v-overlap-small'] },
+      //     'group-v-overlap-medium': { $class: ['group-v-overlap-medium'] },
+      //     'group-v-overlap-large': { $class: ['group-v-overlap-large'] },
+      //   },
+      // },
       'group-align': {
         'Y_group-align': {
           'group-align-start': { $class: ['group-align-start'] },

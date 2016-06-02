@@ -21,7 +21,7 @@ document.querySelector('.Shuffle').addEventListener("click", shuffle);
 
 function changeSystem() {
   document.querySelector('#System-input').value = system
-  system_el.className = "System " + system;
+  system_el.className = "System ";
   changePhotos();
   for (var branch in siteBeautyverse){
     branch = Object.keys(siteBeautyverse[branch][Object.keys(siteBeautyverse[branch])[0]]);
