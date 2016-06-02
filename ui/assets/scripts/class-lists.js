@@ -43,7 +43,7 @@ var theStylist =
       },
       'section-h-padding': {
         'Y_section-h-padding': {
-          'section-h-padding-none': { $class: ['section-h-padding-none'] },
+          // 'section-h-padding-none': { $class: ['section-h-padding-none'] },
           'section-h-padding-xsmall': { $class: ['section-h-padding-xsmall'] },
           'section-h-padding-small': { $class: ['section-h-padding-small'] },
           'section-h-padding-medium': { $class: ['section-h-padding-medium'] },
@@ -53,7 +53,7 @@ var theStylist =
       },
       'section-v-padding': {
         'Y_section-v-padding': {
-          'section-v-padding-none': { $class: ['section-v-padding-none'] },
+          // 'section-v-padding-none': { $class: ['section-v-padding-none'] },
           'section-v-padding-xsmall': { $class: ['section-v-padding-xsmall'] },
           'section-v-padding-small': { $class: ['section-v-padding-small'] },
           'section-v-padding-medium': { $class: ['section-v-padding-medium'] },
