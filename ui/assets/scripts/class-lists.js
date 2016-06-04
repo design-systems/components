@@ -33,14 +33,14 @@ var theStylist =
 {
   'the_beautician': {
     siteBeautyverse: {
-      'design-style': {
-        'Y_design-style': {
-          'Rams': { $class: ['Rams'] },
-          'Bass': { $class: ['Bass'] },
-          'Vignelli': { $class: ['Vignelli'] },
-          'Brockmann': { $class: ['Brockmann'] },
-        },
-      },
+      // 'design-style': {
+      //   'Y_design-style': {
+      //     'Rams': { $class: ['Rams'] },
+      //     'Bass': { $class: ['Bass'] },
+      //     'Vignelli': { $class: ['Vignelli'] },
+      //     'Brockmann': { $class: ['Brockmann'] },
+      //   },
+      // },
       'section-h-padding': {
         'Y_section-h-padding': {
           // 'section-h-padding-none': { $class: ['section-h-padding-none'] },

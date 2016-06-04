@@ -21,7 +21,7 @@ document.querySelector('.Shuffle').addEventListener("click", shuffle);
 
 function changeSystem() {
   document.querySelector('#System-input').value = system
-  system_el.className = "System ";
+  system_el.className = "System " + system;
   changePhotos();
   for (var branch in siteBeautyverse){
     branch = Object.keys(siteBeautyverse[branch][Object.keys(siteBeautyverse[branch])[0]]);
@@ -60,7 +60,7 @@ function init(){
   changeSystem()
 }
 function shuffle(){
-  system = 'Vignelli'//Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+  system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
   changeSystem();
   shuffleItemClassList();
 }
