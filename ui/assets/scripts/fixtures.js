@@ -14,3 +14,9 @@ Authors_array['Vignelli'] = 'Lella & Massimo Vignelli via NYTimes'
 Authors_array['Bass'] = 'Saul Bass via Medium'
 Authors_array['Brockmann'] = 'Josef Müller-Brockmann via Coroflot'
 // Authors_array['Escher'] = 'MC Escher via Dailymail'
+
+var Archetypes_array = new Array();
+Archetypes_array[0] = 'Rams'
+Archetypes_array[1] = 'Vignelli'
+Archetypes_array[2] = 'Bass'
+Archetypes_array[3] = 'Brockmann'

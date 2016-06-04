@@ -7,7 +7,7 @@ var headlines = document.querySelectorAll('.Headline span');
 var authors = document.querySelectorAll('.Author');
 
 var sections = document.querySelectorAll('.Section');
-var sectionClasses = []
+var sectionClasses = [];
 for (var i = 0;i< sections.length; i++) {
   sectionClasses[i] = sections[i].classList + ' ';
 }
@@ -34,6 +34,7 @@ function changeSystem() {
   // }
 }
 function changePhotos() {
+  var system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]
   var headline = Headlines_array[Math.floor(Math.random() * Headlines_array.length)];
   var author = Authors_array[system]//Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]];
   var myPhoto = system; //Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
@@ -59,7 +60,7 @@ function init(){
   changeSystem()
 }
 function shuffle(){
-  system = 'Vignelli'//Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+  system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
   changeSystem();
   shuffleItemClassList();
 }
@@ -103,15 +104,14 @@ function createItemClassList(){
 }
 function shuffleItemClassList(){
   var section = sections[0];
-
-  var list = sections[0].querySelector('.Class-list')
+  for (var j=0; j<sections.length; j++ ) {
+    sections[j].className = sectionClasses[j];
+  }
   for (var branch in sectionsBeautyverse){
     var branchName = branch;
     branch = Object.keys(sectionsBeautyverse[branch][Object.keys(sectionsBeautyverse[branch])[0]]);
     if(mySectionClasses.indexOf(branchName) != -1){
       var path = branch[Math.floor(Math.random()*branch.length)]
-      var listItem = document.createElement('li');
-      listItem.innerHTML = path;
       for (var j=0; j<sections.length; j++ ) {
         sections[j].classList.add(path);
       }
@@ -125,7 +125,7 @@ function shuffleItemClassList(){
   //     sections[j].classList.add(newClass);
   //   }
   // }
-  applyClasses();
+  // applyClasses();
 }
 function applyClasses() {
   var section = sections[0];
@@ -140,6 +140,7 @@ function applyClasses() {
         myClass = myClass + ' '
       }
     }
+    sections[j].className = originalClasses;
     sections[j].className = myClass;
   }
 }
