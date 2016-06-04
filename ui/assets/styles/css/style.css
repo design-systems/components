@@ -195,6 +195,9 @@ button {
   // font-size: 5em;
   transition: .3s ease-out;
 }
+.Group--column {
+  max-width: 760px;
+}
 
 .Component {
   flex-wrap: wrap;
@@ -1232,7 +1235,7 @@ button {
     width: 50%;
   }
   .Section--components-1.section-bgcover-w .Group {
-    max-width: 66.666%;
+    max-width: 760px;
   }
   .Section--components-1:not(.Section--article).section-flex-row .Group,
   .Section--components-1:not(.Section--article).section-flex-row-reverse .Group

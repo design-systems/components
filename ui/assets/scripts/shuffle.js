@@ -60,7 +60,7 @@ function init(){
   changeSystem()
 }
 function shuffle(){
-  system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+  system = 'Vignelli'//Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
   changeSystem();
   shuffleItemClassList();
 }
@@ -140,7 +140,6 @@ function applyClasses() {
         myClass = myClass + ' '
       }
     }
-    sections[j].className = originalClasses;
     sections[j].className = myClass;
   }
 }
