@@ -10,8 +10,8 @@
 
   function scrollHandler() {
     scrollTop = document.body.scrollTop;
-    bg.style.webkitTransform = 'translate3d(0,'+scrollTop/3+'px,0)';
-    bg.style.webkitTransitionDuration = '0s';
+    // bg.style.webkitTransform = 'translate3d(0,'+scrollTop/3+'px,0)';
+    // bg.style.webkitTransitionDuration = '0s';
   }
 
 })()

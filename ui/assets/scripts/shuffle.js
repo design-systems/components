@@ -1,5 +1,6 @@
 
 var system = 'Rams'; // Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+var wrapper = document.querySelector('.Wrapper');
 var system_el = document.querySelector('.System');
 var images = document.querySelectorAll('.Image img');
 var covers = document.querySelectorAll('.Cover img');
@@ -11,27 +12,38 @@ var sectionClasses = [];
 for (var i = 0;i< sections.length; i++) {
   sectionClasses[i] = sections[i].classList + ' ';
 }
-// adjust if multiple sections
 
-document.querySelector('#System-input').addEventListener("change", function(){
-  system = document.querySelector('#System-input').value;
-  changeSystem()
-});
+// document.querySelector('#System-input').addEventListener("change", function(){
+//   system = document.querySelector('#System-input').value;
+//   changeSystem()
+// });
 document.querySelector('.Shuffle').addEventListener("click", shuffle);
 
+// var shuffleInterval = setInterval(shuffle,10000);
+// setTimeout(function(){
+//   clearInterval(shuffleInterval);
+// },5000)
+
+
 function changeSystem() {
-  document.querySelector('#System-input').value = system
-  system_el.className = "System " + system;
+  var newSystem = system_el.cloneNode(true);
+  wrapper.appendChild(newSystem);
+  newSystem.className = "System ";
   changePhotos();
   for (var branch in siteBeautyverse){
     branch = Object.keys(siteBeautyverse[branch][Object.keys(siteBeautyverse[branch])[0]]);
     var path = branch[Math.floor(Math.random()*branch.length)]
     system_el.classList.add(path);
   }
-  // for (var i=0; i<system_classes.length; i++){
-  //   var newClass = system_classes[i][Math.floor(Math.random()*system_classes[i].length)];
-  //   system_el.classList.add(newClass);
-  // }
+  newSystem.querySelector('.Kill').addEventListener('click',function(e){
+    newSystem.remove();
+  })
+  newSystem.querySelector('.Class-list').addEventListener('keypress',function(e){
+    if (e.keyCode == 13) {
+      e.preventDefault();
+      applyClasses(e.target);
+    }
+  })
 }
 function changePhotos() {
   var system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]
@@ -57,21 +69,25 @@ function changePhotos() {
 function init(){
   system_el.className = "System "+ system
   createItemClassList();
-  changeSystem()
+  // shuffle();
 }
 function shuffle(){
   system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
   changeSystem();
-  shuffleItemClassList();
+  createItemClassList();
+  // shuffleItemClassList();
 }
 
 function createItemClassList(){
-  var section = sections[0];
-
+  var section = document.querySelector('.System').querySelector('.Section');
+  if(section.querySelector('.Class-list')){
+    section.querySelector('.Class-list').remove();
+  }
   var list = document.createElement('span');
   list.classList.add('Class-list');
   list.setAttribute('contenteditable',true);
   section.insertBefore(list,section.firstChild);
+  section.className = 'Section Section--components-1 section-height-fullscreen ';
   for (var branch in sectionsBeautyverse){
     var branchName = branch;
     branch = Object.keys(sectionsBeautyverse[branch][Object.keys(sectionsBeautyverse[branch])[0]]);
@@ -80,67 +96,46 @@ function createItemClassList(){
       var listItem = document.createElement('li');
       listItem.innerHTML = path;
       list.appendChild(listItem);
-      for (var j=0; j<sections.length; j++ ) {
-        sections[j].classList.add(path);
-      }
+      section.classList.add(path);
     }
   }
-  // for (var i=0; i<item_classes.length; i++){
-  //   var listItem = document.createElement('li');
-  //   var newClass = item_classes[i][Math.floor(Math.random()*item_classes[i].length)];
-  //   listItem.innerHTML = newClass;
-  //   list.appendChild(listItem);
-  //   for (var j=0; j<sections.length; j++ ) {
-  //     sections[j].classList.add(newClass);
-  //   }
-  // }
 
   list.addEventListener('keypress',function(e){
     if (e.keyCode == 13) {
       e.preventDefault();
-      applyClasses();
+      applyClasses(e.target);
     }
   })
 }
+
 function shuffleItemClassList(){
   var section = sections[0];
   for (var j=0; j<sections.length; j++ ) {
-    sections[j].className = sectionClasses[j];
+    section.className = 'Section Section--components-1 section-height-fullscreen ';
   }
   for (var branch in sectionsBeautyverse){
     var branchName = branch;
     branch = Object.keys(sectionsBeautyverse[branch][Object.keys(sectionsBeautyverse[branch])[0]]);
     if(mySectionClasses.indexOf(branchName) != -1){
       var path = branch[Math.floor(Math.random()*branch.length)]
-      for (var j=0; j<sections.length; j++ ) {
-        sections[j].classList.add(path);
-      }
+      section
+      section.classList.add(path);
     }
   }
-  // for (var i=0; i<item_classes.length; i++){
-  //   var listItem = list.querySelectorAll('li')[i];
-  //   var newClass = item_classes[i][Math.floor(Math.random()*item_classes[i].length)];
-  //   listItem.innerHTML = newClass;
-  //   for (var j=0; j<sections.length; j++ ) {
-  //     sections[j].classList.add(newClass);
-  //   }
-  // }
-  // applyClasses();
 }
-function applyClasses() {
-  var section = sections[0];
+function applyClasses(target) {
+  var section = target.parentNode.parentNode.querySelector('Section');
 
-  var list = sections[0].querySelector('.Class-list')
+  var list = section.querySelector('.Class-list')
   var items = list.querySelectorAll('li');
-  for (var j=0; j<sections.length; j++ ) {
-    var myClass = sectionClasses[j];
-    for (var i=0;i<items.length;i++){
-      myClass += items[i].textContent;
-      if(myClass.substr(myClass.length-1) != " "){
-        myClass = myClass + ' '
-      }
+  var myClass = section.classList;
+  myClass = 'Section Section--components-1 section-height-fullscreen ';
+  for (var i=0;i<items.length;i++){
+    myClass += items[i].textContent;
+    if(myClass.substr(myClass.length-1) != " "){
+      myClass = myClass + ' '
     }
-    sections[j].className = myClass;
   }
+  section.className = myClass;
 }
 init()

@@ -161,6 +161,20 @@ button {
   margin: 0;
 }
 
+.Kill {
+  position: absolute;
+  right: 30px;
+  top: 0px;
+  z-index: 2;
+  cursor: pointer;
+  font-weight: 100;
+  font-size: 100px;
+  opacity: .01;
+}
+.Kill:hover {
+  opacity: 1;
+}
+
 .Group {
   padding: 0rem 1vw 1rem;
   transition: .6s ease-out;
@@ -174,7 +188,7 @@ button {
 }
 
 .Group--graphical .Image {
-  max-height: 90vh;
+  max-height: 100vh;
 }
 
 .Group:not(.Group--graphical) {
@@ -428,7 +442,9 @@ button {
 **************************/
 
 .section-height-fullscreen {
-  width: 100vw;
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  overflow: hidden;
 }
 
 .Section--components-1.section-height-fullscreen:not(.section-bgcover-wo),
@@ -436,9 +452,9 @@ button {
 .Section--components-3.section-height-fullscreen:not(.section-bgcover-wo)
 {
   // width: 100vw;
-  // height: 90vh;
+  // height: 100vh;
   // max-height: 800px;
-  min-height: 90vh;
+  min-height: calc(100vh - 70px);
   // overflow: hidden;
 }
 
@@ -585,7 +601,7 @@ button {
 }
 .section-bgcover-w .Bg {
   display: block;
-  opacity: .3;
+  opacity: .4;
 }
 
 .section-bgcover-wo .Group--graphical {
@@ -636,7 +652,8 @@ button {
   transform: translate3d(0,0,0) !important;
 }
 .Section--components-1.section-bgcover-and .Bg .Cover {
-  opacity: .1 !important;
+  opacity: .3 !important;
+  // -webkit-filter: blur(12px);
 }
 .Section--components-1.section-bgcover-and .Bg .Cover img,
 .Section--components-1.section-bgcover-and .Bg .Cover iframe,
@@ -717,7 +734,7 @@ button {
 
 .section-bgcover-fit-cover .Bg img {
   object-fit: cover;
-  object-position: 60% 50%;
+  object-position: 40% 40%;
 }
 .section-bgcover-fit-contain .Bg img {
   object-fit: contain;
@@ -771,9 +788,9 @@ button {
   background: #FFF0BA;
   color: #271325;
 }
-.section-bg-color-light .Bg .Cover{
-  opacity: .3;
-}
+// .section-bg-color-light .Bg .Cover{
+//   opacity: .4;
+// }
 .section-bg-color-light .Group {
   background: transparent;
 }
@@ -781,9 +798,9 @@ button {
   background: #36222F;
   color: #FFF0BA;
 }
-.section-bg-color-dark .Bg .Cover{
-  opacity: .3;
-}
+// .section-bg-color-dark .Bg .Cover{
+//   opacity: .4;
+// }
 .section-bg-color-dark .Group {
   background: transparent;
 }
@@ -791,9 +808,9 @@ button {
   background: #93806F;
   color: #FFF0BA;
 }
-.section-bg-color-neutral .Bg .Cover{
-  opacity: .3;
-}
+// .section-bg-color-neutral .Bg .Cover{
+//   opacity: .4;
+// }
 .section-bg-color-neutral .Group {
   background: transparent;
 }
@@ -801,13 +818,13 @@ button {
   background: url(../../images/pattern.jpg);
   color: #271325;
 }
-.section-bg-color-pattern .Bg .Cover{
-  opacity: .3;
-}
+// .section-bg-color-pattern .Bg .Cover{
+//   opacity: .4;
+// }
 .section-bg-color-pattern .Group {
   background: transparent;
 }
-.section-bg-color-none {
+. ction-bg-color-none {
   background: #FFF0BA;
   color: #271325;
 }
@@ -916,7 +933,7 @@ button {
 .Section--article .Image img
 {
   object-fit: cover;
-  max-height: 90vh;
+  max-height: 100vh;
 }
 
 .Section--article .Group--Column .Image img {
@@ -1084,7 +1101,503 @@ button {
 
 
 
+/* Hadid DESIGN SYSTEM */
+.Hadid {
 
+}
+.Hadid section {
+
+}
+.Hadid .Group {
+  // background: transparent;
+}
+.Hadid .Section--components-5.section-bgcover-w .Component .Group,
+.Hadid .Section--components-6.section-bgcover-w .Component .Group
+{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.Hadid .Headline span,
+.Hadid .Attribution span,
+.Hadid .Paragraph blockquote span
+{
+  padding: .2rem .4rem;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4;
+  background: #271325;
+  color: #FFF0BA;
+}
+.Hadid .Paragraph blockquote {
+  border: none;
+  padding: 0;
+}
+.Hadid .Paragraph blockquote:before {
+  content: "“";
+  position: absolute;
+  left: -.6rem;
+  font-size: 4em;
+  margin-top: -4rem;
+  font-weight: 200;
+}
+.Hadid .Attribution {
+  color: #FFF0BA;
+}
+.Hadid .Headline {
+
+}
+
+.Hadid .section-bg-color-dark .Headline span,
+.Hadid .section-bg-color-dark .Attribution span,
+.Hadid .section-bg-color-dark .Paragraph blockquote span,
+.Hadid .section-bg-color-neutral .Headline span,
+.Hadid .section-bg-color-neutral .Attribution span,
+.Hadid .section-bg-color-neutral .Paragraph blockquote span,
+.Hadid .group-bg-color-dark .Headline span,
+.Hadid .group-bg-color-dark .Attribution span,
+.Hadid .group-bg-color-dark .Paragraph blockquote span,
+.Hadid .group-bg-color-neutral .Headline span,
+.Hadid .group-bg-color-neutral .Attribution span,
+.Hadid .group-bg-color-neutral .Paragraph blockquote span
+{
+  background: #FFF0BA;
+  color: #271325;
+}
+.Hadid .section-bgcover-w.section-bg-color-none .Paragraph {
+  background: #FFF0BA;
+  padding: 1.5vw !important;
+}
+.Hadid .section-bgcover-w.group-bg-color-dark .Paragraph {
+  background: transparent;
+  padding: 1.5vw !important;
+}
+.Hadid p {
+  padding: 0 !important;
+}
+
+@media screen and (min-width: 960px) {
+  .Hadid .Paragraph blockquote:before{
+    left: -60px;
+    font-size: 5em;
+    margin-top: -36px;
+  }
+}
+
+
+
+/* Cooper DESIGN SYSTEM */
+.Cooper {
+
+}
+.Cooper section {
+
+}
+.Cooper .Group {
+  // background: transparent;
+}
+.Cooper .Section--components-5.section-bgcover-w .Component .Group,
+.Cooper .Section--components-6.section-bgcover-w .Component .Group
+{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.Cooper .Headline span,
+.Cooper .Attribution span,
+.Cooper .Paragraph blockquote span
+{
+  padding: .2rem .4rem;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4;
+  background: #271325;
+  color: #FFF0BA;
+}
+.Cooper .Paragraph blockquote {
+  border: none;
+  padding: 0;
+}
+.Cooper .Paragraph blockquote:before {
+  content: "“";
+  position: absolute;
+  left: -.6rem;
+  font-size: 4em;
+  margin-top: -4rem;
+  font-weight: 200;
+}
+.Cooper .Attribution {
+  color: #FFF0BA;
+}
+.Cooper .Headline {
+
+}
+
+.Cooper .section-bg-color-dark .Headline span,
+.Cooper .section-bg-color-dark .Attribution span,
+.Cooper .section-bg-color-dark .Paragraph blockquote span,
+.Cooper .section-bg-color-neutral .Headline span,
+.Cooper .section-bg-color-neutral .Attribution span,
+.Cooper .section-bg-color-neutral .Paragraph blockquote span,
+.Cooper .group-bg-color-dark .Headline span,
+.Cooper .group-bg-color-dark .Attribution span,
+.Cooper .group-bg-color-dark .Paragraph blockquote span,
+.Cooper .group-bg-color-neutral .Headline span,
+.Cooper .group-bg-color-neutral .Attribution span,
+.Cooper .group-bg-color-neutral .Paragraph blockquote span
+{
+  background: #FFF0BA;
+  color: #271325;
+}
+.Cooper .section-bgcover-w.section-bg-color-none .Paragraph {
+  background: #FFF0BA;
+  padding: 1.5vw !important;
+}
+.Cooper .section-bgcover-w.group-bg-color-dark .Paragraph {
+  background: transparent;
+  padding: 1.5vw !important;
+}
+.Cooper p {
+  padding: 0 !important;
+}
+
+@media screen and (min-width: 960px) {
+  .Cooper .Paragraph blockquote:before{
+    left: -60px;
+    font-size: 5em;
+    margin-top: -36px;
+  }
+}
+
+
+
+/* Sagmeister DESIGN SYSTEM */
+.Sagmeister {
+
+}
+.Sagmeister section {
+
+}
+.Sagmeister .Group {
+  // background: transparent;
+}
+.Sagmeister .Section--components-5.section-bgcover-w .Component .Group,
+.Sagmeister .Section--components-6.section-bgcover-w .Component .Group
+{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.Sagmeister .Headline span,
+.Sagmeister .Attribution span,
+.Sagmeister .Paragraph blockquote span
+{
+  padding: .2rem .4rem;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4;
+  background: #271325;
+  color: #FFF0BA;
+}
+.Sagmeister .Paragraph blockquote {
+  border: none;
+  padding: 0;
+}
+.Sagmeister .Paragraph blockquote:before {
+  content: "“";
+  position: absolute;
+  left: -.6rem;
+  font-size: 4em;
+  margin-top: -4rem;
+  font-weight: 200;
+}
+.Sagmeister .Attribution {
+  color: #FFF0BA;
+}
+.Sagmeister .Headline {
+
+}
+
+.Sagmeister .section-bg-color-dark .Headline span,
+.Sagmeister .section-bg-color-dark .Attribution span,
+.Sagmeister .section-bg-color-dark .Paragraph blockquote span,
+.Sagmeister .section-bg-color-neutral .Headline span,
+.Sagmeister .section-bg-color-neutral .Attribution span,
+.Sagmeister .section-bg-color-neutral .Paragraph blockquote span,
+.Sagmeister .group-bg-color-dark .Headline span,
+.Sagmeister .group-bg-color-dark .Attribution span,
+.Sagmeister .group-bg-color-dark .Paragraph blockquote span,
+.Sagmeister .group-bg-color-neutral .Headline span,
+.Sagmeister .group-bg-color-neutral .Attribution span,
+.Sagmeister .group-bg-color-neutral .Paragraph blockquote span
+{
+  background: #FFF0BA;
+  color: #271325;
+}
+.Sagmeister .section-bgcover-w.section-bg-color-none .Paragraph {
+  background: #FFF0BA;
+  padding: 1.5vw !important;
+}
+.Sagmeister .section-bgcover-w.group-bg-color-dark .Paragraph {
+  background: transparent;
+  padding: 1.5vw !important;
+}
+.Sagmeister p {
+  padding: 0 !important;
+}
+
+@media screen and (min-width: 960px) {
+  .Sagmeister .Paragraph blockquote:before{
+    left: -60px;
+    font-size: 5em;
+    margin-top: -36px;
+  }
+}
+
+
+
+
+
+.Maeda section {
+
+}
+
+.Maeda section {
+
+}
+.Maeda .Section:not(.section-flex-row) .Group:last-of-type:not(.Group--graphical) > div:last-of-type,
+.Maeda .section-flex-row:not(.Section--components-1) .Group:last-of-type:not(.Group--graphical) > div:last-of-type
+{
+  border-bottom: 6px solid;
+}
+.Maeda .section-flex-row.Section--components-1 .Group:not(.Group--graphical):not(.Group--meta) > div:last-of-type {
+  border-bottom: 6px solid;
+}
+
+.Maeda .Group .Headline,
+.Maeda .Group .Paragraph,
+.Maeda .Group .Attribution,
+.Maeda .Fallback h1,
+.Maeda .Fallback h2,
+.Maeda .Fallback h3,
+.Maeda .Fallback h4,
+.Maeda .Fallback h5,
+.Maeda .Fallback p {
+  border: none;
+  border-top: 6px solid;
+  padding: 1rem 0 1.5rem;
+}
+.Maeda .Section:not(.section-flex-row) .Group:not(:first-of-type) .Paragraph {
+  border-top: 1px solid;
+}
+.Maeda .Paragraph blockquote {
+  border: none;
+  padding: 1rem 0 1.5rem;
+}
+
+.Maeda .section-flex-row.group-align-end .Attribution:only-of-type,
+.Maeda .section-flex-row-reverse.group-align-end .Attribution:only-of-type
+{
+  border-top: none;
+  border-bottom: 6px solid;
+}
+
+
+
+.Chanel .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  opacity: .2;
+  border-right: 1px solid;
+}
+
+.Chanel .Attribution span{
+  border-bottom: .125em solid;
+  padding: 0;
+}
+
+.Chanel .Paragraph blockquote {
+  /*border: none;
+  padding: 0;*/
+}
+
+.Chanel .Section--components-1 .Headline:before {
+  content: '';
+  width: 62%;
+  height: 50px;
+  left: 19%;
+  right: 19%;
+  margin: 0 0 20px 0;
+  border: 8px solid;
+  border-bottom: none;
+  display: inline-block;
+}
+.Chanel .Headline:after {
+  content: '';
+  width: 62%;
+  height: 50px;
+  left: 19%;
+  right: 19%;
+  margin: 24px 0 0 0;
+  border: 8px solid;
+  border-top: none;
+  display: inline-block;
+}
+.Chanel .Section--components-2 .Headline:after,
+.Chanel .Section--components-3 .Headline:after,
+.Chanel .Section--components-4 .Headline:after {
+  width: 40px;
+  height: 0;
+  border-width: 4px;
+}
+
+
+.Rand .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  opacity: .2;
+  border-right: 1px solid;
+}
+
+.Rand .Attribution span{
+  border-bottom: .125em solid;
+  padding: 0;
+}
+
+.Rand .Paragraph blockquote {
+  /*border: none;
+  padding: 0;*/
+}
+
+.Rand .Section--components-1 .Headline:before {
+  content: '';
+  width: 62%;
+  height: 50px;
+  left: 19%;
+  right: 19%;
+  margin: 0 0 20px 0;
+  border: 8px solid;
+  border-bottom: none;
+  display: inline-block;
+}
+.Rand .Headline:after {
+  content: '';
+  width: 62%;
+  height: 50px;
+  left: 19%;
+  right: 19%;
+  margin: 24px 0 0 0;
+  border: 8px solid;
+  border-top: none;
+  display: inline-block;
+}
+.Rand .Section--components-2 .Headline:after,
+.Rand .Section--components-3 .Headline:after,
+.Rand .Section--components-4 .Headline:after {
+  width: 40px;
+  height: 0;
+  border-width: 4px;
+}
+
+
+.Masayuki .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  opacity: .2;
+  border-right: 1px solid;
+}
+
+.Masayuki .Attribution span{
+  border-bottom: .125em solid;
+  padding: 0;
+}
+
+.Masayuki .Paragraph blockquote {
+  /*border: none;
+  padding: 0;*/
+}
+
+.Masayuki .Section--components-1 .Headline:before {
+  content: '';
+  width: 62%;
+  height: 50px;
+  left: 19%;
+  right: 19%;
+  margin: 0 0 20px 0;
+  border: 8px solid;
+  border-bottom: none;
+  display: inline-block;
+}
+.Masayuki .Headline:after {
+  content: '';
+  width: 62%;
+  height: 50px;
+  left: 19%;
+  right: 19%;
+  margin: 24px 0 0 0;
+  border: 8px solid;
+  border-top: none;
+  display: inline-block;
+}
+.Masayuki .Section--components-2 .Headline:after,
+.Masayuki .Section--components-3 .Headline:after,
+.Masayuki .Section--components-4 .Headline:after {
+  width: 40px;
+  height: 0;
+  border-width: 4px;
+}
+
+
+
+.Gerstner section {
+
+}
+
+.Gerstner section {
+
+}
+.Gerstner .Section:not(.section-flex-row) .Group:last-of-type:not(.Group--graphical) > div:last-of-type,
+.Gerstner .section-flex-row:not(.Section--components-1) .Group:last-of-type:not(.Group--graphical) > div:last-of-type
+{
+  border-bottom: 6px solid;
+}
+.Gerstner .section-flex-row.Section--components-1 .Group:not(.Group--graphical):not(.Group--meta) > div:last-of-type {
+  border-bottom: 6px solid;
+}
+
+.Gerstner .Group .Headline,
+.Gerstner .Group .Paragraph,
+.Gerstner .Group .Attribution,
+.Gerstner .Fallback h1,
+.Gerstner .Fallback h2,
+.Gerstner .Fallback h3,
+.Gerstner .Fallback h4,
+.Gerstner .Fallback h5,
+.Gerstner .Fallback p {
+  border: none;
+  border-top: 6px solid;
+  padding: 1rem 0 1.5rem;
+}
+.Gerstner .Section:not(.section-flex-row) .Group:not(:first-of-type) .Paragraph {
+  border-top: 1px solid;
+}
+.Gerstner .Paragraph blockquote {
+  border: none;
+  padding: 1rem 0 1.5rem;
+}
+
+.Gerstner .section-flex-row.group-align-end .Attribution:only-of-type,
+.Gerstner .section-flex-row-reverse.group-align-end .Attribution:only-of-type
+{
+  border-top: none;
+  border-bottom: 6px solid;
+}
 /* VIGNELLI DESIGN SYSTEM
 **************************/
 
@@ -1154,7 +1667,7 @@ button {
   top: 0;
   height: 100%;
   border-right: 1px solid;
-  opacity: .2;
+  opacity: .3;
 }
 
 .Brockmann .Headline span{
@@ -1164,6 +1677,78 @@ button {
 }
 
 .Brockmann .Attribution span{
+  border-bottom: .125em solid;
+  padding: 0;
+}
+
+
+/* Glaser DESIGN SYSTEM
+**************************/
+
+.Glaser section {
+
+}
+
+.Glaser section {
+
+}
+
+.Glaser .section-bgcover-wo .Component:not(:last-of-type):after,
+.Glaser .section-bgcover-and .Component:not(:last-of-type):after
+{
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-right: 1px solid;
+  opacity: .3;
+}
+
+.Glaser .Headline span{
+  border-bottom: .125em solid;
+  line-height: 1.5;
+  padding: 0;
+}
+
+.Glaser .Attribution span{
+  border-bottom: .125em solid;
+  padding: 0;
+}
+
+
+/* Eames DESIGN SYSTEM
+**************************/
+
+.Eames section {
+
+}
+
+.Eames section {
+
+}
+
+.Eames .section-bgcover-wo .Component:not(:last-of-type):after,
+.Eames .section-bgcover-and .Component:not(:last-of-type):after
+{
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-right: 1px solid;
+  opacity: .3;
+}
+
+.Eames .Headline span{
+  border-bottom: .125em solid;
+  line-height: 1.5;
+  padding: 0;
+}
+
+.Eames .Attribution span{
   border-bottom: .125em solid;
   padding: 0;
 }
@@ -1201,7 +1786,7 @@ button {
 @media screen and (min-width: 960px) {
 
   .Bg .Cover {
-    max-height: 90vh;
+    max-height: 100vh;
   }
   .section-bgcover-w:not(.Section--article) .Group,
   .section-bgcover-and:not(.Section--article) .Group
@@ -1371,6 +1956,15 @@ button {
     flex-direction: column;
   }
 
+
+  .Bass .Section--components-1.group-overlap-wo .Component .Group--graphical {
+    margin: 0 !important;
+  }
+  .Bass .Section--components-1.group-overlap-w .Component .Group--graphical {
+    margin: -130px !important;
+  }
+
+
   /* Title Sizing
   **************************/
 
@@ -1407,11 +2001,11 @@ button {
   {
     font-size: 3rem;
   }
-  .Section.Section--components-1.title-size-xlarge:not(.section-flex-row):not(.section-flex-row-reverse) h1 {
+  .Section.Section--components-1.title-size-xlarge h1 {
     font-size: 5rem;
     line-height: 1.25 !important;
   }
-  .Section.Section--components-1.title-size-xxlarge:not(.section-flex-row):not(.section-flex-row-reverse) h1 {
+  .Section.Section--components-1.title-size-xxlarge h1 {
     font-size: 8rem;
     line-height: 1.25 !important;
   }
@@ -1708,7 +2302,7 @@ button {
     max-height: 100vh;
   }
   .graphical--slider .Component {
-    min-height: 90vh;
+    min-height: 100vh;
   }
   .graphical--slider .dots{
     position: absolute;
@@ -1726,7 +2320,7 @@ button {
     border-radius: 50%;
     display: inline-block;
     margin: 0 10px;
-    opacity: .2;
+    opacity: .4;
   }
   .graphical--slider.section-bg-color-dark .dots li,
   .graphical--slider.section-bg-color-neutral .dots li
@@ -1766,7 +2360,7 @@ button {
   .graphical--slider .arrow-left.disabled,
   .graphical--slider .arrow-right.disabled
   {
-    opacity: .3;
+    opacity: .4;
     pointer-events: none;
   }
   .graphical--slider .arrow-right {
@@ -1783,7 +2377,7 @@ button {
     opacity: 0;
     width: 100%;
     top: 50%;
-    // max-height: 90vh;
+    // max-height: 100vh;
     padding: 0;
     overflow-x: hidden;
   }
@@ -1970,14 +2564,21 @@ button {
 }
 /* DEMO UI */
 
-.System {
+.System:not(:first-of-type) {
+  padding-bottom: 0;
+  transform: scale(.8);
+  box-shadow: 2px 2px 22px rgba(50,20,30,.3);
+}
+.System:first-of-type {
   margin-top: 70px;
+  padding: 0;
   min-height: 100vh;
 }
 .Section--nav {
   top: 70px;
 }
 .Class-list {
+  display: none;
   position: absolute;
   background: #FFF0BA;
   color: #271325;
@@ -1993,7 +2594,7 @@ button {
   border-radius: 4px;
   border: 1px solid #271325;
   outline: none;
-  opacity: .4;
+  opacity: .2;
   z-index: 30;
 }
 
