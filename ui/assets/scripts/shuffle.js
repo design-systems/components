@@ -19,22 +19,19 @@ for (var i = 0;i< sections.length; i++) {
 // });
 document.querySelector('.Shuffle').addEventListener("click", shuffle);
 
-// var shuffleInterval = setInterval(shuffle,10000);
-// setTimeout(function(){
-//   clearInterval(shuffleInterval);
-// },5000)
+var shuffleInterval = setInterval(shuffle,100);
+setTimeout(function(){
+  clearInterval(shuffleInterval);
+  shuffleInterval = setInterval(shuffle,10000);
+},5000)
 
 
 function changeSystem() {
   var newSystem = system_el.cloneNode(true);
   wrapper.appendChild(newSystem);
-  newSystem.className = "System ";
+  system_el.className = "System "
   changePhotos();
-  for (var branch in siteBeautyverse){
-    branch = Object.keys(siteBeautyverse[branch][Object.keys(siteBeautyverse[branch])[0]]);
-    var path = branch[Math.floor(Math.random()*branch.length)]
-    system_el.classList.add(path);
-  }
+  changeSystemClasses();
   newSystem.querySelector('.Kill').addEventListener('click',function(e){
     newSystem.remove();
   })
@@ -44,6 +41,13 @@ function changeSystem() {
       applyClasses(e.target);
     }
   })
+}
+function changeSystemClasses() {
+  for (var branch in siteBeautyverse){
+    branch = Object.keys(siteBeautyverse[branch][Object.keys(siteBeautyverse[branch])[0]]);
+    var path = branch[Math.floor(Math.random()*branch.length)]
+    system_el.classList.add(path);
+  }
 }
 function changePhotos() {
   var system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]
@@ -67,8 +71,9 @@ function changePhotos() {
 }
 
 function init(){
-  system_el.className = "System "+ system
+  system_el.className = "System "+ system;
   createItemClassList();
+  changeSystemClasses();
   // shuffle();
 }
 function shuffle(){

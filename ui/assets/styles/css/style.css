@@ -163,16 +163,19 @@ button {
 
 .Kill {
   position: absolute;
-  right: 30px;
-  top: 0px;
-  z-index: 2;
+  right: -81px;
+  top: -10px;
+  z-index: 20;
   cursor: pointer;
   font-weight: 100;
   font-size: 100px;
-  opacity: .01;
+  opacity: .3;
+  transform: scale(.3);
 }
 .Kill:hover {
   opacity: 1;
+  transform: scale(1);
+  transition-duration: .2s;
 }
 
 .Group {
@@ -2568,6 +2571,18 @@ button {
   padding-bottom: 0;
   transform: scale(.8);
   box-shadow: 2px 2px 22px rgba(50,20,30,.3);
+}
+body {
+  counter-reset: section;
+}
+.System:not(:first-of-type):before {
+  counter-increment: section;
+  content: counter(section);
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 30px;
+  position: absolute;
+  right: -50px;
 }
 .System:first-of-type {
   margin-top: 70px;
