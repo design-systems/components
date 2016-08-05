@@ -1816,9 +1816,6 @@ button {
   .Section:not(.Section--components-1) .Component .Bg {
     padding: 8px 4px 8px 4px;
   }
-  .Section.section-bgcover-w {
-    padding: 0 4px !important;
-  }
   .Section--components-1 .Group {
     width: 50%;
   }
