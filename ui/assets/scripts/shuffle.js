@@ -19,11 +19,11 @@ for (var i = 0;i< sections.length; i++) {
 // });
 document.querySelector('.Shuffle').addEventListener("click", shuffle);
 
-var shuffleInterval = setInterval(shuffle,100);
+var shuffleInterval = setInterval(shuffle,1);
 setTimeout(function(){
   clearInterval(shuffleInterval);
   shuffleInterval = setInterval(shuffle,10000);
-},5000)
+},1000)
 
 
 function changeSystem() {
