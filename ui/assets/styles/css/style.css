@@ -12,7 +12,7 @@ html {
   // outline: 1px solid #645244;
 }
 a {
-  color: inherit;
+  color: tomato;
   text-decoration: none;
 }
 a:hover {
@@ -55,14 +55,18 @@ button {
   outline: none;
   padding: .8em 1.5em;
   text-transform: uppercase;
-  border-radius: 3px;
+  border-radius: 50px;
   letter-spacing: .1rem;
   margin: 2rem 0 1.5rem;
   font-weight: 900;
-  font-size: .8rem;
+  font-size: 1rem;
   background: inherit;
-  border: 2px solid;
-  display: none;
+  border: 2px solid tomato;
+  color: tomato;
+  cursor: pointer;
+}
+button:hover {
+  border-color: #FFF0BA;
 }
 .Cover,
 .Image {
@@ -114,6 +118,13 @@ button {
   left: 50%;
   margin-left: -15px;
   cursor: pointer;
+}
+.Header .Shuffle:after {
+  content: 'New Layout';
+  margin-left: 1rem;
+  top: -.25rem;
+  position: relative;
+  opacity: .5;
 }
 .Header .Shuffle img {
   width: 30px;
@@ -191,7 +202,7 @@ button {
 }
 
 .Group--graphical .Image {
-  max-height: 100vh;
+  max-height: 90vh;
 }
 
 .Group:not(.Group--graphical) {
@@ -1786,7 +1797,69 @@ button {
   display: none;
 }
 
+
+.hello {
+  font-size: 2rem;
+  position: fixed;
+  margin: 2rem;
+  padding: 2rem 1rem;
+  z-index: 20;
+  background: #271325;
+  color: #FFF0BA;
+  opacity: 1;
+  transition: 1s ease-in-out;
+  bottom: 0px;
+  overflow: auto;
+  height: calc(100% - 150px);
+  width: calc(100% - 5rem);
+  font-weight: 700;
+  cursor: pointer;
+  opacity: .98;
+}
+
+.hello span{
+  border-top: 2px solid;
+  padding-top: 1.4rem;
+  margin-top: 2rem;
+  display: block;
+  font-size: 14px;
+  max-width: 745px;
+}
+
+.hello.closed {
+  transform: translateY(100%);
+}
+
+.hello .wtf {
+  transition: 1s ease-in-out;
+  position: absolute;
+  top: 12px;
+  font-size: 18px;
+  opacity: 0;
+  cursor: pointer;
+}
+.hello.closed .wtf {
+  opacity: 1;
+}
+
+.hello .message {
+  max-width: 745px;
+}
+
+.Wrapper {
+  -webkit-filter: blur(3px);
+}
+
+.Wrapper.active {
+  -webkit-filter: none;
+}
 @media screen and (min-width: 960px) {
+
+  .hello{
+    margin: 2.5rem;
+    padding: 3rem 5rem;
+    font-size: 3rem;
+  }
 
   .Bg .Cover {
     max-height: 100vh;
@@ -2584,7 +2657,15 @@ body {
 .System:first-of-type {
   margin-top: 70px;
   padding: 0;
-  min-height: 100vh;
+  min-height: 90vh;
+}
+.System:first-of-type:after {
+  content: 'Layout History';
+  font-weight: 700;
+  font-size: 4rem;
+  margin: 5rem 10vw;
+  top: 2rem;
+  position: relative;
 }
 .Section--nav {
   top: 70px;

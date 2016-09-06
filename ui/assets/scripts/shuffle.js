@@ -13,11 +13,8 @@ for (var i = 0;i< sections.length; i++) {
   sectionClasses[i] = sections[i].classList + ' ';
 }
 
-// document.querySelector('#System-input').addEventListener("change", function(){
-//   system = document.querySelector('#System-input').value;
-//   changeSystem()
-// });
 document.querySelector('.Shuffle').addEventListener("click", shuffle);
+document.querySelector('.hello').addEventListener("click", toggleInfo);
 
 // var shuffleInterval = setInterval(shuffle,1);
 // setTimeout(function(){
@@ -143,5 +140,9 @@ function applyClasses(target) {
     }
   }
   section.className = myClass;
+}
+function toggleInfo() {
+  document.querySelector('.hello').classList.toggle('closed')
+  document.querySelector('.Wrapper').classList.toggle('active')
 }
 init()
