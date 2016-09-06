@@ -11,6 +11,7 @@ ImageCenter_array['Masayuki'] = '75% 50%';
 ImageCenter_array['Eames2'] = '32% 40%';
 ImageCenter_array['Chanel'] = '32% 33%';
 ImageCenter_array['Hadid'] = '66% 50%';
+ImageCenter_array['Glaser'] = '50% 30%';
 
 var theStylist =
 {
@@ -163,15 +164,6 @@ var theStylist =
           'section-bgcover-justify-center': { $class: ['section-bgcover-justify-center'] },
           'section-bgcover-justify-right': { $class: ['section-bgcover-justify-right'] },
           'section-bgcover-justify-stretch': { $class: ['section-bgcover-justify-stretch'] },
-        },
-      },
-      'section-bgcover-padding': {
-        'Y_section-bgcover-padding': {
-          'section-bgcover-padding-none': { $class: ['section-bgcover-padding-none'] },
-          'section-bgcover-padding-xsmall': { $class: ['section-bgcover-padding-xsmall'] },
-          'section-bgcover-padding-small': { $class: ['section-bgcover-padding-small'] },
-          'section-bgcover-padding-medium': { $class: ['section-bgcover-padding-medium'] },
-          'section-bgcover-padding-large': { $class: ['section-bgcover-padding-large'] },
         },
       },
     },

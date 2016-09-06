@@ -1,5 +1,5 @@
 
-var system = 'Rams'; // Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+var archetype = 'Rams'; // Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
 var wrapper = document.querySelector('.Wrapper');
 var system_el = document.querySelector('.System');
 var images = document.querySelectorAll('.Image img');
@@ -19,11 +19,11 @@ for (var i = 0;i< sections.length; i++) {
 // });
 document.querySelector('.Shuffle').addEventListener("click", shuffle);
 
-var shuffleInterval = setInterval(shuffle,1);
-setTimeout(function(){
-  clearInterval(shuffleInterval);
-  shuffleInterval = setInterval(shuffle,10000);
-},1000)
+// var shuffleInterval = setInterval(shuffle,1);
+// setTimeout(function(){
+//   clearInterval(shuffleInterval);
+  shuffleInterval = setInterval(shuffle,5000);
+// },1000)
 
 
 function changeSystem() {
@@ -50,10 +50,11 @@ function changeSystemClasses() {
   }
 }
 function changePhotos() {
-  var system = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]
-  var headline = Headlines_array[Math.floor(Math.random() * Headlines_array.length)];
-  var author = Authors_array[system]//Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)]];
-  var myPhoto = system; //Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+  archetype = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
+  console.log(archetype)
+  var headline = archetype.quotes[Math.floor(Math.random()) * archetype.quotes.length];
+  var author = archetype.title;
+  var myPhoto = archetype.name;
   for (var i=0; i<images.length; i++ ) {
     images[i].style.objectPosition = ImageCenter_array[myPhoto]
     images[i].setAttribute('src','ui/assets/images/'+myPhoto+'.jpg');
@@ -71,7 +72,7 @@ function changePhotos() {
 }
 
 function init(){
-  system_el.className = "System "+ system;
+  system_el.className = "System "+ archetype;
   createItemClassList();
   changeSystemClasses();
   // shuffle();
