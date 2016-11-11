@@ -11,6 +11,35 @@ var Archetypes_array = [
     ]
   },
   {
+    name: 'Knuth',
+    title: 'Donald Knuth',
+    quotes: [
+      'Meta-design is much more difficult than design; it’s easier to draw something than to explain how to draw it',
+      'Science is what we understand well enough to explain to a computer. Art is everything else we do.',
+      'An algorithm must be seen to be believed.',
+      'Computer programming is an art, because it applies accumulated knowledge to the world, because it requires skill and ingenuity, and especially because it produces objects of beauty.',
+      'The designer of a new kind of system must participate fully in the implementation.',
+      'We should continually be striving to transform every art into a science: in the process, we advance the art.'
+    ]
+  },
+  {
+    name: 'Hoare',
+    title: 'Sir Tony Hoare',
+    quotes: [
+      'The price of reliability is the pursuit of the utmost simplicity. It is a price which the very rich may find hard to pay.',
+      'Premature optimization is the root of all evil.'
+    ]
+  },
+  {
+    name: 'Poggenpohl',
+    title: 'Sharon Poggenpohl',
+    quotes: [
+      'The cycle changes-conceive an idea, the computer generates form alternatives. We evaluate and select. The seams are more abbreviated. The realm of possibilities expands.',
+      'Fundamentally, design—the process of bringing into existence the unknown or invisible—envisions the future.'
+    ]
+  },
+
+  {
     name: 'Vignelli',
     title: 'Lella & Massimo Vignelli',
     quotes: [
@@ -52,14 +81,14 @@ var Archetypes_array = [
       '[Is integral typography] a new label? The typographical aspect of a new ism? No, this is just what is not meant. The times of both, pioneers and isms , are over. After the adventurers of the 1910s and the 20s we are the settlers, the colonizers.',
       'In the ’20s for instance it was claimed for the first time that the typographer should proceed from the data of his material, from the basic typographic elements; today it is hardly conceivable that he should not proceed from them.',
       'Such ‘either or’ criteria have served their time and purpose. … ‘There remain only open doors to be unlocked’, as the German saying has it. … Nobody will relieve us of the task of searching for new criteria.',
-      'Here the designer must intervene, he must in a sense aim at a larger whole; he must not continue to carry out the single task so much as create structures from which single solutions can be derived.'
+      'Here the designer must intervene, he must in a sense aim at a larger whole; he must not continue to carry out the single task so much as create structures from which single solutions can be derived.',
+      'The act of describing the task is part of the solution....the more precise and complete these criteria are, the more creative the work.'
     ]
   },
   {
     name: 'Sagmeister',
     title: 'Stefan Sagmeister',
     quotes: [
-      'Complaining is silly. Either act or forget.',
       'Perfection is boring. Getting better is where all the fun is.',
       'Not all graphic design needs to be made by a machine.',
       'Any excuse to get away from the computer screen is welcome.',

@@ -1516,6 +1516,57 @@ button:hover {
 }
 
 
+.Poggenpohl .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  opacity: .2;
+  border-right: 1px solid;
+}
+
+.Poggenpohl .Attribution span{
+  border-bottom: .125em solid;
+  padding: 0;
+}
+
+.Poggenpohl .Paragraph blockquote {
+  /*border: none;
+  padding: 0;*/
+}
+
+.Poggenpohl .Section--components-1 .Headline:before {
+  content: '';
+  width: 62%;
+  height: 50px;
+  left: 19%;
+  right: 19%;
+  margin: 0 0 20px 0;
+  border: 8px solid;
+  border-bottom: none;
+  display: inline-block;
+}
+.Poggenpohl .Headline:after {
+  content: '';
+  width: 62%;
+  height: 50px;
+  left: 19%;
+  right: 19%;
+  margin: 24px 0 0 0;
+  border: 8px solid;
+  border-top: none;
+  display: inline-block;
+}
+.Poggenpohl .Section--components-2 .Headline:after,
+.Poggenpohl .Section--components-3 .Headline:after,
+.Poggenpohl .Section--components-4 .Headline:after {
+  width: 40px;
+  height: 0;
+  border-width: 4px;
+}
+
 .Masayuki .Section:not(.section-bgcover-w):not(.section-bgcover-and) .Component:not(:last-of-type):after {
   content: "";
   z-index: 11;
@@ -1659,7 +1710,6 @@ button:hover {
   border-bottom: 6px solid;
 }
 
-
 /* Brockmann DESIGN SYSTEM
 **************************/
 
@@ -1691,6 +1741,76 @@ button:hover {
 }
 
 .Brockmann .Attribution span{
+  border-bottom: .125em solid;
+  padding: 0;
+}
+
+/* Knuth DESIGN SYSTEM
+**************************/
+
+.Knuth section {
+
+}
+
+.Knuth section {
+
+}
+
+.Knuth .section-bgcover-wo .Component:not(:last-of-type):after,
+.Knuth .section-bgcover-and .Component:not(:last-of-type):after
+{
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-right: 1px solid;
+  opacity: .3;
+}
+
+.Knuth .Headline span{
+  border-bottom: .125em solid;
+  line-height: 1.5;
+  padding: 0;
+}
+
+.Knuth .Attribution span{
+  border-bottom: .125em solid;
+  padding: 0;
+}
+
+/* Brockmann DESIGN SYSTEM
+**************************/
+
+.Hoare section {
+
+}
+
+.Hoare section {
+
+}
+
+.Hoare .section-bgcover-wo .Component:not(:last-of-type):after,
+.Hoare .section-bgcover-and .Component:not(:last-of-type):after
+{
+  content: "";
+  z-index: 11;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border-right: 1px solid;
+  opacity: .3;
+}
+
+.Hoare .Headline span{
+  border-bottom: .125em solid;
+  line-height: 1.5;
+  padding: 0;
+}
+
+.Hoare .Attribution span{
   border-bottom: .125em solid;
   padding: 0;
 }
@@ -2657,12 +2777,12 @@ body {
 .System:first-of-type {
   margin-top: 70px;
   padding: 0;
-  min-height: 90vh;
+  min-height: 180vh;
 }
 .System:first-of-type:after {
   content: 'Layout History';
   font-weight: 700;
-  font-size: 4rem;
+  font-size: 2rem;
   margin: 5rem 10vw;
   top: 2rem;
   position: relative;

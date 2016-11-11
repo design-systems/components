@@ -13,14 +13,18 @@ for (var i = 0;i< sections.length; i++) {
   sectionClasses[i] = sections[i].classList + ' ';
 }
 
+document.querySelector('.jsStop').addEventListener('click', function(){
+  clearInterval(shuffleInterval);
+})
 document.querySelector('.Shuffle').addEventListener("click", shuffle);
 document.querySelector('.hello').addEventListener("click", toggleInfo);
 
-// var shuffleInterval = setInterval(shuffle,1);
-// setTimeout(function(){
-//   clearInterval(shuffleInterval);
-  shuffleInterval = setInterval(shuffle,5000);
-// },1000)
+var shuffleInterval = setInterval(shuffle,1);
+setTimeout(function(){
+  clearInterval(shuffleInterval);
+  shuffleInterval = setInterval(shuffle,10000);
+}, 5000)
+
 
 
 function changeSystem() {
@@ -48,8 +52,7 @@ function changeSystemClasses() {
 }
 function changePhotos() {
   archetype = Archetypes_array[Math.floor(Math.random() * Archetypes_array.length)];
-  console.log(archetype)
-  var headline = archetype.quotes[Math.floor(Math.random()) * archetype.quotes.length];
+  var headline = archetype.quotes[Math.floor(Math.random() * archetype.quotes.length)];
   var author = archetype.title;
   var myPhoto = archetype.name;
   for (var i=0; i<images.length; i++ ) {
@@ -72,6 +75,9 @@ function init(){
   system_el.className = "System "+ archetype;
   createItemClassList();
   changeSystemClasses();
+  for (var i=0; i<500; i++) {
+    shuffle();
+  }
   // shuffle();
 }
 function shuffle(){
