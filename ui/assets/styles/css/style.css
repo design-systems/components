@@ -225,6 +225,7 @@ button:hover {
 }
 .Group--column {
   max-width: 760px;
+  display: none;
 }
 
 .Component {
